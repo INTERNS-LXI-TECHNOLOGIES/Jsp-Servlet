@@ -40,7 +40,7 @@
 	<input type="text" placeholder="search here"/>
 	
 </form>	-->
-<form action="Details.jsp" method="post">
+<form action="Details.jsp" >
 
 
 <input type="text" name="name" placeholder="search here">
@@ -56,7 +56,9 @@
 		
 		<%ContactController cc=new ContactController();
 		Set<Contact> contactList=cc.getContacts();
+		collections.sort(contactList);
 			for(Contact b:contactList){
+			
 			%>
 
 				<a href="Details.jsp?name=<%=b.getName()%>"><%out.println(b.getName());%></br></a>

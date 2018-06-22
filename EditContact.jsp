@@ -17,22 +17,26 @@
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
 
-	
-	<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*" %>
+<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*" %>
 <%
 
  try{
 		
         String name=request.getParameter("name"); 
+		
 		String phone=request.getParameter("phoneNumber");
 		String place=request.getParameter("place");
 		String emailId=request.getParameter("e-mail");
+		String id=request.getParameter("id");
+	
 		
+		int pId=Integer.parseInt(id);
 		
 		ContactController cc = new ContactController();
 		
-		int id=cc.contactList.size()+1;
-		cc.addContact(id,name,phone,place,emailId);
+			
+
+      cc.editContact(pId,name,phone,place,emailId);
 		//Set<Contact> sets  = cc.getContacts();
 		out.println(" "+name);
 		out.println(" "+phone);
@@ -42,8 +46,7 @@
 	catch(Exception e){
 		System.out.println("Exception occurs"+e);
 	}	
-	
-	%>
-	
-</body>
+
+%>
 </html>
+	

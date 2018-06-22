@@ -3,12 +3,12 @@
 
 <head>
 	<title>Details</title>
-	<%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*"%>
+	
 </head>
 <style>
 	body
 	{
-		background-color:lightpink;
+		background-color:skyblue;
 	}
 	h1
 	{
@@ -19,13 +19,16 @@
 	
 </style>
 
+<%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*"%>
     <% String name=request.getParameter("name");
 	
 	Set<Contact> contactList=ContactController.getContacts();
-	loop1:
+	
 	for(Contact contact:contactList){
-		if(contact.getName().equals(name)){%>
-
+		
+			
+		if(contact.getName().equals(name)){
+		%>
 
 <body>
 <p align="left">
@@ -43,10 +46,10 @@
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
 
+
    
 
-    <%//Collections.sort(contactList);
-	//int i=Collections.binarySearch(contactList,name);%>
+    
 	
 		
 			<%out.println(" "+contact.getName());%></br>
@@ -56,8 +59,7 @@
 	<%	
 	}
 		
-		
-		break loop1;
+	
 		
 	}
 

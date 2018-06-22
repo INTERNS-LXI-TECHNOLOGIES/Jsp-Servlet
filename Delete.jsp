@@ -30,7 +30,7 @@
 <p align="left">
 <a href="Contact.jsp"><img src="/ContactsApp/images/home.jpg" width="50" height="50"></a></br></br>
 </p>
-<form action="contact.jsp" method="post">
+<form action="Contact.jsp" method="post">
 
 <% String name=request.getParameter("name");
 Set<Contact> contactList=ContactController.getContacts();
