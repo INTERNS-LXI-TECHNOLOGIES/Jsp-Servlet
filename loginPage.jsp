@@ -40,7 +40,7 @@ body
 <img src = "images/addcontact.jpg" alt = "add contacts" title = "Add contact" width = "50px"/>
 
 </div></a>
-<img src = "images/remove-user.jpg" align = "right" alt = "delete contact" title = "Delete contact" width = "50px">
+
 </p>
 
 
@@ -57,14 +57,17 @@ body
 <%@ page import = "com.lxisoft.model.*"%>
 <%
 ContactFile cf = new ContactFile();
-String[] data = cf.readData();
-if(data.length!=null)
+Set<Contact> data = cf.readData();
+if(data!=null)
 {	
- for(i = 0;i<data.length;i++)
+ for(Contact contacts:data)
  {
 %>
+<div id ="contact" align = "center" >
+<a href = "ContactsInformation.jsp?name=<%=contacts.getFirstName()%>"><%
+out.println(contacts.getFirstName());%></a></br>
+</div>
 
-<input type = "button" class = "button1" value = "<%=data[i]%>"/>
 <%
  }
 }
