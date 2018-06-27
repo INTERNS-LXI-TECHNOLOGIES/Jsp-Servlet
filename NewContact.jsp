@@ -25,9 +25,10 @@
 		
         String name=request.getParameter("name"); 
 		String phone=request.getParameter("phoneNumber");
+		
 		String sid=request.getParameter("id");
 		int id;
-		ContactController cc = ContactController.getInstance();
+		ContactController cc = new ContactController();
 		if(sid==null)
 			{
 				id=(cc.getContacts().size()+1);
@@ -43,15 +44,10 @@
 			cc.save(id,name,phone);
 			}
 		
-		//cc.addContact(id,name,phone);
-		List<Contact> sets  = cc.getContacts();
-		
-		//for(Contact contact:sets)
-		//out.println("Setttttttttttt "+contact.getName());
-		%>
+		//cc.addContact(id,name,phone,place,emailId);
+		//Set<Contact> sets  = cc.getContacts();%>
 		<%out.println(" "+name);%></br>
 		<%out.println(" "+phone);%></br>
-		
 		
 <% }	
 	catch(Exception e){

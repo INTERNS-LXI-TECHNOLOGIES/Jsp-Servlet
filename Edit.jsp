@@ -30,12 +30,12 @@
     <%
 try{	
 		String name=request.getParameter("name");
-		
-		ArrayList<Contact> contactList=ContactController.getContacts();
 		ContactController cc=new ContactController();
+		ArrayList<Contact> contactList=cc.getContacts();
+		
 			Contact contact=new Contact(0,"not found","not found");
 			 contact=cc.search(name);
-			System.out.println("2Edit/name=="+contact.name);
+			System.out.println("2Edit/name=="+contact.getName());
 			System.out.println("2Edit/name=="+contact.id);
 	
 			%>

@@ -32,11 +32,15 @@
 </p>
 <form action="Contact.jsp" method="post">
 
-<% String name=request.getParameter("name");
+<%try{
+ String name=request.getParameter("name");
 String sid=request.getParameter("id");
 int id=Integer.parseInt(sid);
-ArrayList<Contact> contactList=ContactController.getContacts();
 ContactController cc=new ContactController();
+ArrayList<Contact> contactList=cc.getContacts();
+for(Contact con:contactList){
+	out.println("$$$$$$$$$$"+con.getName());
+}
 Contact rc=null;
 	for(Contact contact:contactList){
 		g:
@@ -47,7 +51,11 @@ Contact rc=null;
 	}
 	cc.remove(id);
 	
-	out.println("Are you sure you want to delete this contact");%>
+	out.println("Are you sure you want to delete this contact");
+}
+catch(Exception e){
+	out.println("delete/exception  "+e);
+}%>
 		<input align="center" type="submit" value="Submit" class="button" >
 		<input  type="reset" value="Cancel" class="button" >	
 			</form>

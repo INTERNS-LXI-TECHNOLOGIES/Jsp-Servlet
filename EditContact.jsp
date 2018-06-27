@@ -12,7 +12,7 @@
 <p align="left">
 <a href="Contact.jsp"><img src="/ContactsApp/images/homePic.jpg" width="50" height="50"></a></br></br>
 <p align="center">
-<img src="/ContactsApp/images/contacts.jpg" width="140" height="150"></br></br></br></br>
+<img src="/ContactsApp/images/contact.jpg" width="140" height="150"></br></br></br></br>
 </p>
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
@@ -24,17 +24,21 @@
 		
         String name=request.getParameter("name"); 
 		String phone=request.getParameter("phoneNumber");
+		
 		String id=request.getParameter("id");
+	
+		
 		int pId=Integer.parseInt(id);
 		
 		ContactController cc = new ContactController();
 		
 			
-
-      cc.edit(pId,name,phone);
-		//Set<Contact> sets  = cc.getContacts();
-		out.println(" "+name);
+out.println(" "+name);
 		out.println(" "+phone);
+		cc.edit(pId,name,phone);
+		//Set<Contact> sets  = cc.getContacts();
+		
+		
 		
  }	
 	catch(Exception e){

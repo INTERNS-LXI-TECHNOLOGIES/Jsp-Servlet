@@ -7,8 +7,6 @@ public class ContactController{
 	
 	private static File contactData;
 	
-	
-	
 	public File getFile(){
 		return contactData;
 	}
@@ -17,17 +15,16 @@ public class ContactController{
 	}
 	static
 	{
-		File dir=new File("C://apache-tomcat-7.0.72/webapps/ContactsFile/data");
-		contactData= new File(dir,"Data.csv");
+		File dir=new File("C://apache-tomcat-7.0.72/webapps/contactsDb/data");
+		contactData=new File(dir,"Data.csv");
 		contactData.delete();
 		
 		
 	}
-	public  void save(int id,String name,String phone)
-	{
+	public  void save(int id,String name,String phone){
 		
 		try{
-		File dir=new File("C://apache-tomcat-7.0.72/webapps/ContactsFile/data");
+		File dir=new File("C://apache-tomcat-7.0.72/webapps/contactsDb/data");
 		contactData=new File(dir,"Data.csv");
 		contactData.createNewFile();
 		BufferedWriter bw=new BufferedWriter(new FileWriter(contactData,true));
@@ -43,7 +40,7 @@ public class ContactController{
 	}
 public Contact search(String name){
 		
-		Contact contact= new Contact(0,"non","non");
+		Contact contact=new Contact(0,"non","non");
 		loop1:
 		for(Contact tempContact:getContacts()){
 			if(name.equalsIgnoreCase(tempContact.getName())){
@@ -54,35 +51,27 @@ public Contact search(String name){
 		}
 		return contact;
 	}
-		
 
-	public  ArrayList<Contact> getContacts(){
+	public ArrayList<Contact> getContacts(){
+		
+		
 		ArrayList<Contact>contacts=new ArrayList<Contact>();
-		File dir=new File("C://apache-tomcat-7.0.72/webapps/ContactsFile/data");
-		File contactDatas=new File(dir,"Data.csv");
-		Contact[] contactsTemp=new Contact[10];
 		
 		try{
-				if(contactDatas!=null)
+				if(contactData!=null)
 				{
-					BufferedReader br=new BufferedReader(new FileReader(contactDatas));//null is coming
+					BufferedReader br=new BufferedReader(new FileReader(contactData));//null is coming
 					
 					String data= null;
-					int i=0;
+					
 						while((data=br.readLine())!=null){
-										System.out.println("looooppppppppppppppppppppp" +i);
+							
 							String[]datas=data.split(",");
-							System.out.println("Contact-From file Reading +++++++++++++++++"+datas[0]+datas[1]+datas[2]);
+							
 							int id=Integer.parseInt(datas[0]);
-							Contact c =new Contact(id,datas[1],datas[2]);
-							contactsTemp[i]=c;
-							//System.out.println("In list while loop "+contacts.get(i).getName()+" and size is "+contacts.size());
-				
-					i++;
+							contacts.add(new Contact(id,datas[1],datas[2]));
 						}
 						br.close();
-						
-						
 				}
 			}
 		catch(IOException e){
@@ -90,22 +79,11 @@ public Contact search(String name){
 			System.out.println("getContacts/ "+e);
 			
 		}
-
-			
-		for(Contact contact:contactsTemp){
-			if(contact!=null){
-			System.out.println("in list  +++++"+contact.getName());
-			contacts.add(contact);
-			}
-			
-		}
-			
 		
 		return contacts;
 		
 	}
-	
-	public void check(int id,String name,String phone)
+	public void check(int id,String name,String phone)//to check what action is to be perfomed edit or saving
 	{
 		ArrayList<Contact>contacts=getContacts();
 		boolean isToSave=true;
@@ -125,7 +103,7 @@ public Contact search(String name){
 		}
 		
 	}
-	public void edit(int id1,String name,String phone){
+	public void edit(int id1,String name,String phone){//reding all data,storing and editing the data .deleteing old data file saveing all data into the file by calling save
 		ArrayList<ArrayList<String>>contactsFile=new ArrayList<ArrayList<String>>();
 		try{
 			BufferedReader br=new BufferedReader(new FileReader(contactData));
@@ -139,12 +117,13 @@ public Contact search(String name){
 					int tempId=Integer.parseInt(field[0]);
 					if(id1==tempId)
 					{
-						System.out.println(""+"\n"+"\n"+" gonne to edit method");
+						System.out.println(">>>>>>>>>>>>>>>>>>>>"+"\n"+"\n"+" gonne to edit method");
 						System.out.println("affter edit[]"+id1+name+phone);
-						System.out.println("befor edit[]"+field[0]+field[1]+field[2]);
+						System.out.println("befor edit[]"+field[0]+field[1]);
 						rowData.add(field[0]);
 						rowData.add(name);
 						rowData.add(phone);
+						
 						
 					}
 					else
@@ -152,8 +131,7 @@ public Contact search(String name){
 						rowData.add(field[0]);
 						rowData.add(field[1]);
 						rowData.add(field[2]);
-						
-						
+						 
 					}
 				contactsFile.add(rowData);
 			}
@@ -184,10 +162,8 @@ public Contact search(String name){
 				
 					String []field=contactFile.split(",");
 					int tempId=Integer.parseInt(field[0]);
-					System.out.println("cc/remove/"+id+" "+tempId);
 					if(id==tempId)
 					{
-						System.out.println("cc/remove/"+id+" "+tempId);
 						continue;
 					}
 					else
@@ -196,7 +172,7 @@ public Contact search(String name){
 						rowData.add(field[0]);
 						rowData.add(field[1]);
 						rowData.add(field[2]);
-						
+						 
 					}
 				contactsFile.add(rowData);
 			}
@@ -206,14 +182,13 @@ public Contact search(String name){
 				System.out.println("cc/remove/1st/ "+ep+"/n");
 			}
 		}
-		
 		catch(IOException e)
 		{
-			System.out.println("edit/Exception "+e+" "+"/n"+"/n");
+			System.out.println("edit/Exception "+e+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+"/n"+"/n");
 		}
 		System.out.println("delete is ="+contactData.delete());
 		try{
-			System.out.println("cc/remove/2loop st/ "+" "+"/n"+"/n");
+			System.out.println("cc/remove/2loop st/ "+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+"/n"+"/n");
 
 			for(ArrayList<String>rowData:contactsFile){
 				System.out.println(rowData.get(0)+rowData.get(1)+rowData.get(2));
@@ -223,7 +198,7 @@ public Contact search(String name){
 			}
 		}
 		catch(Exception ep){
-				System.out.println("cc/remove/2st/ "+ep+" "+"/n"+"/n");
+				System.out.println("cc/remove/2st/ "+ep+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+"/n"+"/n");
 			}
 		
 		
