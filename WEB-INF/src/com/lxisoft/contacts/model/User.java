@@ -1,8 +1,8 @@
-package com.lxisoft.model;
+package com.lxisoft.contacts.model;
 
 public class User{
 
-	private int id;
+	private int userId;
 	private String username;
 	private String password;
 
@@ -11,18 +11,18 @@ public class User{
 		this.password = password;
 	}
 	
-	public User(int id, String username, String password){
-		this.id = id;
+	public User(int userId, String username, String password){
+		this.userId = userId;
 		this.username = username;
 		this.password = password;
 	}
 
-	public int getId(){
-		return id;
+	public int getUserId(){
+		return userId;
 	}
 	
-	public void setId(int id){
-		this.id = id;
+	public void setUserId(int userId){
+		this.userId = userId;
 	}
 	
 	public String getUsername(){
