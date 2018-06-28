@@ -1,4 +1,46 @@
-javac -d classes -cp mysql-connector-java-5.1.46-bin.jar;servlet-api.jar;. com\lxisoft\controller\ContactServlet.java
-cd classes
-jar -cf "G:\Softwares\lxi softwares\apache-tomcat-7.0.72\webapps\contacts-v3\WEB-INF\lib\contact-servlet.jar" com
-javac -d ..\classes -cp ..\..\..\lib\servlet-api.jar;..\..\..\lib\mysql-connector-java-5.1.46-bin.jar com\lxisoft\contacts\repository\ContactRepository.java
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# netbeans
+nbproject/private/
+build/
+nbbuild/
+
+# the dist file could make some problems
+# dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
