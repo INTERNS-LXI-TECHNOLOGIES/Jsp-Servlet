@@ -12,6 +12,12 @@ public class Contact{
 		this.phone = phone;
 	}
 
+	public Contact(int userId, String name, int phone){
+		this.userId = userId;
+		this.name = name;
+		this.phone = phone;
+	}
+	
 	public Contact(int userId, int contactId, String name, int phone){
 		this.userId = userId;
 		this.contactId = contactId;
@@ -31,7 +37,7 @@ public class Contact{
 		return contactId;
 	}
 	
-	public void setContactId(contactId){
+	public void setContactId(int contactId){
 		this.contactId = contactId;
 	}
 	

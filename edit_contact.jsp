@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 
@@ -18,12 +19,12 @@
 			}
 		%>	
 	
-		<form action="create" method="post">
+		<form action="update" method="post">
 			<p>Name</p>
-			<input type="text" name="name" />
+			<input type="text" name="name" value="<c:out value="${contact.name}"/>"/>
 			<p>Phone</p> 
-			<input type="text" name="phone" />
-			<input type="submit" value="SAVE"/>
+			<input type="text" name="phone" value="<c:out value='${contact.phone}'/>"/>
+			<input type="submit" value="UPDATE"/>
 		</form>
 	</body>
 </html>

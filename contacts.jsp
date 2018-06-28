@@ -10,15 +10,18 @@
 	</head>
 	
 	<body>
-		<%
-			response.setHeader("Cache-Control", "no-cache, no-Store, must-revalidate");
-			response.setHeader("Pragma", "no-cache");
-			response.setHeader("Expires", "0");
-			if(session.getAttribute("id")==null){
-				response.sendRedirect("login.jsp");
-			}
-		%>	
-	
-		CONTACTS.JSP
+		<table border="1" cellpadding="5" align="center">
+		<tr>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Salary</th>
+		</tr>	
+		<c:forEach items="${contactList}" var="contact">
+		<tr>
+			<td> <c:out value="${contact.name}"/></td>
+			<td><c:out value="${contact.phone}"/></td>
+		</tr>
+		</c:forEach>
+	</table>
 	</body>
 </html>

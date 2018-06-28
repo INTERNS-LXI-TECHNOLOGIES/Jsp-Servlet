@@ -16,6 +16,7 @@
 				<ul>
 					<li ><a href="signup.jsp">SIGN UP</a></li>
 					<li ><a href="login.jsp">LOGIN</a></li>
+					<li ><a href="contacts.jsp">ALL CONTACTS</a></li>
 				</ul>
 			</nav>
 		</div>

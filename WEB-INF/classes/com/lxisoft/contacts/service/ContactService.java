@@ -1,18 +1,16 @@
 package com.lxisoft.contacts.service;
 
-import com.lxisoft.contacts.model.Contact;
 import java.io.*;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.sql.SQLException;
+import com.lxisoft.contacts.model.Contact;
+import com.lxisoft.contacts.repository.ContactRepository;
 
 public class ContactService{
-	
-	//CONSTRUCTOR
-	public ContactService(String url, String username, String password) throws SQLException{
-		System.out.println("constructor_ContactService");
-		ContactRepository contactRepository = new ContactRepository(url, username, password);
-	}
+
+	private ContactRepository contactRepository = new ContactRepository();
 
 	//CREATE CONTACT
 	public void create(Contact contact) throws SQLException{
@@ -23,7 +21,8 @@ public class ContactService{
 	//READ CONTACT
 	public Contact read(int userId) throws SQLException{
 		System.out.println("read_ContactService");
-		contactRepository.findOne(userId);
+		Contact contact = contactRepository.findOne(userId);
+		return contact;
 	}
 
 	//READ ALL CONTACTS
@@ -34,15 +33,17 @@ public class ContactService{
 	}
 	
 	//UPDATE CONTACT
-	public void update(Contact updatedContact) throws SQLException{
+	public boolean update(Contact updatedContact) throws SQLException{
 		System.out.println("update_ContactService");	
-		contactRepository.update(updatedContact);
+		boolean updated = contactRepository.update(updatedContact);
+		return updated;
 	}
 	
 	//DELETE CONTACT
-	public void delete(int userId) throws SQLException{
+	public boolean delete(int userId) throws SQLException{
 		System.out.println("delete_ContactService");
-			contactRepository.delete(userId);
+		boolean deleted = contactRepository.delete(userId);
+		return deleted;
 	}
 
 
