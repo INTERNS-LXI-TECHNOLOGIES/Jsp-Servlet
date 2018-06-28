@@ -48,7 +48,7 @@
   </servlet>
   
   <servlet>
-	<servlet-name>delete</servlet-name>
+	<servlet-name>search</servlet-name>
 	<servlet-class>com.lxisoft.controllerServlet.SearchContactServlet</servlet-class>
   </servlet>
   
@@ -73,7 +73,7 @@
   </servlet-mapping>
   
   <servlet-mapping>
-   <servlet-name>delete</servlet-name>
+   <servlet-name>search</servlet-name>
    <url-pattern>/servletSearchContact</url-pattern>
   </servlet-mapping>
 
