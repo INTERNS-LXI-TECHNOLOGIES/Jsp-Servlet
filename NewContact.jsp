@@ -18,43 +18,23 @@
 </div>
 
 	
-	<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*" %>
+	<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*,java.sql.*" %>
+	
 <%
 
- try{
+		String name=request.getParameter("name");
+		String phone=request.getParameter("phone");
 		
-        String name=request.getParameter("name"); 
-		String phone=request.getParameter("phoneNumber");
-		
-		String sid=request.getParameter("id");
-		int id;
-		ContactController cc = new ContactController();
-		if(sid==null)
-			{
-				id=(cc.getContacts().size()+1);
-			}
-			else
-			{
-				id=Integer.parseInt(sid);
-			}
-			
-			
-			System.out.println("add2/id=="+id);
-			if(id!=0){
-			cc.save(id,name,phone);
-			}
-		
-		//cc.addContact(id,name,phone,place,emailId);
-		//Set<Contact> sets  = cc.getContacts();%>
-		<%out.println(" "+name);%></br>
-		<%out.println(" "+phone);%></br>
-		
-<% }	
-	catch(Exception e){
-		System.out.println("Exception occurs"+e);
-	}	
+		Contact contact=new Contact(name,phone);
+
+		ContactController cc=new ContactController();
+		cc.dbInsertion(name,phone);
+
+
+	out.println(" "+name);%></br>
+	<%out.println(" "+phone);%></br>
 	
-	%>
+	
 	
 </body>
 </html>

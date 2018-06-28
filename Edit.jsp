@@ -27,19 +27,39 @@
 
 
 <body>
+<%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*,java.sql.*"%>
     <%
-try{	
-		String name=request.getParameter("name");
-		ContactController cc=new ContactController();
-		ArrayList<Contact> contactList=cc.getContacts();
-		
-			Contact contact=new Contact(0,"not found","not found");
-			 contact=cc.search(name);
-			System.out.println("2Edit/name=="+contact.getName());
-			System.out.println("2Edit/name=="+contact.id);
+try{
 	
-			%>
+	
+    String name=request.getParameter("name");
+	String oldName=name;
+	
+	//out.println(""+name);
+	
+	
+	
+		Connection conn = null;
+		Statement stmt = null;
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcontact", "root", "root");
 
+		stmt = conn.createStatement();
+		String sql = "select * from contacts where name='"+name+"'";
+		
+		ResultSet rs = null;
+		rs = stmt.executeQuery(sql);
+		while(rs.next()){
+			
+			
+
+       
+
+			
+			%>	
+	
+	
+	
 
  <form action="EditContact.jsp" method="get">
 
@@ -47,14 +67,13 @@ try{
  
 <tr>
 	<td>Name:</td>
-	<td><input type="text" "First Name"  value="<%=contact.getName()%>" name="name"/></td>
+	<td><input type="text" "First Name"  value="<%=rs.getString("name")%>" name="name"/></td>
 <tr>
 	<td>Phone:</td>
-	<td><input type="text" value="<%=contact.getPhoneNumber()%>" name="phoneNumber"/></td>
+	<td><input type="text" value="<%=rs.getString("phone")%>" name="phone"/></td>
 	
 </tr>
 
-<input type="hidden" value="<%=contact.id%>" name="id"/>
 			
 <tr align="center">
 	<td colspan="2">
@@ -63,13 +82,17 @@ try{
 		
 	</td>
 </tr>  
+<input type="hidden" value="<%=oldName%>" name="oldName"/>
 </table>
 </form>
-	<%}
-			catch(Exception e)
+<%
+		}
+		}
+
+catch(Exception e)
 			{
 				System.out.println(e);
-			}
-			%>	
+			}%>
+	
 </body>
 </html>

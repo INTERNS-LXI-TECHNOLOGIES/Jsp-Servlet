@@ -19,18 +19,30 @@
 	
 </style>
 
-<%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*"%>
+<%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*,java.sql.*"%>
     <% String name=request.getParameter("name");
-	ContactController cc=new ContactController();
-	ArrayList<Contact> contactList=cc.getContacts();
+	//out.println(""+name);
 	
-	for(Contact contact:contactList){
-		
-			
-		if(contact.getName().equals(name)){
-		%>
+	
+	try{
+		Connection conn = null;
+		Statement stmt = null;
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcontact", "root", "root");
 
-<body>
+		stmt = conn.createStatement();
+		String sql = "select name,phone from contacts where name='"+name+"'";
+		
+		ResultSet rs = null;
+		rs = stmt.executeQuery(sql);
+
+        while (rs.next()) {
+			%>
+			
+	
+
+
+    <body>
 <p align="left">
 <a href="Contact.jsp"><img src="/ContactsApp/images/homePic.jpg" width="50" height="50"></a></br></br>
 </p>
@@ -41,27 +53,25 @@
 </p>
 
 <div id="mid">
-<a href="Edit.jsp?name=<%=contact.getName()%>"><img src="/ContactsApp/images/editPic.jpg" width="50" height="50" title=editContact></a>
-<a href="Delete.jsp?name=<%=contact.getName()%>&id=<%=contact.id%>"><img src="/ContactsApp/images/deletePic.jpg" width="50" height="50" title=deleteContact></a>
+<a href="Edit.jsp?name=<%=rs.getString("name")%>"><img src="/ContactsApp/images/editPic.jpg" width="50" height="50" title=editContact></a>
+<a href="Delete.jsp?name=<%=rs.getString("name")%>"><img src="/ContactsApp/images/deletePic.jpg" width="50" height="50" title=deleteContact></a>
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
 
-
-   
-
-    
-	
+			<%out.println(" "+rs.getString("name"));%></br>
+			<%out.println(" "+rs.getString("phone"));%></br>
+			<%
+		}
 		
-			<%out.println(" "+contact.getName());%></br>
-			<%out.println(" "+contact.getPhoneNumber());%></br>
+	}
+	catch(Exception e){
+		
+		System.out.println(e);
+	}
+		%>
+        
+	
+</body>
 			
-	<%	
-	}
-		
-	
-		
-	}
-
-	%>
 
 </html>

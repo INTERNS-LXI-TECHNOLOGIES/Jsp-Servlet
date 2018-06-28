@@ -3,7 +3,7 @@
 
 <head>
 	<title>Home</title>
-	<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*"%>
+	<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*,java.sql.*"%>
 </head>
 <style>
 	body
@@ -51,28 +51,33 @@
 
 <div id="contact">
 		
-		
-		
-		
-		<%  ContactController cc=new ContactController();
-					//System.out.println(cc);
-					ArrayList<Contact>contactList=cc.getContacts();
-					
-					//System.out.println(contacts);
-			for(Contact b:contactList){
-			out.println("*");
-			%>
+		<%
+		try{
+		Connection conn = null;
+		Statement stmt = null;
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcontact", "root", "root");
 
-				<a href="Details.jsp?name=<%=b.getName()%>"><%out.println(b.getName());%></br></a>
-				
-				<%
-			}
-		
-		
+		stmt = conn.createStatement();
+		String sql = "select * from contacts";
+		ResultSet rs = null;
+		rs = stmt.executeQuery(sql);
+
+        while (rs.next()) {
+			//   Contact contact = new Contact(rs.getString("name"),rs.getString("phone"));
 		%>
-		
-			
-		
+        
+		   
+		   
+		   <a href="Details.jsp?name=<%=rs.getString("name")%>"><%out.println("<>"+rs.getString("name"));%></a></br>
+		   <%
+		}
+		//out.println("*"+contact.getString(getName()));
+		conn.close();
+    } catch (Exception e) {
+        System.out.println(e);
+    }
+	%>
 		
 			
 		

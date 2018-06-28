@@ -31,7 +31,7 @@
 </tr>
 <tr>
 	<td>Phone:</td>
-	<td><input type="text" placeholder="phone" name="phoneNumber"/></td>
+	<td><input type="text" placeholder="phone" name="phone"/></td>
 	
 </tr>
 

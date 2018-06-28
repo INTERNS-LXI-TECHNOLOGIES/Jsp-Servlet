@@ -1,12 +1,12 @@
 package com.lxisoft.model;
 public class Contact{
-	public int id;
+	//public int id;
     private String name;
 	private String phoneNumber;
 	
 	
-	public Contact(int  id,String name, String phoneNumber){
-		this.id=id;
+	public Contact(String name, String phoneNumber){
+		//this.id=id;
 		this.name=name;
 		this.phoneNumber=phoneNumber;
 		

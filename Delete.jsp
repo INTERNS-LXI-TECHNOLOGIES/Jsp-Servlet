@@ -3,7 +3,7 @@
 
 <head>
 	<title>Delete</title>
-	<%@ page import="com.lxisoft.controller.*,com.lxisoft.model.*,java.util.*" %>
+	<%@ page import="com.lxisoft.controller.*,com.lxisoft.model.*,java.util.*,java.sql.*" %>
 </head>
 <h1>Delete Contact<h1>
 <style>
@@ -32,33 +32,41 @@
 </p>
 <form action="Contact.jsp" method="post">
 
-<%try{
- String name=request.getParameter("name");
-String sid=request.getParameter("id");
-int id=Integer.parseInt(sid);
-ContactController cc=new ContactController();
-ArrayList<Contact> contactList=cc.getContacts();
-for(Contact con:contactList){
-	out.println("$$$$$$$$$$"+con.getName());
-}
-Contact rc=null;
-	for(Contact contact:contactList){
-		g:
-		if(contact.getName().equals(name)){
-			 rc=contact;
-			break g;
-		}
-	}
-	cc.remove(id);
+
+ <% String name=request.getParameter("name");
+	//out.println(""+name);
 	
-	out.println("Are you sure you want to delete this contact");
-}
-catch(Exception e){
-	out.println("delete/exception  "+e);
-}%>
+	
+	try{
+		Connection conn = null;
+		Statement stmt = null;
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcontact", "root", "root");
+
+		stmt = conn.createStatement();
+		String sql = "delete from contacts where name='"+name+"'";
+		//out.println(" "+sql);
+		//ResultSet rs = null;
+		out.println("Do you want to delete this entry");
+		int rs=stmt.executeUpdate(sql);
+	}
+		catch(Exception e){
+		
+		out.println(e);
+	}
+
+       %>
+			
+	
 		<input align="center" type="submit" value="Submit" class="button" >
 		<input  type="reset" value="Cancel" class="button" >	
-			</form>
+			
+			
+			
+			
+			
+		
+		</form>
 </body>
 
 </html>

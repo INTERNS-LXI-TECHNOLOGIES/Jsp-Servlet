@@ -1,6 +1,4 @@
 <html>
-<!--String redirect="Contact.jsp";-->
-		<!--response.sendRedirect(redirect);-->
 
 <head>
 	<title></title>
@@ -17,30 +15,37 @@
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
 
-<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*" %>
+<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*,java.sql.*" %>
 <%
 
  try{
 		
         String name=request.getParameter("name"); 
-		String phone=request.getParameter("phoneNumber");
+		String phone=request.getParameter("phone");
+		String oldName=request.getParameter("oldName"); 
 		
-		String id=request.getParameter("id");
-	
+		Connection conn = null;
+		Statement stmt = null;
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcontact", "root", "root");
+
+		stmt = conn.createStatement();
+		String sql = "update contacts set name='"+name+"',phone='"+phone+"' where name='"+oldName+"'";
 		
-		int pId=Integer.parseInt(id);
+		//out.println("Do you want to update this entry");
+		int rs=stmt.executeUpdate(sql);
 		
-		ContactController cc = new ContactController();
+		String sql2 = "select * from contacts where name='"+oldName+"'";
+		ResultSet rst = null;
+		rst = stmt.executeQuery(sql2);
+		while(rst.next())
+		{
+			out.println(" "+rst.getString("name"));
+			out.println(" "+rst.getString("phone"));
 		
-			
-out.println(" "+name);
-		out.println(" "+phone);
-		cc.edit(pId,name,phone);
-		//Set<Contact> sets  = cc.getContacts();
+		}
 		
-		
-		
- }	
+	}	
 	catch(Exception e){
 		System.out.println("Exception occurs"+e);
 	}	
