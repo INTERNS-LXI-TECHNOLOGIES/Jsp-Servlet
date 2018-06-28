@@ -56,7 +56,7 @@
 		
 		<%ContactController cc=new ContactController();
 		Set<Contact> contactList=cc.getContacts();
-		collections.sort(contactList);
+		//collections.sort(contactList);
 			for(Contact b:contactList){
 			
 			%>

@@ -1,6 +1,7 @@
 package com.lxisoft.controller;
 import com.lxisoft.model.*;
 import java.util.*;
+import java.io.file;
 
 
 public class ContactController{
@@ -29,11 +30,6 @@ public void editContact(int id,String name, String phoneNumber, String place, St
 					contact.setPlace(place);
 					contact.setEmailId(emailId);
 			}		
-				
-	
-	
-	
-	
 	
 }
 }
