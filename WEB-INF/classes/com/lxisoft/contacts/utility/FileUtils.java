@@ -2,12 +2,16 @@ package com.lxisoft.contacts.utility;
 
 import java.io.*;
 import java.util.*;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public final class FileUtils {
 
+	private static final Logger LOGGER = LogManager.getLogger(FileUtils.class.getName());
+
 	//WRITE TO FILE
 		public static void write(String fileName, String text){
-			System.out.println("write_FileUtils");
+			LOGGER.info("write");
 			
 			try{
 				PrintWriter pw = new PrintWriter(fileName);	
@@ -22,7 +26,7 @@ public final class FileUtils {
 		
 		//READ LINE
 		public static String readLine(String fileName, String searchText1, String searchText2){
-			System.out.println("readLine_FileUtils");
+			LOGGER.info("readLine");
 			
 			Scanner scanner = null;
 			String currentLine = null, word1 = null, word2 = null, word3 = null;
@@ -49,7 +53,7 @@ public final class FileUtils {
 		
 		//READ FILE 
 		public static List<String> readFile(String fileName){
-			System.out.println("readFile_FileUtils");
+			LOGGER.info("readFile");
 			
 			Scanner scanner = null;
 			String currentLine = null;
@@ -69,7 +73,7 @@ public final class FileUtils {
 		
 		//UPDATE TEXT OF A PARTICULAR LINE
 		public static void updateTextOfMatchingLine(String fileName, String searchText, String oldText, String newText){
-			System.out.println("update_FileUtils");
+			LOGGER.info("update");
 			
 			Scanner scanner = null;
 			List<String> lineList = new ArrayList<String>();
@@ -99,7 +103,7 @@ public final class FileUtils {
 		
 		//DELETE LINE CONTAINING TEXT
 		public static void deleteLine(String fileName, String searchText){
-			System.out.println("delete_FileUtils");
+			LOGGER.info("delete");
 			
 			Scanner scanner = null;
 			List<String> lineList = new ArrayList<String>();
@@ -130,7 +134,7 @@ public final class FileUtils {
 		
 		//WRITE UPDATED CONTENT BACK TO FILE
 		private static void writeBackToFile(String fileName, List<String> lineList) throws FileNotFoundException {
-			System.out.println("writeBackToFile_FileUtils");
+			LOGGER.info("writeBackToFile");
 			PrintWriter pw = new PrintWriter(fileName);
 			pw.write("");	//empties the file
 			

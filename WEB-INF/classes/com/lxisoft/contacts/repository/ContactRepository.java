@@ -4,29 +4,32 @@ import com.lxisoft.contacts.model.*;
 import java.sql.*;
 import java.util.*;
 import com.lxisoft.contacts.utility.*;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 //Connect to MySQL database via JDBC: http://www.codejava.net/java-se/jdbc/connect-to-mysql-database-via-jdbc
 //JDBC Tutorial on SQL Insert, Select, Update, and Delete Examples: http://www.codejava.net/java-se/jdbc/jdbc-tutorial-sql-insert-select-update-and-delete-examples
 
 public class ContactRepository{
 	
+	private static final Logger LOGGER = LogManager.getLogger(ContactRepository.class.getName());
 	private Connection connection;
 	
 	//CONNECT
 	public void connect() throws SQLException{
-		System.out.println("connect_ContactRepository");
+		LOGGER.info("connect");
 		connection = DatabaseUtils.getInstance().getConnection();
 	}
 	
 	//DISCONNECT
 	public void disconnect() throws SQLException{
-		System.out.println("disconnect_ContactRepository");
+		LOGGER.info("disconnect");
 		DatabaseUtils.getInstance().disconnect();
 	}
 	
 	//SAVE CONTACT
 	public boolean save(Contact contact)throws SQLException{
-		System.out.println("save_ContactRepository");
+		LOGGER.info("save");
 		connect();
 		String sql = "insert into contacts (user_id, name, phone) values (?, ?, ?)";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -42,7 +45,7 @@ public class ContactRepository{
 	
 	//FIND CONTACT
 	public Contact findOne(int userId)throws SQLException{
-		System.out.println("findOne_ContactRepository");
+		LOGGER.info("findOne");
 		Contact contact = null;
 		connect();
 		String sql = "select * from contacts where user_id = ?";
@@ -63,7 +66,7 @@ public class ContactRepository{
 	
 	//FIND ALL CONTACTS
 	public List<Contact> findAll()throws SQLException{
-		System.out.println("findAll_ContactRepository");
+		LOGGER.info("findAll");
 		List<Contact> contactList = new ArrayList<Contact>();
 		connect();
 		String sql = "select * from contacts";
@@ -83,7 +86,7 @@ public class ContactRepository{
 	
 	//UPDATE CONTACT
 	public boolean update(Contact updatedContact)throws SQLException{
-		System.out.println("update_ContactRepository");
+		LOGGER.info("update");
 		connect();
 		String sql = "update contacts set name = ?, phone = ? where user_id = ?";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -99,7 +102,7 @@ public class ContactRepository{
 	
 	//DELETE CONTACT
 	public boolean delete(int userId)throws SQLException{
-		System.out.println("delete_ContactRepository");
+		LOGGER.info("delete");
 		connect();
 		String sql = "delete from contacts where user_id = ?";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);

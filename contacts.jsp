@@ -14,7 +14,6 @@
 		<tr>
 			<th>Name</th>
 			<th>Phone</th>
-			<th>Salary</th>
 		</tr>	
 		<c:forEach items="${contactList}" var="contact">
 		<tr>

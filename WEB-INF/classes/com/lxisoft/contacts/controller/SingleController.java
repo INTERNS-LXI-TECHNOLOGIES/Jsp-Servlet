@@ -1,9 +1,10 @@
 package com.lxisoft.contacts.controller;
 
-//cd apache-tomcat-7.0.72\webapps\contacts\WEB-INF\src
-//javac -classpath D:\apache-tomcat-7.0.72\lib\servlet-api.jar;. com\lxisoft\contacts\controller\SingleController.java
+//cd apache-tomcat-7.0.72\webapps\contacts\WEB-INF\classes
+//javac -classpath D:\apache-tomcat-7.0.72\lib\servlet-api.jar;D:\apache-tomcat-7.0.72\webapps\contacts\WEB-INF\lib\log4j-api-2.11.0.jar;. com\lxisoft\contacts\controller\SingleController.java
 //http://localhost:8080/contacts/index.jsp
 //changing 'classes' to 'src' -> problem (war)
+//D:\apache-tomcat-7.0.72\webapps\contacts\WEB-INF\classes\log4j2.properties
 
 import java.io.*;
 import java.util.*;
@@ -18,6 +19,8 @@ import javax.servlet.http.HttpSession;
 import com.lxisoft.contacts.model.*;
 import com.lxisoft.contacts.service.*;
 import com.lxisoft.contacts.utility.*;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
 * This program gives a hands-on experience on Jsp-Servlet-MySql-FileUtils-DatabaseUtils
@@ -29,12 +32,12 @@ import com.lxisoft.contacts.utility.*;
 @WebServlet("/")
 public class SingleController extends HttpServlet{
 	
-	private ContactService contactService;
+	private static final Logger LOGGER = LogManager.getLogger(SingleController.class.getName());
 	
 	//OVERRIDE INIT METHOD OF GENERICSERVLET
 	@Override
 	public void init() {
-		System.out.println("init");
+		LOGGER.info("init");
 		String url=getServletContext().getInitParameter("url");
 		String username=getServletContext().getInitParameter("username");
 		String password=getServletContext().getInitParameter("password");
@@ -45,13 +48,13 @@ public class SingleController extends HttpServlet{
 
 	//POST METHOD
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		System.out.println("doPost");
+		LOGGER.info("doPost");
 		doGet(request, response);
 	}
 
 	//GET METHOD
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		System.out.println("doGet");
+		LOGGER.info("doGet");
 		String action = request.getServletPath();
 		System.out.println(action);
 		
@@ -92,43 +95,43 @@ public class SingleController extends HttpServlet{
 	
 	//SIGNUP	
 	private void signup(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("signup_SingleController");
+		LOGGER.info("signup");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		User user = new User(username, password);
 		UserService userService = new UserService();
 		boolean userCeated = userService.create(user);
 		if(userCeated){
-			System.out.println("signup successful");
+			LOGGER.info("signup successful");
 			user = userService.read(username, password);
 			request.getSession().setAttribute("userId", user.getUserId());						// 2nd parameter: type Object (mayb auto parsed)
 			showCreateContactPage(request, response);
 		}else{
-			System.out.println("signup failed");
+			LOGGER.info("signup failed");
 		}
 			
 	}
 	
 	//LOGIN	
 	private void login(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("login_SingleController");
+		LOGGER.info("login");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		UserService userService = new UserService();
 		User user = userService.read(username, password);
 		if(user != null){												
-			System.out.println("login success");
+			LOGGER.info("login success");
 			request.getSession().setAttribute("userId", user.getUserId());	// 2nd parameter: type Object (mayb auto parsed)
 			RequestDispatcher dispatcher = request.getRequestDispatcher("edit_contact.jsp");
 			dispatcher.forward(request, response);
 		}else{
-			System.out.println("login failed");
+			LOGGER.info("login failed");
 		}	
 	}
 	
 	//LOGOUT	
 	private void logout(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("logout_SingleController");
+		LOGGER.info("logout");
 		HttpSession session = request.getSession();
 		//session.removeAttribute("username");
 		//session.removeAttribute("user_id");
@@ -140,7 +143,7 @@ public class SingleController extends HttpServlet{
 	
 	//CREATE CONTACT
 	private void createContact(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("create_SingleController");
+		LOGGER.info("create");
 		int userId = (int) request.getSession().getAttribute("userId");					
 		String name = request.getParameter("name");
 		int phone = Integer.parseInt(request.getParameter("phone"));
@@ -155,7 +158,7 @@ public class SingleController extends HttpServlet{
 		
 	//READ CONTACT
 	private Contact readContact(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("showMyContactPage_SingleController");
+		LOGGER.info("showMyContactPage");
 		HttpSession session = request.getSession();
 		int userId = (int) request.getSession().getAttribute("userId");	
 		ContactService contactService = new ContactService();
@@ -165,7 +168,7 @@ public class SingleController extends HttpServlet{
 	
 	//READ ALL CONTACTS
 	 private List<Contact> readAllContacts() throws SQLException{
-		System.out.println("readAll_SingleController");
+		LOGGER.info("readAll");
 		ContactService contactService = new ContactService();
 		List<Contact> contactList = contactService.readAll();
 		return contactList;
@@ -173,7 +176,7 @@ public class SingleController extends HttpServlet{
 		
 	//EDIT CONTACT	
 	private void editContact(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("editContact_SingleController");
+		LOGGER.info("editContact");
 		Contact contact = readContact(request, response);
 		request.setAttribute("contact",contact);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("edit_contact.jsp");
@@ -182,7 +185,7 @@ public class SingleController extends HttpServlet{
 		
 	//UPDATE CONTACT
 	private void updateContact(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("updateContact_SingleController");
+		LOGGER.info("updateContact");
 		int userId = (int) request.getSession().getAttribute("userId");	
 		String name = request.getParameter("name");
 		int phone = Integer.parseInt(request.getParameter("phone"));
@@ -190,32 +193,32 @@ public class SingleController extends HttpServlet{
 		ContactService contactService = new ContactService();
 		boolean contactUpdated = contactService.update(updatedContact);	
 		if(contactUpdated) {
-			System.out.println("Contact updated..");
+			LOGGER.info("Contact updated..");
 			request.setAttribute("contact",updatedContact);
 			showMyContactPage(request, response);
 		}else {
-	    	System.out.println("Contact not updated");
+	    	LOGGER.info("Contact not updated..");
 		}
 	
 	}
 	
 	//DELETE CONTACT
 	private void deleteContact(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("deleteContact_SingleController");
+		LOGGER.info("deleteContact");
 		int userId = (int) request.getSession().getAttribute("userId");	
 		ContactService contactService = new ContactService();
 		boolean contactdeleted = contactService.delete(userId);	
 		if(contactdeleted) {
-			System.out.println("Contact deleted..");
+			LOGGER.info("Contact deleted..");
 			showCreateContactPage(request, response);	
 		}else {
-	    	System.out.println("Contact not updated");
+	    	LOGGER.info("Contact not updated");
 		}
 	}
 	
 	//OPEN CONTACTS.JSP
 	private void showContactsPage(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("showContactsPage_SingleController");
+		LOGGER.info("showContactsPage");
 		List<Contact> contactList = readAllContacts();
 		request.setAttribute("contactList", contactList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("contacts.jsp");
@@ -224,14 +227,14 @@ public class SingleController extends HttpServlet{
 	
 	//OPEN CREATECONTACTPAGE.JSP
 	private void showCreateContactPage(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("showCreateContactPage_SingleController");
+		LOGGER.info("showCreateContactPage");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("create_contact.jsp");
 		dispatcher.forward(request, response);
 	}
 	
 	//OPEN MYCONTACT.JSP
 	private void showMyContactPage(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		System.out.println("showMyContactPage_SingleController");
+		LOGGER.info("showMyContactPage");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("my_contact.jsp");
 		dispatcher.forward(request, response);
 	}

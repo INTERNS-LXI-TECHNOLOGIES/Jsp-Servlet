@@ -3,26 +3,29 @@ package com.lxisoft.contacts.repository;
 import com.lxisoft.contacts.model.*;
 import java.sql.*;
 import com.lxisoft.contacts.utility.*;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class UserRepository{
 	
+	private static final Logger LOGGER = LogManager.getLogger(UserRepository.class.getName());
 	private Connection connection;
 	
 	//CONNECT
 	public void connect() throws SQLException{
-		System.out.println("connect_UserRepository");
+		LOGGER.info("connect");
 		connection = DatabaseUtils.getInstance().getConnection();
 	}
 	
 	//DISCONNECT
 	public void disconnect() throws SQLException{
-		System.out.println("disconnect_UserRepository");
+		LOGGER.info("disconnect");
 		DatabaseUtils.getInstance().disconnect();
 	}
 	
 	//SAVE USER
 	public boolean save(User user) throws SQLException{
-		System.out.println("save_UserRepository");
+		LOGGER.info("save");
 		connect();
 		String sql = "insert into users (username, password) values (?, ?)";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -37,7 +40,7 @@ public class UserRepository{
 	
 	//FIND USER
 	public User findOne(String username, String password) throws SQLException{
-		System.out.println("findOne_UserRepository");
+		LOGGER.info("findOne");
 		User user = null;
 		connect();
 		String sql = "select * from users where username = ? and password = ?";
