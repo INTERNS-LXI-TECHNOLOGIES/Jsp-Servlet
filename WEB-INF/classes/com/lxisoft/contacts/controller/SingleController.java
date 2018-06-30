@@ -133,9 +133,7 @@ public class SingleController extends HttpServlet{
 	private void logout(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
 		LOGGER.info("logout");
 		HttpSession session = request.getSession();
-		//session.removeAttribute("username");
-		//session.removeAttribute("user_id");
-		//session.removeAttribute("profile");
+		session.removeAttribute("userId");
 		session.invalidate();
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request,response);

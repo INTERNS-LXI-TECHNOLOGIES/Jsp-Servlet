@@ -18,7 +18,10 @@
 			if(session.getAttribute("userId")==null){
 				response.sendRedirect("login.jsp");
 			}
-		%>		
+		%>	
+		<form action="logout" method="post">
+			<input type="submit" value="LOGOUT"/>
+		</form>
 		<table border="1" cellpadding="5" width="500">
 			<tr>
 				<th>Name</th>

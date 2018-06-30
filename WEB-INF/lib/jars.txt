@@ -1,0 +1,18 @@
+1. servlet-api.jar
+ - server specific, so tomcat/lib must contain servlet-api.jar, else tomcat wont run. 
+   (So, no need to put another servlet-api.jar in webinf/lib....although while compiling 'where to put jar' doesn't matter, compiler just needs the jar wherever it is)
+ - needed for compiling, so set in classpath
+2. log4j
+ - log4j-api.jar needed for compiling, so set in classpath
+ - log4j-api.jar class log4j-core.jar at runtime, so both must be in same location
+ - log4j-core.jar needed at runtime only(called by log4j-api.jar), so no need to set in classpath
+ - both are application specific, so can be put either in tomcat/lib or webinf/lib. Will be automatically called
+4. mysql
+ - mysql-connecot.jar needed at runtime only, so no need to set in classpath
+ - application specific, so can be put either in tomcat/lib or webinf/lib. Will be automatically called
+5. jstl
+ - jstl.jar needed at runtime only, so no need to set in classpath
+ - application specific, so can be put either in tomcat/lib or webinf/lib. Will be automatically called
+
+https://stackoverflow.com/questions/45333891/what-will-happen-if-web-inf-lib-and-tomcat-lib-contains-similar-jars
+https://tomcat.apache.org/tomcat-8.0-doc/class-loader-howto.html#Class_Loader_Definitions

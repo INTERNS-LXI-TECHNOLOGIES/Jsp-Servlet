@@ -17,7 +17,9 @@
 				response.sendRedirect("login.jsp");
 			}
 		%>	
-	
+		<form action="logout" method="post">
+			<input type="submit" value="LOGOUT"/>
+		</form>
 		<form action="create" method="post">
 			<p>Name</p>
 			<input type="text" name="name" />
