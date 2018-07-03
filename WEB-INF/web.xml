@@ -77,4 +77,32 @@
    <url-pattern>/servletSearchContact</url-pattern>
   </servlet-mapping>
 
+  <security-constraint>
+   <web-resource-collection>
+    <web-resource-name>contact_ruhailv4</web-resource-name>
+	<url-pattern>/addContact.jsp</url-pattern>
+	<url-pattern>/searchContact.jsp</url-pattern>
+	<url-pattern>/editContact.jsp</url-pattern>
+	<url-pattern>/viewContact.jsp</url-pattern>
+	<url-pattern>/servletDeleteContact</url-pattern>
+	<http-method>GET</http-method>
+	<http-method>POST</http-method>
+   </web-resource-collection>
+   
+   <auth-constraint>
+    <description>Users can use this page</description>
+	<role-name>user</role-name>
+   </auth-constraint>
+  </security-constraint>
+  
+  <security-role>
+	<role-name>user</role-name>
+  </security-role>
+  
+  <login-config>
+   <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/login.jsp</form-login-page>
+      </form-login-config>
+  </login-config>
 </web-app>

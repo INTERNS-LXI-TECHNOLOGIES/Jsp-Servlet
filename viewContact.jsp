@@ -1,9 +1,5 @@
 <%@ page import="com.lxisoft.controller.*,com.lxisoft.model.*,java.util.*"%>
 <html>
-<%
-if(((String)session.getAttribute("sid"))!=null)
-{
-%>
 <head></head>
 <body>
 <div style="width;100%;height:250px;background:lightblue">
@@ -38,11 +34,4 @@ catch(Exception ex)
 %>
 </table>
 </body>
-<%
-}
-else
-{
-	response.sendRedirect("login.jsp");
-}
-	%>
 </html>

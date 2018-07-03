@@ -1,8 +1,4 @@
 <html>
-<%
-if(((String)session.getAttribute("sid"))!=null)
-{
-%>
 	<head>
 		<title>
 	home page
@@ -31,11 +27,4 @@ if(((String)session.getAttribute("sid"))!=null)
 		</a>
 		
 	</body>
-	<%
-}
-else
-{
-	response.sendRedirect("login.jsp");
-}
-	%>
 </html>

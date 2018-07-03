@@ -30,7 +30,7 @@ public class AddContactServlet extends HttpServlet
 			response.sendRedirect("addContact.jsp?failed");
 		}
 	}
-	public void doget(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException
 	{
 		
 	}
