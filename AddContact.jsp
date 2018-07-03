@@ -30,7 +30,21 @@ body
 }
 
 </style>
+<%@ page import = "java.util.*"%>
+<%@ page contentType = "text/html"%>
+<%@ page pageEncoding = "UTF-8"%>
+<%@ page import = "java.io.*"%>
+<%
+try{
 
+Properties prts = new Properties();
+InputStream input = null;
+input = getClass().getClassLoader().getResourceAsStream("MyLabels.properties");
+Reader reader = new InputStreamReader(input,"UTF-8");
+prts.load(reader);
+
+
+%>
 <body>
 <div id = "image">
 <h1 background = "red">Add Contact<h1/>
@@ -43,7 +57,9 @@ body
 <table>
 <tr>
 	<td>
-		<label for  = "Name">Name:</label>
+		<label for  = "Name">
+<%out.println(prts.getProperty("name"));%>
+</label>
 	</td>
 	<td>
 		<input name = "Name" type = "text"/>
@@ -51,7 +67,9 @@ body
 </tr>
 <tr>
 	<td>
-		<label for = "Place">Place:</label>
+		<label for = "Place">
+		<%out.println(prts.getProperty("place"));%>
+		</label>
 	</td>
 	<td>
 		<input name = "Place" type = "text"/>
@@ -59,7 +77,9 @@ body
 </tr>
 <tr>
 	<td>
-		<label for = "Phn_no">Phone Number:</label>
+		<label for = "Phn_no">
+		<%out.println(prts.getProperty("phonenumber"));%>
+		</label>
 	</td>
 	<td>
 		<input name = "Phn_no" type = "text"/>
@@ -67,7 +87,9 @@ body
 </tr>
 <tr>
 	<td>
-		<label for = "email">Email:</label>
+		<label for = "email">
+		<%out.println(prts.getProperty("email"));%>
+		</label>
 	</td>
 	<td>
 		<input name = "Email" type = "text"/>
@@ -85,7 +107,12 @@ body
 
 </form>
 </div>
-
+<%
+}catch(IOException ex)
+{
+	ex.printStackTrace();
+}
+%>
 
 </body>
 </html>

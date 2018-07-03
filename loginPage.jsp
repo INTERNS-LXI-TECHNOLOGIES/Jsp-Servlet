@@ -47,21 +47,23 @@ body
 <%@ page contentType = "text/html"%>
 <%@ page pageEncoding = "UTF-8"%>
 <%@ page import = "java.io.*"%>
-<select >
-</select>
-<%
-try{
-File file = new File("MyLabels.properties");
-FileInputStream fileInput = new FileInputStream(file);
-Properties prts = new Properties();
-prts.load(fileInput);
-fileInput.close();
+<%@ page import = "com.lxisoft.model.*"%>
 
-String value = prts.getProperty("malayalam");
-out.println(value);
-}catch(Exception e)
+<%
+
+try{
+
+Properties prts = new Properties();
+InputStream input = null;
+input = getClass().getClassLoader().getResourceAsStream("MyLabels.properties");
+Reader reader = new InputStreamReader(input,"UTF-8");
+prts.load(reader);
+out.println(prts.getProperty("malayalam"));
+out.println("|");
+out.println("English");
+}catch(IOException ex)
 {
-	e.printStackTrace();
+	ex.printStackTrace();
 }
 
 %>
@@ -74,7 +76,25 @@ out.println(value);
 <input type = "image" src = "images/search-contact-icon_1626595.jpg" alt = "search icon" title = "Search contact" width = "30"height = "30"/>
 </form>
 
-
+<% Object obj= session.getAttribute("contacts");
+List<Contact> contacts=null;
+ if(obj!=null)
+ {
+   contacts = (List<Contact>)obj;
+   for(Contact contact:contacts)
+{
+%>
+<div id = "name" align = "center">
+<a href = "ContactsInformation.jsp?name=<%contact.getFirstName();%>">
+<%out.println(contact.getFirstName());%>
+</a>
+<%}
+ }else
+ {
+	 response.sendRedirect("ContactsAppServlet");
+ }
+ %>
+</div>
 
 
 </body>

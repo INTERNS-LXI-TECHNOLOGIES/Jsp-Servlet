@@ -4,6 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.sql.*;
+import com.lxisoft.model.*;
+import java.util.*;
 
 
 public class ContactsAppServlet extends HttpServlet
@@ -41,14 +43,26 @@ public class ContactsAppServlet extends HttpServlet
 	
     public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
-	
+	    List<Contact> contacts = new ArrayList<Contact>();
+		PrintWriter out = response.getWriter();
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/contactsapp","root","root");
-        PreparedStatement stmt = con.prepareStatement("select * from contacts");
+		Statement stmt = con.createStatement();
+        
         ResultSet rs = stmt.executeQuery("select name,place,phn_no,email from contacts");
+		while(rs.next())
+		{
+			contacts.add(new Contact(rs.getString("name"),rs.getString("place"),rs.getString("phn_no"),rs.getString("email")));
+			/*contacts.get(contacts.size()-1).setFirstName(rs.getString("name"));
+			contacts.get(contacts.size()-1).setPlace(rs.getString("place"));
+			contacts.get(contacts.size()-1).setPhone_Number(rs.getString("phn_no"));
+			contacts.get(contacts.size()-1).setEmail_Id(rs.getString("email"));*/
+		}
+		HttpSession session = request.getSession();
+		session.setAttribute("contacts",contacts);
+		response.sendRedirect("loginPage.jsp");
 
-		PrintWriter out = response.getWriter();
 	}catch(Exception e)
 	{
 		e.printStackTrace();
