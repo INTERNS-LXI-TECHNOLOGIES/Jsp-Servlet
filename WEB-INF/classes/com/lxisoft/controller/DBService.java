@@ -3,32 +3,45 @@ import com.lxisoft.model.Contact;
 import java.util.Set;
 import java.util.TreeSet;
 import java.sql.ResultSet;
-import com.lxisoft.repository.Dbcon;
+import javax.sql.*;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 /**
-*The FileService program implements creating file and saving contacts to the file
-*and also implement the retrieving data from the file created
+*The DBService class is used to handle database operatios
+*instance variables are ds,ic,con,ps,rs;
+*
 @version 1.2
 @author ruhail
-@since 2018-06-14
+@since 2018-07-04
 */
 
 public class DBService
 {
-	static Dbcon con=new Dbcon();
+	DataSource ds;
+	Context ic; 
+	Connection con;
+	PreparedStatement ps;
+	ResultSet rs;
+	int status;
 	/**
-	*writeToFile method create a directory and a file in that directory.
-	*local variable s contain directory path and file name is contacts.csv
-	*contacts are added to file using BufferedWriter wrapped with FileWriter class
-	*writing data to file is by using contact getters
+	*insertToDB method inserts data to database.
+	*creates database connection using data source.
+	*execute query using sexecteUpadete mathod after preparing the query statement. 
 	*/
 	public int insertToDB(Contact cont)
 	{
-		int status=0;
 		try
 		{
+			ic=new InitialContext();
+			ds=(DataSource) ic.lookup("java:/comp/env/jdbc/contactdb");
+			con=ds.getConnection();
 			String insertQuery="insert into table_contacts(name,place,phoneNumber,email) values('"+cont.getName()+"','"+cont.getPlace()+"','"+cont.getPhoneNumber()+"','"+cont.getEmail()+"')";
-			status=con.manipulate(insertQuery);
+			ps=con.prepareStatement(insertQuery);
+			status=ps.executeUpdate();
+			con.close();
 		}
 		catch(Exception ex)
 		{
@@ -36,14 +49,24 @@ public class DBService
 		}
 		return status;
 	}
+	/**
+	*selectFromDB method retrieve data from database.
+	*creates database connection using data source.
+	*execute query using execteQuery mathod after preparing the query statement. 
+	*resultset data populate to contacts using setters and store in TreeSet.
+	*/
 	public Set<Contact> selectFromDB()
 	{
 		Set<Contact> contact=new TreeSet<Contact>();
-		ResultSet rs;
 		try
 		{
+			ic=new InitialContext();
+			ds=(DataSource) ic.lookup("java:/comp/env/jdbc/contactdb");
+			con=ds.getConnection();
 			String selectQuery="select * from table_contacts";
-			rs=con.select(selectQuery);
+			ps=con.prepareStatement(selectQuery);
+			rs=ps.executeQuery();
+			con.close();
 			while(rs.next())
 			{
 				Contact c=new Contact();
@@ -64,13 +87,22 @@ public class DBService
 		}
 		return contact;
 	}
+	/**
+	*deleteFromDB method delete data from database.
+	*creates database connection using data source.
+	*execute query using execteUpdate mathod after preparing the query statement. 
+	*/
 	public int deleteFromDB(String nam)
 	{
-		int status=0;
 		try
 		{
+			ic=new InitialContext();
+			ds=(DataSource) ic.lookup("java:/comp/env/jdbc/contactdb");
+			con=ds.getConnection();
 			String deleteQuery="delete from table_contacts where name='"+nam+"'";
-			status=con.manipulate(deleteQuery);
+			ps=con.prepareStatement(deleteQuery);
+			status=ps.executeUpdate();
+			con.close();
 		}
 		catch(Exception ex)
 		{
@@ -78,13 +110,22 @@ public class DBService
 		}
 		return status;
 	}
+	/**
+	*updateDB method update data in database.
+	*creates database connection using data source.
+	*execute query using execteUpdate mathod after preparing the query statement. 
+	*/
 	public int updateDB(Contact cont,String nam)
 	{
-		int status=0;
 		try
 		{
+			ic=new InitialContext();
+			ds=(DataSource) ic.lookup("java:/comp/env/jdbc/contactdb");
+			con=ds.getConnection();
 			String updateQuery="update table_contacts set name='"+cont.getName()+"',place='"+cont.getPlace()+"',phoneNumber='"+cont.getPhoneNumber()+"',email='"+cont.getEmail()+"' where name='"+nam+"'";
-			status=con.manipulate(updateQuery);
+			ps=con.prepareStatement(updateQuery);
+			status=ps.executeUpdate();
+			con.close();
 		}
 		catch(Exception ex)
 		{
@@ -92,14 +133,25 @@ public class DBService
 		}
 		return status;
 	}
+	/**
+	*searchFromDB method search and read data from database.
+	*creates database connection using data source.
+	*execute query using execteQuery mathod after preparing the query statement. 
+	*/
 	public Set<Contact> searchFromDB(String search)
 	{
 		Set<Contact> contact=new TreeSet<Contact>();
 		ResultSet rs;
 		try
 		{
+			ic=new InitialContext();
+			ds=(DataSource) ic.lookup("java:/comp/env/jdbc/contactdb");
+			con=ds.getConnection();
 			String searchQuery="select * from table_contacts where name like ?";
-			rs=con.searchSelect(searchQuery,search);
+			ps=con.prepareStatement(searchQuery);
+			ps.setString(1,search);
+			rs=ps.executeQuery(searchQuery);
+			con.close();
 			while(rs.next())
 			{
 				Contact c=new Contact();

@@ -76,6 +76,13 @@
    <servlet-name>search</servlet-name>
    <url-pattern>/servletSearchContact</url-pattern>
   </servlet-mapping>
+  
+  <resource-ref>
+   <description>Primary Database</description>
+   <res-ref-name>jdbc/contactdb</res-ref-name>
+   <res-type>javax.sql.DataSource</res-type>
+   <res-auth>container</res-auth>
+  </resource-ref>
 
   <security-constraint>
    <web-resource-collection>
