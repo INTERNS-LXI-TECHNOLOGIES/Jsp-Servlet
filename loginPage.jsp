@@ -86,6 +86,7 @@ List<Contact> contacts=null;
 %>
 <div id = "name" align = "center">
 <a href = "ContactsInformation.jsp?name=<%contact.getFirstName();%>">
+
 <%out.println(contact.getFirstName());%>
 </a>
 <%}

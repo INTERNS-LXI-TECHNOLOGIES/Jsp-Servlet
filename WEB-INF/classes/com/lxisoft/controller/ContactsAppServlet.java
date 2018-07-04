@@ -10,6 +10,9 @@ import java.util.*;
 
 public class ContactsAppServlet extends HttpServlet
     {
+		
+	Database database;
+	
 	public ContactsAppServlet(){
 	}
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
@@ -22,8 +25,10 @@ public class ContactsAppServlet extends HttpServlet
       try
         {
 	       System.out.println("database first");
-	       Class.forName("com.mysql.jdbc.Driver");
-	       Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/contactsapp","root","root");
+	       //Class.forName("com.mysql.jdbc.Driver");
+		   database = new Database("jdbc/db");
+	      // Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/contactsapp","root","root");
+	      Connection con = database.getConnection();
 	
 	       PreparedStatement ps = con.prepareStatement("insert into contacts(name,place,Phn_no,Email) values(?,?,?,?)");
 	       ps.setString(1,name);
@@ -46,8 +51,10 @@ public class ContactsAppServlet extends HttpServlet
 	    List<Contact> contacts = new ArrayList<Contact>();
 		PrintWriter out = response.getWriter();
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/contactsapp","root","root");
+		//Class.forName("com.mysql.jdbc.Driver");
+		 database = new Database("jdbc/db");
+        //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/contactsapp","root","root");
+        Connection con = database.getConnection();
 		Statement stmt = con.createStatement();
         
         ResultSet rs = stmt.executeQuery("select name,place,phn_no,email from contacts");
