@@ -50,16 +50,18 @@
 
 
 <div id="contact">
+
 		
-		<%
+		
+	<%
 		try{
 		Connection conn = null;
 		Statement stmt = null;
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcontact", "root", "root");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactssvlt", "root", "root");
 
 		stmt = conn.createStatement();
-		String sql = "select * from contacts";
+		String sql = "select * from contactss";
 		ResultSet rs = null;
 		rs = stmt.executeQuery(sql);
 
@@ -79,7 +81,9 @@
     }
 	%>
 		
-			
+
+		
+		
 		
 		
 </div>

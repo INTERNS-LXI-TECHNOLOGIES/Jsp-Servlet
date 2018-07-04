@@ -19,19 +19,21 @@
 
 	
 	<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*,java.sql.*" %>
-	
+	<form action="processing" method ="post">
 <%
 
 		String name=request.getParameter("name");
 		String phone=request.getParameter("phone");
+		//out.println("haihellooo");
 		
-		Contact contact=new Contact(name,phone);
+		%>
+		<input type="hidden" value="<%=name%>" name="name"/>
+		<input type="hidden" value="<%=phone%>" name="phone"/>
+		<input  type="submit" value="Proceed" >
+		
+		</form>
 
-		ContactController cc=new ContactController();
-		cc.dbInsertion(name,phone);
-
-
-	out.println(" "+name);%></br>
+	<%out.println(" "+name);%></br>
 	<%out.println(" "+phone);%></br>
 	
 	

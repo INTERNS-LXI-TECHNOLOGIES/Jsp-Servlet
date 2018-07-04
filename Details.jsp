@@ -28,10 +28,10 @@
 		Connection conn = null;
 		Statement stmt = null;
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcontact", "root", "root");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactssvlt", "root", "root");
 
 		stmt = conn.createStatement();
-		String sql = "select name,phone from contacts where name='"+name+"'";
+		String sql = "select name,phone from contactss where name='"+name+"'";
 		
 		ResultSet rs = null;
 		rs = stmt.executeQuery(sql);
