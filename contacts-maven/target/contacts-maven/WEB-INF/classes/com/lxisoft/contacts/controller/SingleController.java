@@ -1,9 +1,8 @@
 package com.lxisoft.contacts.controller;
 
-//cd apache-tomcat-7.0.72\webapps\contacts\WEB-INF\classes
-//javac -classpath D:\apache-tomcat-7.0.72\lib\servlet-api.jar;D:\apache-tomcat-7.0.72\webapps\contacts\WEB-INF\lib\log4j-api-2.11.0.jar;. com\lxisoft\contacts\controller\SingleController.java
+//cd C:\Program Files\apache-maven-3.5.2\contacts-maven\src\main\webapp\WEB-INF\classes
+//javac -classpath D:\apache-tomcat-7.0.72\lib\servlet-api.jar;C:\Program Files\apache-maven-3.5.2\contacts-maven\src\main\webapp\WEB-INF\lib\log4j-api-2.11.0.jar;. com\lxisoft\contacts\controller\SingleController.java
 //http://localhost:8080/contacts/index.jsp
-//changing 'classes' to 'src' -> problem (war)
 //D:\apache-tomcat-7.0.72\webapps\contacts\WEB-INF\classes\log4j2.properties
 
 import java.io.*;
