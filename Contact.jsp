@@ -28,64 +28,31 @@
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
 
-<!--
-<form>-->
-	
-	
-	
-	<!--input type="text"/-->
+
+
+
+
 	<a href="AddContact.jsp"><img src="/ContactsApp/images/addContacts.jpg" width="50" height="50" title=addContact></a></br></br>
 	
-	<!--<a href="Result.jsp"><img src="/ContactsApp/images/images.jpg" width="30" height="30"></a>
-	<input type="text" placeholder="search here"/>
 	
-</form>	-->
-<form action="Details.jsp" >
 
-
+<form action="search" method="get">
 <input type="text" name="name" placeholder="search here">
 <input type="submit" value="go"></br>
 </form>
 
 
+<form action="processing" method ="get">
+<input type="submit" value="showAllContacts" >
+</form>
 
 <div id="contact">
 
 		
-		
-	<%
-		try{
-		Connection conn = null;
-		Statement stmt = null;
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactssvlt", "root", "root");
 
-		stmt = conn.createStatement();
-		String sql = "select * from contactss";
-		ResultSet rs = null;
-		rs = stmt.executeQuery(sql);
-
-        while (rs.next()) {
-			//   Contact contact = new Contact(rs.getString("name"),rs.getString("phone"));
-		%>
-        
-		   
-		   
-		   <a href="Details.jsp?name=<%=rs.getString("name")%>"><%out.println("<>"+rs.getString("name"));%></a></br>
-		   <%
-		}
-		//out.println("*"+contact.getString(getName()));
-		conn.close();
-    } catch (Exception e) {
-        System.out.println(e);
-    }
-	%>
-		
-
-		
-		
-		
-		
+	
+	
+				
 </div>
 </body>
 </html>

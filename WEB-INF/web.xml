@@ -14,4 +14,16 @@
 <url-pattern>/processing</url-pattern>
 </servlet-mapping>
 
+<servlet>
+<servlet-name>SearchController</servlet-name>
+<servlet-class>com.lxisoft.controller.SearchController</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>SearchController</servlet-name>
+<url-pattern>/search</url-pattern>
+</servlet-mapping>
+
 </web-app>
+
+
+

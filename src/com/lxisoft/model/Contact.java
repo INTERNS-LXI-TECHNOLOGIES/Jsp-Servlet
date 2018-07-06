@@ -8,20 +8,22 @@ public class Contact{
 	
 	public Contact(ResultSet resultSet) throws SQLException{
 		//this.id=id;
-		this.name=name;
-		this.phone=phone;
+		this.name= resultSet.getString("name");
+        this.phone = resultSet.getString("phone");
 		
 		
 		
 	}
-	/*public Contact(String name,String phone){
+	public Contact(String name,String phone){
 		//this.id=id;
-		this.name=name;
-		this.phone=phone;
+		//this.name=name;
+		//this.phone=phone;
+		setName(name);
+		setPhoneNumber(phone);
 		
 		
 		
-	}*/
+	}
 	
 	public void setName(String name){
 		this.name=name;
