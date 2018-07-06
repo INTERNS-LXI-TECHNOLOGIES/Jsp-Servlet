@@ -18,56 +18,44 @@
 </div>
 
 <%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*,java.sql.*" %>
-<%
 
- try{
+<form action="delete" method="post">
+
+<%
+try{
+ 
 		
         String name=request.getParameter("name"); 
 		String phone=request.getParameter("phoneNumber");
 		String place=request.getParameter("place");
 		String emailId=request.getParameter("e-mail");
 		String oldName=request.getParameter("oldName");%>
+		
+		
+		
+		
+		
+		<%out.println(""+name);%></br>
+		<%out.println(""+phone);%></br>
+		<%out.println(""+place);%></br>
+		<%out.println(""+emailId);%></br>
+		
+		
+		<%request.getSession().setAttribute("i",name);
+		request.getSession().setAttribute("j",phone);
+		request.getSession().setAttribute("k",place);
+		request.getSession().setAttribute("l",emailId);
+		request.getSession().setAttribute("m",oldName);
+		
+}
+catch(Exception e){
+	out.println(e);
+}
+		
+		%>
 	
-		
-		
-		
-		
-		
-		
-		<%	Connection conn = null;
-			Statement stmt = null;
-			
-				Class.forName("com.mysql.jdbc.Driver");
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact", "root", "root");
-				stmt = conn.createStatement();
-				
-				//List<Contact> contacts = new ArrayList<Contact>();
-			String sql = "UPDATE contable SET name='"+name+"', phoneNumber='"+phone+"',place='"+place+"',emailID='"+emailId+"' where name='"+oldName+"'";
-		 //  ResultSet rs = null;
-		   
-		int	rs = stmt.executeUpdate(sql);
-		
-		
-		
-		String sql2="select * from contable where name='"+name+"'";
-		ResultSet rst=null;
-		rst=stmt.executeQuery(sql2);
-		
-		while(rst.next()){%>
-			<%out.println(""+rst.getString("name"));%></br>
-		<%out.println(""+rst.getString("phoneNumber"));%></br>
-		<%out.println(""+rst.getString("place"));%></br>
-		<%out.println(""+rst.getString("emailId"));%></br>
-		<%}
-			%>
-		
-		
-		
- <%}	
-	catch(Exception e){
-		System.out.println("Exception occurs"+e);
-	}	
-
-%>
+<input align="center" type="submit" value="Submit" class="button" >
+		<input  type="reset" value="Cancel" class="button" >
+		</form>
 </html>
 	

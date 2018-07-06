@@ -32,7 +32,7 @@ public class DetailServlet extends HttpServlet{
 			   String phone=rs.getString("phoneNumber");
 			   String place=rs.getString("place");
 			   String email=rs.getString("emailID");
-			   System.out.println("?????????????????"+name);
+			  // System.out.println("?????????????????"+name);
 			  request.getSession().setAttribute("e",name);
 			  request.getSession().setAttribute("f",phone);
 			  request.getSession().setAttribute("g",place);

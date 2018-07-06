@@ -59,13 +59,13 @@
 	
 
 
- <form action="EditContact.jsp" method="post">
+ <form action="EditContact.jsp" method="get">
 
 <table>
  
 <tr>
 	<td>Name:</td>
-	<td><input type="text"  value="<%=rs.getString("name")%>" name="name"/></td>
+	<td><input type="text" "First Name"  value="<%=rs.getString("name")%>" name="name"/></td>
 <tr>
 	<td>Phone:</td>
 	<td><input type="text" value="<%=rs.getString("phoneNumber")%>" name="phoneNumber"/></td>

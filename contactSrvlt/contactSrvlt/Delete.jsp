@@ -34,10 +34,18 @@
 
 <% String name=request.getParameter("name");
 try{
+			Connection conn = null;
+			Statement stmt = null;
 			
-			
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact", "root", "root");
+				stmt = conn.createStatement();
+				
+				//List<Contact> contacts = new ArrayList<Contact>();
+			String sql = "DELETE FROM contable where name='"+name+"'";
+		  // ResultSet rs = null;
 		   out.println("are you sure you want to delete this contact");
-						
+			int rs = stmt.executeUpdate(sql);			
 		}catch(Exception e){
 				out.println(e);
 		}

@@ -15,23 +15,12 @@
 </servlet-mapping>
 
 <servlet>
-<servlet-name>DetailServlet</servlet-name>
-<servlet-class>com.lxisoft.controller.DetailServlet</servlet-class>
+<servlet-name>ContactServlet</servlet-name>
+<servlet-class>com.lxisoft.controller.ContactServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-<servlet-name>DetailServlet</servlet-name>
-<url-pattern>/detail</url-pattern>
+<servlet-name>ContactServlet</servlet-name>
+<url-pattern>/</url-pattern>
 </servlet-mapping>
-
-<servlet>
-<servlet-name>DeleteServlet</servlet-name>
-<servlet-class>com.lxisoft.controller.DeleteServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>DeleteServlet</servlet-name>
-<url-pattern>/delete</url-pattern>
-</servlet-mapping>
-
-
 
 </web-app>

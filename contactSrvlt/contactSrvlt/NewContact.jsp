@@ -19,7 +19,7 @@
 
 	
 	<%@ page import="com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*,java.sql.*"%>
-<form action="save" method="post">
+<form action="save" method="get">
 <%
 
  try{
@@ -28,13 +28,13 @@
 		String phone=request.getParameter("phoneNumber");
 		String place=request.getParameter("place");
 		String emailId=request.getParameter("email");
+
+		request.setAttribute("a",name);
+		request.setAttribute("b",phone);
+		request.setAttribute("c",place);
+		request.setAttribute("d",emailId);
 		
-		request.getSession().setAttribute("a",name);
-		request.getSession().setAttribute("b",phone);
-		request.getSession().setAttribute("c",place);
-		request.getSession().setAttribute("d",emailId);
-		
-		//out.println("<<<<<<<<<<<<<<"+(String)request.getAttribute("c"));
+		out.println("<<<<<<<<<<<<<<"+(String)request.getAttribute("a"));
 		
 		
 		
@@ -52,11 +52,11 @@
 	
 	%>
 	
-	<input type="hidden" placeholder="name" name="name"/>
+<!--	<input type="hidden" placeholder="name" name="name"/>
 	<input type="hidden" placeholder="phone"  name="phone"/>
 	<input type="hidden" placeholder="place"  name="place"/>
-	<input type="hidden" placeholder="emailId"  name="emailId"/>
-	<input align="center" type="submit" value="Submit" >
+	<input type="hidden" placeholder="emailId"  name="emailId"/>-->
+	<input align="center" type="submit" value="Submit" class="button" >
 	</form>
 	
 </body>

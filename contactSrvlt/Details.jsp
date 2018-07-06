@@ -22,7 +22,7 @@
 <%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*,java.sql.*"%>
 
 	<% try{
-	String name=(String)request.getSession().getAttribute("e");%>
+		String name=(String)request.getSession().getAttribute("e");%>
 	<%	String phone=(String)request.getSession().getAttribute("f");%>
 	<%	String place=(String)request.getSession().getAttribute("g");%>
 	<%	String email=(String)request.getSession().getAttribute("h");%>
@@ -40,8 +40,8 @@
 </p>
 
 <div id="mid">
-<a href="edit?name=<%=name%>"><img src="/ContactsApp/images/edit.jpg" width="50" height="50" title=editContact></a>
-<a href="Delete.jsp?name=<%=name%>"><img src="/ContactsApp/images/delete.jpg" width="50" height="50" title=deleteContact></a>
+<a href="Edit.jsp?name=<%=name%>"><img src="/ContactsApp/images/edit.jpg" width="50" height="50" title=editContact></a>
+<a href="delete?name=<%=name%>"><img src="/ContactsApp/images/delete.jpg" width="50" height="50" title=deleteContact></a>
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
 			

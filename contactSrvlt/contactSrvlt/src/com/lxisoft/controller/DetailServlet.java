@@ -6,9 +6,3 @@ import javax.sql.*;
 import java.sql.*;
 
 public class DetailServlet extends HttpServlet{
-	
-	public void doGet(HttpServletRequest request, HttpServletResponse response ){
-		
-		
-	}
-}
