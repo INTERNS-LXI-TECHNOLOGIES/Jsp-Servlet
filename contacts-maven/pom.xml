@@ -24,7 +24,7 @@
 	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 	<dependency>
 		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>	<!-- same as serlet-api found in tomcat/lib -- >
+		<artifactId>javax.servlet-api</artifactId>	<!-- same as serlet-api found in tomcat/lib -->
 		<version>4.0.1</version>
 		<scope>provided</scope>
 	</dependency>
@@ -47,7 +47,20 @@
 		<version>2.11.0</version>
 	</dependency>
   </dependencies>
+  
   <build>
     <finalName>contacts-maven</finalName>
+	
+	<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
