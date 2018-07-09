@@ -36,7 +36,7 @@
 			Search:<input type="text" name="name">
 			<input type="submit" value="ok"></br>
 			</form>
-			<form action="controller?showAll=true" method="get">
+			<form action="Find?showAll=true" method="get">
 			<input type="submit" value="Show All Contacts">
 			</form>
 
@@ -50,7 +50,7 @@
 						for(Contact contact:contacts){%>
 							
 						<div id="top">
-							<a href="controller?name=<%=contact.name%>&phone=<%=contact.phone%>&id=<%=contact.id%>"><% out.println("Name:"+contact.name);%></a></br>
+							<a href="Find?name=<%=contact.name%>&phone=<%=contact.phone%>&id=<%=contact.id%>"><% out.println("Name:"+contact.name);%></a></br>
 							<%out.println("Phone:"+contact.phone);%>
 						</div></br>
 							

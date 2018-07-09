@@ -19,7 +19,7 @@
 	</div>
 
 	<a href="Contacts.jsp"><img src="/Contactsv1.3/images/homeIcon.ico" height="50" width></a>
-	<form action ="controller" method="post">
+	<form action ="Add" method="get">
 		Name   :<input type="text" name= "name"></br>
 		Phone :<input type="text" name = "phone"></br></br>
 	   <input align="left" type="submit"/><input type="reset"/>

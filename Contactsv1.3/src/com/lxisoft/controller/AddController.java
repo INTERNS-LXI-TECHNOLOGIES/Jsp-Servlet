@@ -7,13 +7,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 
-public class AddContact extends HttpServlet{
+public class AddController extends HttpServlet{
 	
 	
 	
 	@Override
-	public void doPost(HttpServletRequest request,HttpServletResponse response){
-	System.out.println("post working++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+	public void doGet(HttpServletRequest request,HttpServletResponse response){
+	System.out.println("addController/post working++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 	String name=request.getParameter("name");
 	int id=generateId();
 	String phone=request.getParameter("phone");
@@ -47,4 +47,4 @@ public class AddContact extends HttpServlet{
 	
 	
 	
-}
+} 

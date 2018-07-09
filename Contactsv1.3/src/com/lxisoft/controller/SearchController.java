@@ -7,7 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 
-public class SearchContact extends HttpServlet{
+public class SearchController extends HttpServlet{
 
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	{

@@ -6,12 +6,59 @@
   version="3.0"
   metadata-complete="true">
 <servlet>
-<servlet-name>controller</servlet-name>
-<servlet-class>com.lxisoft.controller.ContactController</servlet-class>
+
+	<servlet-name>Find</servlet-name>
+	<servlet-class>com.lxisoft.controller.SearchController</servlet-class>
+
 </servlet>
+
+<servlet>
+
+	<servlet-name>AddController</servlet-name>
+	<servlet-class>com.lxisoft.controller.AddController</servlet-class>
+
+</servlet>
+
+<servlet>
+
+	<servlet-name>DeleteController</servlet-name>
+	<servlet-class>com.lxisoft.controller.DeleteController</servlet-class>
+
+</servlet>
+
+<servlet>
+
+	<servlet-name>EditController</servlet-name>
+	<servlet-class>com.lxisoft.controller.EditController</servlet-class>
+
+</servlet>
+
 <servlet-mapping>
-<servlet-name>controller</servlet-name>
-<url-pattern>/controller</url-pattern>
+
+	<servlet-name>Find</servlet-name>
+	<url-pattern>/Find</url-pattern>
+
+</servlet-mapping>
+
+<servlet-mapping>
+
+	<servlet-name>AddController</servlet-name>
+	<url-pattern>/Add</url-pattern>
+
+</servlet-mapping>
+
+<servlet-mapping>
+
+	<servlet-name>EditController</servlet-name>
+	<url-pattern>/Edit</url-pattern>
+
+</servlet-mapping>
+
+<servlet-mapping>
+
+	<servlet-name>DeleteController</servlet-name>
+	<url-pattern>/Delete</url-pattern>
+
 </servlet-mapping>
 
 </web-app>

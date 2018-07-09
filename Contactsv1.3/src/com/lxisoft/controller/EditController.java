@@ -7,17 +7,21 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 
-public class EditContact extends HttpServlet{
+public class EditController extends HttpServlet{
 	
 	
 	
 	@Override
 	public void doPost(HttpServletRequest request,HttpServletResponse response){
-	System.out.println("post working++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-	String name=request.getParameter("name");
-	String phone=request.getParameter("phone");
-	Stirnd id=request.getParameter("id");
-		try{
+	System.out.println("Edit//post working ++++++++++++++++++++++++++++");
+	Contact contact=(Contact)request.getSession().getAttribute("contact");
+	String name=contact.name;
+	String phone=contact.phone;
+	int id=contact.id;
+	System.out.println("edit//name="+name+" phone="+phone+" id="+id);
+	System.out.println("2edit//name="+((String)request.getParameter("name"))+" phone="+((String)request.getParameter("phone"))+" id="+id);
+	
+		try{ 
 		Class.forName("com.mysql.jdbc.Driver");
 			  Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/contactWebApp","root","root");
 			Statement statement=connection.createStatement();
@@ -39,3 +43,4 @@ public class EditContact extends HttpServlet{
 	
 	
 	}
+}

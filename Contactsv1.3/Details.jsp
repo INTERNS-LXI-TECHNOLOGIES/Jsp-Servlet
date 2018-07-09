@@ -29,15 +29,13 @@
 			
 			<!-- <a href="delete?id=<%=contact.id%>" method="delete"><img src="\Contactsv1.3\images\delete.png" height="50" width="50"></a>-->
 			
-			<form action="controller" method="delete">
+			<form action="Delete" method="get">
+			<%request.getSession().setAttribute("contact",contact);%>
 			<input type="submit" value="Delete">
 			</form>
 			
-			<!--<a href="Edit.jsp?name=<%=contact.name%>" method="get"><img src="\Contactsv1.3\images\edit.jpg" height="50" width="50">-->
-			<form action="Edit.jsp?id=<%=contact.id%>&name=<%=contact.name%>&phone=<%=contact.phone%>" method="get">
+			<a href="Edit.jsp" method="get"><img src="\Contactsv1.3\images\edit.jpg" height="50" width="50">
 			
-			<input type="submit" value="Edit">
-			</form>
 			<a href="Contacts.jsp"><img src="/Contactsv1.3/images/homeIcon.ico" height="50" width></a></br>
 		
 	</body>
