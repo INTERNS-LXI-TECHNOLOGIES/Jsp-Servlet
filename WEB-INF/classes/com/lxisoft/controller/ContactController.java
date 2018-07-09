@@ -15,14 +15,9 @@ public class ContactController
 	Set<String> searchedContact;
 	private final static Logger LOGGER = Logger.getLogger(ContactController.class.getName());
 	
-	public int addContact(String name,String place,String phone,String email)
+	public int addContact(Contact c)
 	{
 		LOGGER.info("------add contact started------");
-		Contact c=new Contact();
-		c.setName(name);
-		c.setPlace(place);
-		c.setPhoneNumber(phone);
-		c.setEmail(email);
 		int res=dbService.insertToDB(c);
 		LOGGER.info("------add contact completed------");
 		return res;

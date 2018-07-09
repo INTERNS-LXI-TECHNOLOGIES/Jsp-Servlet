@@ -27,6 +27,12 @@
   <description>
      Welcome to Tomcat
   </description>
+  
+  <servlet>
+    <servlet-name>creating</servlet-name>
+	<servlet-class>com.lxisoft.controllerServlet.CreateContactObjectServlet</servlet-class>
+  </servlet>
+  
   <servlet>
 	<servlet-name>adding</servlet-name>
 	<servlet-class>com.lxisoft.controllerServlet.AddContactServlet</servlet-class>
@@ -51,6 +57,11 @@
 	<servlet-name>search</servlet-name>
 	<servlet-class>com.lxisoft.controllerServlet.SearchContactServlet</servlet-class>
   </servlet>
+  
+  <servlet-mapping>
+   <servlet-name>creating</servlet-name>
+   <url-pattern>/servletCreateContact</url-pattern>
+  </servlet-mapping>
   
   <servlet-mapping>
    <servlet-name>adding</servlet-name>

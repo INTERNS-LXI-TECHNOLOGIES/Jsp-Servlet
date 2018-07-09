@@ -5,7 +5,7 @@
 	</title>
 	</head>
 	<body>
-		<a href="addContact.jsp">
+		<a href="servletCreateContact">
 			<div id="main" style="margin: 30px; width: 27%; height: 350px; background: lightblue;  float: left; border-left: 10px solid #fff;">
 			<img style="margin:20px;" src="Add-Male-User-icon.png"></img>
 			<center><h2>Add Contact</h2></center>
