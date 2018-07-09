@@ -14,11 +14,9 @@ public class EditController extends HttpServlet{
 	@Override
 	public void doPost(HttpServletRequest request,HttpServletResponse response){
 	System.out.println("Edit//post working ++++++++++++++++++++++++++++");
-	Contact contact=(Contact)request.getSession().getAttribute("contact");
-	String name=contact.name;
-	String phone=contact.phone;
-	int id=contact.id;
-	System.out.println("edit//name="+name+" phone="+phone+" id="+id);
+	String name=request.getParameter("name");
+	String phone=request.getParameter("phone");
+	int id=Integer.valueOf(request.getParameter("id"));
 	System.out.println("2edit//name="+((String)request.getParameter("name"))+" phone="+((String)request.getParameter("phone"))+" id="+id);
 	
 		try{ 

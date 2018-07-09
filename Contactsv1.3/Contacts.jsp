@@ -32,8 +32,9 @@
 	</div>
 		<a href="AddContacts.jsp">
 			</br><img src="\Contactsv1.3\images\add2.png" height="50" width="50"></a>
-			<form action="Details.jsp?showAll=true"method="get"></br></br>
+			<form action="Find" method="get"></br></br>
 			Search:<input type="text" name="name">
+			
 			<input type="submit" value="ok"></br>
 			</form>
 			<form action="Find?showAll=true" method="get">
@@ -58,6 +59,7 @@
 						
 						}
 					}
+					
 		%>
 		
 		

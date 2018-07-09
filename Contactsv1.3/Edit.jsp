@@ -19,11 +19,10 @@
 		%>
 		</br>
 		<form action="Edit" method="post">
-		Name:<input type="text" value="<%=contact.name%>" name="<%=contact.name%>"/></br>
-		Phone:<input type="text" value="<%=contact.phone%>" name="<%=contact.phone%>"/></br>
-		<input type="hidden" value="<%=contact.id%>" name=<%=contact.id%>/>
+		Name:<input type="text" value="<%=contact.name%>" name="name"/></br>
+		Phone:<input type="text" value="<%=contact.phone%>" name="phone"<%=contact.phone%>/></br>
+		<input type="hidden" value="<%=contact.id%>" name="id"/>
 		<input type="submit" value="ok"><input type="reset" value="clear"></br>
-		<%request.getSession().setAttribute("contact",contact);%>
 		</form>
 	</body>
 </html>

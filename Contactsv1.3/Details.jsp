@@ -17,8 +17,9 @@
 	<h1 align="center">Details</h1>
 	
 			<% 
-					String name=request.getParameter("name");
+
 					Contact contact=(Contact)request.getSession().getAttribute("contact");
+			
 					request.getSession().removeAttribute("contact");
 					request.getSession().setAttribute("contact",contact);
 						%>
@@ -30,7 +31,18 @@
 			<!-- <a href="delete?id=<%=contact.id%>" method="delete"><img src="\Contactsv1.3\images\delete.png" height="50" width="50"></a>-->
 			
 			<form action="Delete" method="get">
-			<%request.getSession().setAttribute("contact",contact);%>
+			
+			<%
+			
+						try{
+			request.getSession().setAttribute("contact",contact);
+			
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			%>
 			<input type="submit" value="Delete">
 			</form>
 			
