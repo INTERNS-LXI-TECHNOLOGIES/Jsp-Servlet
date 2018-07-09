@@ -1,20 +1,31 @@
 <web-app>
 <servlet>
+<<<<<<< HEAD
 <servlet-name>ContactsApp</servlet-name>
+=======
+<servlet-name>Contacts App</servlet-name>
+>>>>>>> 201bee6a767262eb682a7060bcc7a3b422c7fa10
 <servlet-class>com.lxisoft.controller.ContactsAppServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
+<<<<<<< HEAD
 <servlet-name>ContactsApp</servlet-name>
 <url-pattern>/ContactsAppServlet</url-pattern>
 
 </servlet-mapping>
 
+=======
+<servlet-name>Contacts App</servlet-name>
+<url-pattern>/ContactsAppServlet</url-pattern>
+</servlet-mapping>
+>>>>>>> 201bee6a767262eb682a7060bcc7a3b422c7fa10
 <resource-env-ref>
     <resource-env-ref-name>jdbc/db</resource-env-ref-name>
     <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
 </resource-env-ref>
 
+<<<<<<< HEAD
 <security-constraint>
 
 <web-resource-collection>
@@ -42,4 +53,6 @@
 </form-login-config>
 </login-config>
 
+=======
+>>>>>>> 201bee6a767262eb682a7060bcc7a3b422c7fa10
 </web-app>

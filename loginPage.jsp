@@ -33,7 +33,11 @@ body
 
 <img src="images/contacts.jpg" alt = "contact image" width="150px"/>
 </p>
+<<<<<<< HEAD
 <a href = "AddContact.jsp"> 
+=======
+<a href = "AddContact.jsp" target = "_blank" > 
+>>>>>>> 201bee6a767262eb682a7060bcc7a3b422c7fa10
 <div id = "add">
 <p align ="left">
 
@@ -42,7 +46,10 @@ body
 
 </div></a>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 201bee6a767262eb682a7060bcc7a3b422c7fa10
 </p>
 <%@ page import = "java.util.*"%>
 <%@ page contentType = "text/html"%>
