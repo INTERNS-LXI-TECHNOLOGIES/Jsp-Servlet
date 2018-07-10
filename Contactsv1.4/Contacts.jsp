@@ -27,7 +27,7 @@
 	<div id="top">
 	<h1><i>Contacts</i></h1>
 	<p align="center">
-	<img src="\Contactsv1.3\images\61755-200.png" height="50" width="50"></br>
+	<img src="\Contactsv1.4\images\61755-200.png" height="50" width="50"></br>
 	</p></br></br>
 	</div>
 		<a href="AddContacts.jsp">

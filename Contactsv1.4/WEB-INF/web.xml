@@ -82,6 +82,10 @@
 
 </security-role>
 <login-config>
-	<auth-method>BASIC</auth-method>
+	<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/Login.jsp</form-login-page>
+			<form-error-page>/Error.jsp</form-error-page>
+		</form-login-config>
 </login-config>
  </web-app>
