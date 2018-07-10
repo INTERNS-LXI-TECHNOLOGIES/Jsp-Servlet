@@ -27,6 +27,10 @@
 </style>
 
 <body>
+
+
+
+
 <p align="left">
 <a href="Contact.jsp"><img src="/ContactsApp/images/homePic.jpg" width="50" height="50"></a></br></br>
 </p>
