@@ -24,7 +24,7 @@ public void doGet(HttpServletRequest request,HttpServletResponse response){
 		ResultSet rs = null;	
 		rs = stmt.executeQuery(sql);
 		//System.out.println("rs/get"+rs);
-	ArrayList<Contact> contacts=new ArrayList<Contact>();
+		ArrayList<Contact> contacts=new ArrayList<Contact>();
         while (rs.next()) {
 			
 			System.out.println("rs.next");
