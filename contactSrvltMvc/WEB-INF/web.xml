@@ -1,0 +1,37 @@
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+<servlet>
+<servlet-name>ContactServlet</servlet-name>
+<servlet-class>com.lxisoft.controller.ContactServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ContactServlet</servlet-name>
+<url-pattern>/save</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>DetailServlet</servlet-name>
+<servlet-class>com.lxisoft.controller.DetailServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>DetailServlet</servlet-name>
+<url-pattern>/detail</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>DeleteServlet</servlet-name>
+<servlet-class>com.lxisoft.controller.DeleteServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>DeleteServlet</servlet-name>
+<url-pattern>/delete</url-pattern>
+</servlet-mapping>
+
+
+
+</web-app>
