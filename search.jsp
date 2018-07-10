@@ -54,33 +54,14 @@ out.println("{{{{{{{{{{{{{}}}}}}}}}}}");%></br>
 		<input  type="submit" value="Delete" >
 		
 		</form>
-<form action="EditContact.jsp" method="get">
 
-<table>
- 
-<tr>
-	<td>Name:</td>
-	<td><input type="text" "First Name"  value="<%=contacts.getName()%>" name="name"/></td>
-<tr>
-	<td>Phone:</td>
-	<td><input type="text" value="<%=contacts.getPhoneNumber()%>" name="phone"/></td>
+		
+		
+<form action="Edit.jsp" method="post">
 	
-</tr>
-
-			
-<tr align="center">
-	<td colspan="2">
-		<input align="center" type="submit" value="Submit" class="button" >
-		<input  type="reset" value="Cancel" class="button" >
+		<input  type="submit" value="Edit" >
 		
-	</td>
-</tr>  
-
-</table>
-</form>
-		
-		
-
+		</form>
 <!--<a href="Delete.jsp"><img src="/ContactsApp/images/deletePic.jpg" width="50" height="50" title=deleteContact></a>-->
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
