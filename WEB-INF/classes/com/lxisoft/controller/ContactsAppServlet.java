@@ -6,19 +6,28 @@ import java.io.*;
 import java.sql.*;
 import com.lxisoft.model.*;
 import java.util.*;
+//import java.util.logging.Logger;
+import org.apache.log4j.Logger;
+
+
 
 
 public class ContactsAppServlet extends HttpServlet
     {
 		
-	Database database;
+	 private Database database;
+	 private static Logger logger;
 	
 	public ContactsAppServlet(){
 	}
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
+		logger = Logger.getLogger("ContactsAppServlet.class");
+	
 		String name  = request.getParameter("Name");
         System.out.println("name"+name);
+		logger.warn("request is coming..");
+		logger.debug("file is upcoming..");
         String place = request.getParameter("Place");
         String phn_no = request.getParameter("Phn_no");
         String email = request.getParameter("Email");
@@ -43,6 +52,7 @@ public class ContactsAppServlet extends HttpServlet
 	         System.out.println(ex);
           }
 
+		  response.sendRedirect("loginPage.jsp");
 	}
 	
 	

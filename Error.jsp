@@ -9,7 +9,10 @@ background-color:lightblue;
 <font size = '5' color = 'red'>Invalid Username and Password</font>
 <%@ page import = "java.sql.*"%>
 <%String direction = "SecurityLogin.jsp";%>
- <%response.sendRedirect("SecurityLogin.jsp");%>//to get one more chance
+<a href = "AddContact.jsp">
+Click here
+</a> to get one more chance
+
 
 </body>
 </html>
