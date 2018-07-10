@@ -19,26 +19,34 @@ public void doGet(HttpServletRequest request,HttpServletResponse response){
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactssvlt", "root", "root");
 
 		stmt = conn.createStatement();
-		String sql = "select name,phone from contactss where name='"+getName+"'";
+		String sql = "select * from contactss where name='"+getName+"'";
 		//System.out.println(""+sql);
 		ResultSet rs = null;	
 		rs = stmt.executeQuery(sql);
 		//System.out.println("rs/get"+rs);
-	
+	ArrayList<Contact> contacts=new ArrayList<Contact>();
         while (rs.next()) {
-			Contact contact =new Contact(rs.getString("name"),rs.getString("phone"));
-			//contact.setName(rs.getString("name"));
-			//contact.setPhoneNumber(rs.getString("phone"));
-
-		//rs.getString("name"));
-		//rs.getString("phone"));
-		
-			request.getSession().setAttribute("Contact", contact);
-			response.sendRedirect("search.jsp");
-			System.out.println("name equl============");
 			
-	
+			System.out.println("rs.next");
+			Contact contact =new Contact(rs);
+			contact.setName(rs.getString("name"));
+			contact.setPhoneNumber(rs.getString("phone"));
+       
+			
+			//RequestDispatcher view = request.getRequestDispatcher("Contact.jsp");
+			//System.out.println("getName"+getName);
+			System.out.println("contact.getName"+contact.getName());
+			System.out.println("contact.getPhone"+contact.getPhoneNumber());
+			contacts.add(contact);
+			System.out.println("contacts size"+contacts.size());
+			request.getSession().setAttribute("Contact", contacts);
+			
+			System.out.println("name equal============");
+						
+			
 		}
+		
+		response.sendRedirect("search.jsp");
 		//out.println("*"+contact.getString(getName()));
 		//conn.close();
 	}

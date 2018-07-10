@@ -58,7 +58,7 @@ public void doGet(HttpServletRequest request,HttpServletResponse response){
 		//System.out.println(""+sql);
 		ResultSet rs = null;	
 		rs = stmt.executeQuery(sql);
-//System.out.println("rs/get"+rs);
+		//System.out.println("rs/get"+rs);
 		ArrayList<Contact> contacts=new ArrayList<Contact>();
         while (rs.next()) {
 			System.out.println("rs.next");
@@ -74,11 +74,71 @@ public void doGet(HttpServletRequest request,HttpServletResponse response){
 			contacts.add(contact);
 			System.out.println("contacts size"+contacts.size());
 			request.getSession().setAttribute("Contact", contacts);
-			response.sendRedirect("Details.jsp");
+			
 			System.out.println("name display============");
 						
 							
 		}
+		//out.println("*"+contact.getString(getName()));
+		//conn.close();
+		response.sendRedirect("Details.jsp");
+	}
+    catch (Exception e) {
+		//System.out.println("india");
+        System.out.println(e);
+    }
+	finally {
+      // Always close the database connection.
+      try {
+        if (conn != null) conn.close();
+      }
+      catch (SQLException ignored) { }
+   }
+	
+}
+
+
+	//@Override
+	/*public void doDelete(HttpServletRequest request,HttpServletResponse response){
+		
+	System.out.println("delete is working");
+	String getName=request.getParameter("name");
+	Connection conn = null;
+	Statement stmt = null;
+	try{
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactssvlt", "root", "root");
+
+		stmt = conn.createStatement();
+		String sql = "delete from contactss where name='"+getName+"'";
+		//System.out.println(""+sql);
+		ResultSet rs = null;	
+		rs = stmt.executeQuery(sql);
+		//System.out.println("rs/get"+rs);
+	
+        while (rs.next()) {
+			
+			System.out.println("rs.next");
+			/*Contact contact =new Contact(rs);
+			contact.setName(rs.getString("name"));
+			contact.setPhoneNumber(rs.getString("phone"));
+       
+			
+			//RequestDispatcher view = request.getRequestDispatcher("Contact.jsp");
+			//System.out.println("getName"+getName);
+			System.out.println("contact.getName"+contact.getName());
+			System.out.println("contact.getPhone"+contact.getPhoneNumber());
+			contacts.add(contact);
+			System.out.println("contacts size"+contacts.size());
+			request.getSession().setAttribute("Contact", contacts);
+			
+			System.out.println("name equal============");
+						
+			
+		}
+		
+		response.sendRedirect("delete.jsp");
 		//out.println("*"+contact.getString(getName()));
 		//conn.close();
 	}
@@ -93,35 +153,10 @@ public void doGet(HttpServletRequest request,HttpServletResponse response){
       catch (SQLException ignored) { }
    }
 	
-}
-
-
-	@Override
-	public void doDelete(HttpServletRequest request,HttpServletResponse response){
-		
-	String name=request.getParameter("name");
-	//out.println(""+name);
 	
 	
-	try{
-		Connection conn = null;
-		Statement stmt = null;
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactssvlt", "root", "root");
-
-		stmt = conn.createStatement();
-		String sql = "delete from contactss where name='"+name+"'";
-		//out.println(" "+sql);
-		//ResultSet rs = null;
-		System.out.println("Do you want to delete this entry");
-		int rs=stmt.executeUpdate(sql);
-	}
-		catch(Exception e){
 		
-		System.out.println(e);
-	}
-		
-}
+}*/
 
 
 		

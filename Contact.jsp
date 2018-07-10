@@ -29,9 +29,6 @@
 </div>
 
 
-
-
-
 	<a href="AddContact.jsp"><img src="/ContactsApp/images/addContacts.jpg" width="50" height="50" title=addContact></a></br></br>
 	
 	

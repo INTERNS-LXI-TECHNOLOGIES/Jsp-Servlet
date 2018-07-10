@@ -39,7 +39,8 @@
 ArrayList<Contact>contacts=(ArrayList<Contact>) request.getSession().getAttribute("Contact");
 for(Contact tc:contacts){%>
 </br><%out.println("<>"); out.println(" "+tc.getName());%></br>
-<%out.println("       "+tc.getPhoneNumber());}%></br>
+<%out.println("       "+tc.getPhoneNumber());}
+out.println("{{{{{{{{{{{{{}}}}}}}}}}}");%></br>
 
 
 

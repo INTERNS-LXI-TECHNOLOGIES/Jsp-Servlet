@@ -21,8 +21,7 @@ public class Contact{
 		setName(name);
 		setPhoneNumber(phone);
 		
-		
-		
+	
 	}
 	
 	public void setName(String name){
