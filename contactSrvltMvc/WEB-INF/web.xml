@@ -15,11 +15,11 @@
 </servlet-mapping>
 
 <servlet>
-<servlet-name>DetailServlet</servlet-name>
-<servlet-class>com.lxisoft.controller.DetailServlet</servlet-class>
+<servlet-name>SearchController</servlet-name>
+<servlet-class>com.lxisoft.controller.SearchController</servlet-class>
 </servlet>
 <servlet-mapping>
-<servlet-name>DetailServlet</servlet-name>
+<servlet-name>SearchController</servlet-name>
 <url-pattern>/detail</url-pattern>
 </servlet-mapping>
 
@@ -30,6 +30,15 @@
 <servlet-mapping>
 <servlet-name>DeleteServlet</servlet-name>
 <url-pattern>/delete</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>EditController</servlet-name>
+<servlet-class>com.lxisoft.controller.EditController</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>EditController</servlet-name>
+<url-pattern>/edit</url-pattern>
 </servlet-mapping>
 
 

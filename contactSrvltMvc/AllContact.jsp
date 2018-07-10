@@ -23,10 +23,10 @@
 <%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*,java.sql.*"%>
 
 	<% try{
-		out.println("************ All contacts****************");
+		
 		
 		ArrayList<Contact> ct =(ArrayList<Contact>)request.getSession().getAttribute("Contact");
-		out.println("{{{}{{{{{{{{{{{{{{"+ct.size());
+		
 		%>
 		
 	

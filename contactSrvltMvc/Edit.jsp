@@ -27,35 +27,12 @@
 
 
 <body>
-    <% String name=request.getParameter("name");
-	String oldName=name;
-	
-	
-	
-	
+    <% 
 	
 	
 	try{
-			Connection conn = null;
-			Statement stmt = null;
-			
-				Class.forName("com.mysql.jdbc.Driver");
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact", "root", "root");
-				stmt = conn.createStatement();
-				
-				//List<Contact> contacts = new ArrayList<Contact>();
-			String sql = "SELECT * FROM contable where name='"+name+"'";
-		   ResultSet rs = null;
-		   
-			rs = stmt.executeQuery(sql);
-				
-					
-					while(rs.next()){
-					
-					%>
 	
-	
-	
+	Contact contact=(Contact)request.getSession().getAttribute("Contact");%>
 	
 
 
@@ -65,21 +42,21 @@
  
 <tr>
 	<td>Name:</td>
-	<td><input type="text"  value="<%=rs.getString("name")%>" name="name"/></td>
+	<td><input type="text"  value="<%=contact.getName()%>" name="name"/></td>
 <tr>
 	<td>Phone:</td>
-	<td><input type="text" value="<%=rs.getString("phoneNumber")%>" name="phoneNumber"/></td>
+	<td><input type="text" value="<%=contact.getPhoneNumber()%>" name="phoneNumber"/></td>
 	
 </tr>
 <tr>
 	<td>Place:</td>
-	<td><input type="text" value="<%=rs.getString("place")%>" name="place"/></td>
+	<td><input type="text" value="<%=contact.getPlace()%>" name="place"/></td>
 	
 </tr>
 
 <tr>
 	<td>e-mail:</td>
-	<td><input type="text" value="<%=rs.getString("emailID")%>" name="e-mail"/></td>
+	<td><input type="text" value="<%=contact.getEmailId()%>" name="e-mail"/></td>
 	
 </tr>
 
@@ -90,16 +67,17 @@
 		
 	</td>
 </tr>  
-<input type="hidden" value="<%=oldName%>" name="oldName"/> 
+<input type="hidden" value="<%=contact.getName()%>" name="oldName"/> 
 </table>
 </form>
 	<%
-					}
+					
 	}catch(Exception e){
 				out.println(e);
 		}
 	
 	
+		
 	
 
 	%>	

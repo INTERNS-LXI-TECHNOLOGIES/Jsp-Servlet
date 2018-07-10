@@ -42,7 +42,7 @@ public class DeleteServlet extends HttpServlet{
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response ){
-		
+			System.out.println("qwertyuio");
 		try{
 			Connection conn = null;
 			Statement stmt = null;
@@ -55,7 +55,6 @@ public class DeleteServlet extends HttpServlet{
 		String email=(String)request.getSession().getAttribute("l");
 		String oldName=(String)request.getSession().getAttribute("m");
 
-			
 			
 			
 				Class.forName("com.mysql.jdbc.Driver");

@@ -21,15 +21,11 @@
 
 <%@ page import="java.util.*,com.lxisoft.controller.*,com.lxisoft.model.*,java.sql.*"%>
 
-	<% try{
-		ArrayList<Contact> ct =(ArrayList<Contact>)request.getSession().getAttribute("contact");
-		for(Contact cnts:ct){%>
-		
-		
-	
+   
+			<%
+Contact contact=(Contact)request.getSession().getAttribute("Contact");
 
-    
-			
+%>
 			<body>
 <p align="left">
 <a href="Contact.jsp"><img src="/ContactsApp/images/home.jpg" width="50" height="50"></a></br></br>
@@ -41,25 +37,19 @@
 </p>
 
 <div id="mid">
-<a href="Edit.jsp?name=<%=name%>"><img src="/ContactsApp/images/edit.jpg" width="50" height="50" title=editContact></a>
-<a href="delete?name=<%=name%>"><img src="/ContactsApp/images/delete.jpg" width="50" height="50" title=deleteContact></a>
+<a href="edit?name=<%=contact.getName()%>"><img src="/ContactsApp/images/edit.jpg" width="50" height="50" title=editContact></a>
+<a href="delete?name=<%=contact.getName()%>"><img src="/ContactsApp/images/delete.jpg" width="50" height="50" title=deleteContact></a>
 <link rel="stylesheet" type="text/css" href="Sample.css"/>
 </div>
 			
-				<%out.println(">>>>>"+cnts.getName());%></br>
-		<%out.println(">>>>>"+cnts.getPhoneNumber());%></br>
-		<%out.println(">>>>>"+cnts.getPlace());%></br>
-		<%out.println(">>>>>"+cnts.getEmailId());%></br>
-					
-				
-				
-				<%}
-		}catch(Exception e){
-				out.println(e);
-		}
+			
 	
-	%>
-				
+</br><%out.println("<>"); out.println(" "+contact.getName());%></br>
+<%out.println("       "+contact.getPhoneNumber());%></br>
+<%out.println("       "+contact.getPlace());%></br>
+<%out.println("       "+contact.getEmailId());%></br>
+
+
 
 </body>
 
