@@ -88,4 +88,11 @@
 			<form-error-page>/Error.jsp</form-error-page>
 		</form-login-config>
 </login-config>
+<resource-env-ref>
+  
+  <resource-env-ref-name>jdbc/datasource</resource-env-ref-name>
+  
+  <resource-env-ref-type>javax.msql.DataSource</resource-env-ref-type>
+  
+</resource-env-ref>
  </web-app>

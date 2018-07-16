@@ -1,0 +1,2 @@
+Jul 16, 2018 4:25:56 PM com.lxisoft.controller.EditController doPost
+INFO: log working
