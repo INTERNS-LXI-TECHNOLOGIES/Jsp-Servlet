@@ -8,8 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.RequestDispatcher;
 import java.util.*;
-import java.util.logging.Logger;
-
+import org.apache.log4j.Logger;
+/**
+*Used to control delete contact from database.
+*'LOGGER' is a object of Logger class to give logs.
+@author ruhail.
+@since 16-07-2018.
+@version
+*/
 public class DeleteContactServlet extends HttpServlet
 {
 	private static final Logger LOGGER = Logger.getLogger(DeleteContactServlet.class.getName());
@@ -17,6 +23,11 @@ public class DeleteContactServlet extends HttpServlet
 	{
 		 
 	}
+	/**
+	*calling viewContact and deleteContact methods for viewing and deleting contact object.
+	*redirect to view contact UI page.
+	@param request and response.
+	*/
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException
 	{
 		try

@@ -8,6 +8,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import org.apache.log4j.Logger;
 
 /**
 *The DBService class is used to handle database operatios
@@ -25,6 +26,7 @@ public class DBService
 	Connection con;
 	PreparedStatement ps;
 	ResultSet rs;
+	private final static Logger LOGGER = Logger.getLogger(ContactController.class.getName());
 	int status;
 	/**
 	*insertToDB method inserts data to database.
@@ -140,6 +142,7 @@ public class DBService
 	*/
 	public Set<Contact> searchFromDB(String search)
 	{
+		LOGGER.info("------searching------");
 		Set<Contact> contact=new TreeSet<Contact>();
 		ResultSet rs;
 		try
@@ -147,13 +150,12 @@ public class DBService
 			ic=new InitialContext();
 			ds=(DataSource) ic.lookup("java:/comp/env/jdbc/contactdb");
 			con=ds.getConnection();
-			String searchQuery="select * from table_contacts where name like ?";
+			String searchQuery="select * from table_contacts where name like '"+search+"%'";
 			ps=con.prepareStatement(searchQuery);
-			ps.setString(1,search);
 			rs=ps.executeQuery(searchQuery);
-			con.close();
 			while(rs.next())
 			{
+				LOGGER.info("------search item found------");
 				Contact c=new Contact();
 				String name=rs.getString("name");
 				String place=rs.getString("place");
@@ -169,8 +171,10 @@ public class DBService
 		}
 		catch(Exception ex)
 		{
+			LOGGER.info("-----exception in searching-----");
 			ex.printStackTrace();
 		}
+		LOGGER.info("------searching over------");
 		return contact;
 	}
 }

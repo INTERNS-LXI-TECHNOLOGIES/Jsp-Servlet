@@ -8,8 +8,14 @@ import javax.servlet.RequestDispatcher;
 import com.lxisoft.controller.ContactController;
 import java.util.*;
 import com.lxisoft.model.*;
-import java.util.logging.Logger;
-
+import org.apache.log4j.Logger;
+/**
+*Used to control reading data from database to exhibit in UI.
+*'LOGGER' is a object of Logger class to give logs.
+@author ruhail.
+@since 16-07-2018.
+@version
+*/
 public class ViewContactServlet extends HttpServlet
 {
 	private static final Logger LOGGER = Logger.getLogger(ViewContactServlet.class.getName()); 
@@ -18,14 +24,26 @@ public class ViewContactServlet extends HttpServlet
 	{
 		
 	}
+	/**
+	*calling viewContact() method of ContactController class.
+	*send read data to UI to display using RequestDispatcher.
+	@param request and response.
+	*/
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException
 	{
-		LOGGER.info("------view contact servlet doPost started------");
-		ContactController cont=new ContactController();
-		Set<Contact> contacts=cont.viewContact();
-		request.setAttribute("cont",contacts);
-		RequestDispatcher rd=request.getRequestDispatcher("viewContact.jsp");
-		LOGGER.info("------view contact servlet doPost completed------");
-		rd.forward(request,response);
+		try
+		{
+			LOGGER.info("------view contact servlet doPost started------");
+			ContactController cont=new ContactController();
+			Set<Contact> contacts=cont.viewContact();
+			request.setAttribute("cont",contacts);
+			RequestDispatcher rd=request.getRequestDispatcher("viewContact.jsp");
+			LOGGER.info("------view contact servlet doPost completed------");
+			rd.forward(request,response);
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
 	}
 }

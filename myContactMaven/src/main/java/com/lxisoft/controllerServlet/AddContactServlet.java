@@ -5,14 +5,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServlet;
 import com.lxisoft.controller.ContactController;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpSession;
 import com.lxisoft.model.*;
-
+import org.apache.log4j.Logger;
+/**
+*Used to control adding contact to database.
+*'LOGGER' is a object of Logger class to give logs.
+@author ruhail.
+@since 16-07-2018.
+@version
+*/
 public class AddContactServlet extends HttpServlet
 {
 	private static final Logger LOGGER=Logger.getLogger(AddContactServlet.class.getName());
 	ContactController contactController=new ContactController();
+	
+	/**
+	*recieving parameter values from form and add Contact object with setting values.
+	*calling addContact() method of ContactController class.
+	*send read data to UI to display using RequestDispatcher.
+	@param request and response.
+	*/
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException
 	{
 		LOGGER.info("------add contact servlet doPost started------");
