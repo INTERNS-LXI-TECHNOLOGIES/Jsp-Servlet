@@ -1,0 +1,6 @@
+com\lxisoft\controller\ContactsAppServlet.class
+com\lxisoft\controller\Database.class
+com\lxisoft\controller\SecurityServlet.class
+com\lxisoft\model\Contact.class
+com\lxisoft\controller\ContactUpdateServlet.class
+com\lxisoft\controller\PropertiesClass.class
