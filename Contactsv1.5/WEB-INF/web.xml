@@ -1,0 +1,91 @@
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+<servlet>
+
+	<servlet-name>Find</servlet-name>
+	<servlet-class>com.lxisoft.controller.SearchController</servlet-class>
+
+</servlet>
+
+<servlet>
+
+	<servlet-name>AddController</servlet-name>
+	<servlet-class>com.lxisoft.controller.AddController</servlet-class>
+
+</servlet>
+
+<servlet>
+
+	<servlet-name>DeleteController</servlet-name>
+	<servlet-class>com.lxisoft.controller.DeleteController</servlet-class>
+
+</servlet>
+
+<servlet>
+
+	<servlet-name>EditController</servlet-name>
+	<servlet-class>com.lxisoft.controller.EditController</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>Find</servlet-name>
+	<url-pattern>/Find</url-pattern>
+
+</servlet-mapping>
+
+<servlet-mapping>
+
+	<servlet-name>AddController</servlet-name>
+	<url-pattern>/Add</url-pattern>
+
+</servlet-mapping>
+
+<servlet-mapping>
+
+	<servlet-name>EditController</servlet-name>
+	<url-pattern>/Edit</url-pattern>
+
+</servlet-mapping>
+
+<servlet-mapping>
+
+	<servlet-name>DeleteController</servlet-name>
+	<url-pattern>/Delete</url-pattern>
+
+</servlet-mapping>
+
+<security-constraint>
+		<web-resource-collection>
+		<web-resource-name>protected pages</web-resource-name>
+		
+				<url-pattern>/AddContacts.jsp</url-pattern>
+				 
+				<http-method>GET</http-method>
+				<http-method>POST</http-method>
+		
+		</web-resource-collection>
+	
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+</security-constraint>
+<security-role>
+	
+	<role-name>admin</role-name>
+
+</security-role>
+<login-config>
+	<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/Login.jsp</form-login-page>
+			<form-error-page>/Error.jsp</form-error-page>
+		</form-login-config>
+</login-config>
+ </web-app>

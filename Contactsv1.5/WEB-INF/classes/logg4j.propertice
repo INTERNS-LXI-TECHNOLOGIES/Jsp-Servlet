@@ -1,0 +1,18 @@
+# Define the root logger with appender file
+log =D:\apache-tomcat-8.5.32\webapps\Contactsv1.5\WEB-INF\classes
+log4j.rootLogger = DEBUG, FILE
+
+# Define the file appender
+log4j.appender.FILE=org.apache.log4j.FileAppender
+log4j.appender.FILE.File=${log}/log.out
+
+# Define the layout for file appender
+log4j.appender.FILE.layout=org.apache.log4j.PatternLayout
+log4j.appender.FILE.layout.conversionPattern=%m%n %m%n
+
+#to write on console
+
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+log4j.appender.CONSOLE.Target=System.out
+log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+log4j.appender.CONSOLE.layout.conversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p - %m%n
