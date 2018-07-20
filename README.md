@@ -28,5 +28,5 @@ This project gives a deep understanding of JEE Container Managed Security.
   - Create login page with j_security_check, j_username, j_password
   - create two mysql tables users and user_roles (search online on how to create tables properly)
   - use String username = request.getRemoteUser() to get ther current username 
-  - Useful links: https://www.javaworld.com/article/2072850/java-security/j2ee-security--container-versus-custom.html, https://javapipe.com/hosting/blog/tomcat-realm/
+  - Useful links: [javaworld](https://www.javaworld.com/article/2072850/java-security/j2ee-security--container-versus-custom.html), [javapipe](https://javapipe.com/hosting/blog/tomcat-realm/)   [Dropwizard](http://www.dropwizard.io/1.0.2/docs/)
 ```
