@@ -16,7 +16,9 @@ This project gives a deep understanding of:
   - resource injection
 
 ## 2. contacts-maven
-This project gives a deep understanding of maven
+This project gives a deep understanding of a) maven project structure and b) auto deployment.
+Note: Before deploying using 'mvn tomcat7:deploy' start the tomcat server.
+Useful links: [Auto deploy] (http://www.mkyong.com/maven/how-to-deploy-maven-based-war-file-to-tomcat/)
 
 ## 3. contacts-security
 This project gives a deep understanding of JEE Container Managed Security.
