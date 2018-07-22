@@ -1,0 +1,9 @@
+com\lxisoft\contacts\model\User.class
+com\lxisoft\contacts\service\UserService.class
+com\lxisoft\contacts\service\ContactService.class
+com\lxisoft\contacts\repository\UserRepository.class
+com\lxisoft\contacts\repository\ContactRepository.class
+com\lxisoft\contacts\controller\SingleController.class
+com\lxisoft\contacts\utility\DatabaseUtils.class
+com\lxisoft\contacts\utility\FileUtils.class
+com\lxisoft\contacts\model\Contact.class

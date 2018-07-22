@@ -10,7 +10,7 @@
   
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
+	  <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
@@ -52,6 +52,7 @@
     <finalName>contacts-maven</finalName>
 	
 	<plugins>
+	  <!-- MAVEN COMPILER PLUGIN -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -61,6 +62,17 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+	  <!-- TOMCAT MAVEN PLUGIN -->
+	  <plugin>
+	    <groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat7-maven-plugin</artifactId>
+		<version>2.2</version>
+		<configuration>
+		  <url>http://localhost:8080/manager/text</url>
+		  <server>TomcatServer</server>
+		  <path>/contacts-maven</path>
+		</configuration>
+	  </plugin>
     </plugins>
   </build>
 </project>

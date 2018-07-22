@@ -1,0 +1,9 @@
+<Context>
+
+	<Resource name="jdbc/contacts-container security" auth="Container" type="javax.sql.DataSource"
+		maxActive="50" maxIdle="30" maxWait="10000"
+		username="root" password="mysql213" 
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/contacts-container security"/>
+
+</Context>

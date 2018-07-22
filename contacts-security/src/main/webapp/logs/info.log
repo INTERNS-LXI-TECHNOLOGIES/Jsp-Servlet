@@ -1,0 +1,10 @@
+[INFO ] 2018-07-06 23:41:32.986 [http-bio-8080-exec-3] SingleController - doGet
+[INFO ] 2018-07-06 23:41:32.994 [http-bio-8080-exec-3] SingleController - showContactsPage
+[INFO ] 2018-07-06 23:41:32.994 [http-bio-8080-exec-3] SingleController - readAll
+[INFO ] 2018-07-06 23:41:32.998 [http-bio-8080-exec-3] ContactService - readAll
+[INFO ] 2018-07-06 23:41:32.998 [http-bio-8080-exec-3] ContactRepository - findAll
+[INFO ] 2018-07-06 23:41:32.999 [http-bio-8080-exec-3] ContactRepository - connect
+[INFO ] 2018-07-06 23:41:33.001 [http-bio-8080-exec-3] DatabaseUtils - maven-connect
+[INFO ] 2018-07-06 23:41:33.003 [http-bio-8080-exec-3] DatabaseUtils - hii
+[INFO ] 2018-07-06 23:41:33.483 [http-bio-8080-exec-3] ContactRepository - disconnect
+[INFO ] 2018-07-06 23:41:33.610 [http-bio-8080-exec-3] DatabaseUtils - disconnect
