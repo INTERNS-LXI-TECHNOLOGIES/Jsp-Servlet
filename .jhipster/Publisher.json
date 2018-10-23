@@ -1,0 +1,28 @@
+{
+    "name": "Publisher",
+    "fields": [
+        {
+            "fieldName": "publisherName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "books",
+            "otherEntityName": "book",
+            "otherEntityRelationshipName": "publisher"
+        }
+    ],
+    "changelogDate": "20181009161222",
+    "javadoc": "Publisher entity.\n@author Ruhail.",
+    "entityTableName": "publisher",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myjhipsterapp",
+    "applications": "*",
+    "microserviceName": "myjhipsterapp"
+}

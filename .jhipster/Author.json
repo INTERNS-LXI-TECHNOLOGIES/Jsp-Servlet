@@ -1,0 +1,32 @@
+{
+    "name": "Author",
+    "fields": [
+        {
+            "fieldName": "authorName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "books",
+            "otherEntityName": "book",
+            "otherEntityRelationshipName": "author"
+        }
+    ],
+    "changelogDate": "20181009161221",
+    "javadoc": "Author entity.\n@author Ruhail.",
+    "entityTableName": "author",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myjhipsterapp",
+    "applications": "*",
+    "microserviceName": "myjhipsterapp"
+}

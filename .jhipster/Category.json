@@ -1,0 +1,29 @@
+{
+    "name": "Category",
+    "fields": [
+        {
+            "fieldName": "categoryName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "books",
+            "otherEntityName": "book",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "categories"
+        }
+    ],
+    "changelogDate": "20181009161223",
+    "javadoc": "Category entity.\n@author Ruhail.",
+    "entityTableName": "category",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myjhipsterapp",
+    "applications": "*",
+    "microserviceName": "myjhipsterapp"
+}

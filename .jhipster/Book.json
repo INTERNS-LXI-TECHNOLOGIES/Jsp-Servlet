@@ -1,0 +1,46 @@
+{
+    "name": "Book",
+    "fields": [
+        {
+            "fieldName": "bookName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "author",
+            "otherEntityName": "author",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "publisher",
+            "otherEntityName": "publisher",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "books",
+            "relationshipName": "categories",
+            "otherEntityName": "category",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20181009161220",
+    "javadoc": "Book entity.\n@author Ruhail.",
+    "entityTableName": "book",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myjhipsterapp",
+    "applications": "*",
+    "microserviceName": "myjhipsterapp"
+}

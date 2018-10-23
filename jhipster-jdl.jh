@@ -1,0 +1,45 @@
+/**
+ * Book entity.
+ * @author Ruhail.
+ */
+ 
+entity Book {
+	bookName String,
+    price Integer
+}
+/**
+ * Author entity.
+ * @author Ruhail.
+ */
+ 
+entity Author{
+	authorName String,
+    phoneNumber Long
+}
+/**
+ * Publisher entity.
+ * @author Ruhail.
+ */
+ 
+entity Publisher{
+	publisherName String
+}
+/**
+ * Category entity.
+ * @author Ruhail.
+ */
+ 
+entity Category{
+ 	categoryName String
+}
+relationship ManyToOne{
+	Book{author} to Author{books},
+    Book{publisher} to Publisher{books}
+}
+relationship ManyToMany{
+	Book{categories} to Category{books}
+}
+
+dto * with mapstruct 
+service *  with serviceImpl 
+paginate * with pagination
