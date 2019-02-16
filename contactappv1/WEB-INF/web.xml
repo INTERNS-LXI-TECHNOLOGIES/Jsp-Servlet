@@ -9,7 +9,7 @@
 <servlet>
 
 	<servlet-name>AddController</servlet-name>
-	<servlet-class>com.lxisoft.controller.AddController</servlet-class>
+	<servlet-class>com.lxisoft.controller.AddServlet</servlet-class>
 
 </servlet>
 
@@ -17,6 +17,20 @@
 
 	<servlet-name>AddController</servlet-name>
 	<url-pattern>/Add</url-pattern>
+
+</servlet-mapping>
+
+<servlet>
+
+	<servlet-name>viewController</servlet-name>
+	<servlet-class>com.lxisoft.controller.ContactDetailServlet</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>viewController</servlet-name>
+	<url-pattern>/View</url-pattern>
 
 </servlet-mapping>
 

@@ -1,4 +1,4 @@
-
+package com.lxisoft.model;
 
 public class Contact{
 	private String name;
@@ -25,5 +25,7 @@ public class Contact{
 	public String getNumber() {
         return phNumber;
     }
-
+public String toString(){
+	return name+" "+phNumber+" ";
+}
 }
