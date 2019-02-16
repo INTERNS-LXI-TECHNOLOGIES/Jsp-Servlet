@@ -4,7 +4,7 @@
 	<title> Add Details</title>
 </head>
 <body>
-<form method="Post" action="AddContact">
+<form method="post" action="AddContact">
 	Name: <input type="text" name="name">
 	Phone Number: <input type="text" name="phno">
 	<input type="submit" name="add">

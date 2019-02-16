@@ -12,12 +12,14 @@ public class AddContact extends HttpServlet{
 
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
 
+		PrintWriter out=response.getWriter();
 		ArrayList<Contact> list=new ArrayList<Contact>();
 		String name=request.getParameter("name");
 		String phno=request.getParameter("phno");
 
 		Contact contact=new Contact(name,phno);
 		list.add(contact);
+		request.getRequestDispatcher("/home.html?saved").forward(request,response);
 
 	}
 }
