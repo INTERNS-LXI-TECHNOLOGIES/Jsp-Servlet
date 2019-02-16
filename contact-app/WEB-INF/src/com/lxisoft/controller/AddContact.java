@@ -1,8 +1,10 @@
+package com.lxisoft.controller;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import javax.servlet.annotation.WebServlet;
-import java.util.ArraList;
+import java.util.ArrayList;
+import com.lxisoft.model.Contact;
 
 
 public class AddContact extends HttpServlet{

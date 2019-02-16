@@ -1,3 +1,4 @@
+package com.lxisoft.model;
 public class Contact{
 
 	private String name;
