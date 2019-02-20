@@ -4,6 +4,7 @@
 	<title>success</title>
 </head>
 <body>
-	<% out.println("saved"); %>
+	<% out.println("Contact Saved"); %>
+	<a href="home.html">Home</a>
 </body>
 </html>

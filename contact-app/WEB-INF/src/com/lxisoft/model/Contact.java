@@ -17,4 +17,8 @@ public class Contact{
 
 		return phno;
 	}
+	public String toString(){
+
+		return name+" "+phno;
+	}
 }
