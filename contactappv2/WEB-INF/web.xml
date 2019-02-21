@@ -18,4 +18,18 @@
 	<url-pattern>/Add</url-pattern>
 
 </servlet-mapping>
+
+<servlet>
+
+	<servlet-name>View</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.ViewContactServlet</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>View</servlet-name>
+	<url-pattern>/View</url-pattern>
+
+</servlet-mapping>
 </web-app>

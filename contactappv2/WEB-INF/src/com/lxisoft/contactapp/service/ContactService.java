@@ -9,11 +9,21 @@ public class ContactService{
 	ContactRepo contactRepo= new ContactRepo();
 	ArrayList<Contact> contactList;
 	Contact contact;
-	public void save(String name,String phone,String number,String email){
-		contact=new Contact(name,phone,number,email);
-		contactRepo.addToFile(name,phone,number,email);
+	public String save(String name,String phone,String number,String email){
+
+	
+		String a=contactRepo.addToFile(name,phone,number,email);
+		System.out.println(a);
+		return a;
+	}
+	
+	public void viewContactList(){
 		
+		contactList = contactRepo.loadFile();
 		
+		/*For(Contact contact : contactList){
+			System.out.println(contact.getName());
+		}*/
 	}
 	
 	
