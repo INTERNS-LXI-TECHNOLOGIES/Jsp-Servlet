@@ -6,7 +6,7 @@
   metadata-complete="true">
   <servlet>
       <servlet-name>AddContactServlet</servlet-name>
-      <servlet-class>com.lxisoft.controller.AddContactServlet</servlet-class>
+      <servlet-class>com.lxisoft.web.AddContactServlet</servlet-class>
     </servlet>
      <servlet-mapping>
         <servlet-name>AddContactServlet</servlet-name>

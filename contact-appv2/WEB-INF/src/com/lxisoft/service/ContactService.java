@@ -1,14 +1,22 @@
 package com.lxisoft.service;
 
+import java.util.ArrayList;
 import com.lxisoft.repository.ContactRepository;
 import com.lxisoft.model.Contact;
 
 public class ContactService{
 
-	ContactRepository repo;
+	ContactRepository repo=new ContactRepository();
+	ArrayList<Contact> conList;
 
-	public void addContact(Contact contact){
+	public String  addContact(Contact contact){
 
-		repo.addToFile(contact);
+		String save=repo.addToFile(contact);
+		return save;
+	}
+	public ArrayList<Contact> getContact(){
+
+		conList=repo.getFromFile();
+		return conList;
 	}
 }
