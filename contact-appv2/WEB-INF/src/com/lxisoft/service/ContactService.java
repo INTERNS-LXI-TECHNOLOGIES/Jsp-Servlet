@@ -1,5 +1,6 @@
 package com.lxisoft.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import com.lxisoft.repository.ContactRepository;
 import com.lxisoft.model.Contact;
@@ -18,5 +19,10 @@ public class ContactService{
 
 		conList=repo.getFromFile();
 		return conList;
+	}
+	public String removeContact(String name){
+
+		String delete=repo.removeFromFile(name);
+		return delete;
 	}
 }

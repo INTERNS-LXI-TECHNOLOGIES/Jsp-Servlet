@@ -12,5 +12,13 @@
         <servlet-name>AddContactServlet</servlet-name>
         <url-pattern>/AddContact</url-pattern>
     </servlet-mapping>
+      <servlet>
+      <servlet-name>DeleteContactServlet</servlet-name>
+      <servlet-class>com.lxisoft.web.DeleteContactServlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>DeleteContactServlet</servlet-name>
+        <url-pattern>/DeleteContact</url-pattern>
+    </servlet-mapping>
      
 </web-app>

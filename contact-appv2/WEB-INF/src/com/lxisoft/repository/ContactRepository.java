@@ -7,10 +7,12 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 import com.lxisoft.model.Contact;
+import java.io.IOException;
 
 public class ContactRepository{
 
 	File file=new File("D:/Project/tomcat/webapps/contact-appv2/data/ContactList.txt");
+	
 	FileWriter fw=null;
 	BufferedWriter bw=null;
 	FileReader fr=null;
@@ -53,5 +55,38 @@ public class ContactRepository{
 		}
 		return conList;
 
+	}
+	public String removeFromFile(String name){
+
+		ArrayList<Contact> list=null;
+		list=getFromFile();
+		System.out.println(list);
+		
+		try{
+			 fw=new FileWriter(file);
+			 bw=new BufferedWriter(fw);
+	     	 
+	     	 
+	     	 for(int i=0;i<list.size();i++){
+	   
+	      		if(name.equals(list.get(i).getName())){
+
+	      			list.remove(i);
+	   
+	      		}
+	      		System.out.println(list);
+	      		bw.write(list.get(i).getName()+";");
+	      		bw.write(list.get(i).getPhno()+"\n");
+
+	   		 }
+	   		 bw.close();
+	   		 fw.close();
+		}
+		catch(Exception e){
+
+			e.printStackTrace();
+		}
+		String delete="delete";
+		return delete;
 	}
 }
