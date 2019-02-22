@@ -14,7 +14,7 @@
 
 <body>
 
-	<h2 align="center"><i>Add Contact</i></h2></br>
+	<h1 align="center"><i>Add Contact</i></h1></br>
 
 	<form action ="Add" method="post">
 		Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text"   placeholder="Name" name= "name"></br></br>

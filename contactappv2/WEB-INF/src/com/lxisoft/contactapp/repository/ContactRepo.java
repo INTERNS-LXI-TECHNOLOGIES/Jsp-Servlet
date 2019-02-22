@@ -16,14 +16,13 @@ public class ContactRepo{
 	BufferedWriter bw=null;
 	FileReader fr=null;
 	BufferedReader br=null;
-	ArrayList<Contact> contactList;
 	Contact contact;
 	public String addToFile(String name,String phone,String number,String email){
 		
 	try{
 	fw=new FileWriter(contactDetails,true);
 	bw=new BufferedWriter(fw);
-	bw.write(name+","+phone+","+number+","+email);
+	bw.write(name+";"+phone+";"+number+";"+email);
 	bw.newLine();
 	}catch(IOException e){
 			System.out.println("Error");	
@@ -40,20 +39,19 @@ public class ContactRepo{
 	return save;
 	}
 	
-	public ArrayList<Contact> loadFile(){
+	public ArrayList<Contact> getFromFile(){
+		ArrayList<Contact> contactList= null;
 		String line;
-		
-		try{	
+		try{
+		contactList=new ArrayList<Contact>();	
 		fr=new FileReader(contactDetails);
 		br=new BufferedReader(fr);	
 		while((line=br.readLine())!=null){
-		String[] data = line.split(",");
-		
-		contact= new Contact(data[0],data[1],data[2],data[3]);}
-		contactList= new ArrayList<Contact>();
+		String[] data = line.split(";");
+		contact= new Contact(data[0],data[1],data[2],data[3]);
 		contactList.add(contact);
+		}
 		}catch(IOException e){
-			
 			System.out.println("Error");}
 		return contactList;			
 	}

@@ -1,6 +1,6 @@
 package com.lxisoft.contactapp.model;
 
-public class Contact{
+public class Contact implements Comparable<Contact>{
 private String name;
 private String phone;
 private String number;
@@ -13,16 +13,9 @@ private String email;
 		this.email=email;
 	}
 
-	/*public void setName(String name) {
-        this.name = name;
-    }*/
 	public String getName() {
         return name;
     }
-
-	/*public void setEmail(String email) { 
-        this.email = email;
-    }*/
 	
 	public String getEmail() {
         return email;
@@ -31,20 +24,44 @@ private String email;
 	public String getPhone() {
         return phone;
     }
-
-	/*public void setPhone(String phone) {
-        this.phone = phone;
-    }
 	
-	public void setNumber(String number) {
-        this.number = number;
-    }*/
 	public String getNumber() {
         return number;
     }
 	
-	
 	public String toString(){
 	return name+" "+phone+" "+number+" "+email+" ";
 	}
+	
+	 public int compareTo(Contact contact){ 
+        return name.compareTo(contact.getName()); 
+    } 
+	
+	public boolean equals(Object o) {
+		
+		Contact contact=(Contact)o;
+		if(o==null){
+			return false;}
+		if(this==o){
+			return true;}
+		if(name.equals(contact.name)){
+			return true;}	
+		else {
+			return false;}
+	}
+	/*public int hashCode() {
+		int result=0;
+		if(phone==Land-Line){
+			result=1;
+			return result;
+		}
+		if(phone==Mobile){
+			result=2;
+			return result;
+		}
+		else{
+			return result;
+		}
+		
+	}*/
 }

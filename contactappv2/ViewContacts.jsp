@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> View Contacts </title>
+<title> Add Contact </title>
 </head>
 	<style>
 		body
@@ -10,12 +10,17 @@
 			}
 	</style>	
 
-<%@  page import = "com.lxisoft.controller.*,java.util.*,com.lxisoft.model.*"%>
+<%@  page import = "com.lxisoft.contactapp.web.*,java.util.*,com.lxisoft.contactapp.model.*,javax.servlet.ServletException,javax.servlet.http.* "%>
+
 <body>
-
-	<h2 align="center"><i>Contact</i></h2></br>
-
-	<form action ="View" method="post">
+	<h1 align="center"><i>Contacts</i></h1></br>
+	<form action ="Add" method="post">
+	<% 
+	Object rs=session.getAttribute("contactList");
+	out.println(rs);
+	%>
 	
-	</body>
-	</html>
+	</form>
+</body>
+
+</html>

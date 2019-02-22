@@ -1,30 +1,14 @@
-simi,Land-Line,04885 234905,kjsd@lds.com
-achu,Land-Line,00943734292,achu@12.com
-null,null,null,null
-sd,Land-Line,234243542,
-,Land-Line,,
-kjdjk,Land-Line,,
-ksak,Land-Line,988973278,
-anju,Mobile,9854785467,jl@jds.xoc
-Deepthi ,Land-Line,9867568756,afes@dgh.com
-jlf,Land-Line,792893200210,9-329JL@sll
-,Land-Line,,jlds@kl.dl
-jdld,Land-Line,8932821992,
-,Land-Line,0329,
-Deepthi ,Land-Line,9867568756,fhhn@jjj.hiouj
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Mobile,9867568756,deepthievijayan@gmail.com
-Deepthi ,Land-Line,04885 234905,afes@dgh.com
-Deepthi ,Land-Line,9867568756,afes@dgh.com
-Deepthi ,Land-Line,04885 234905,kjsd@lds.com
-Deepthi ,Land-Line,04885 234905,kjsd@lds.com
+Deepthi ;Mobile;9867568756;deepthievijayan@gmail.com
+Deepthi ;Land-Line;04885 234905;afes@dgh.com
+Deepthi ;Land-Line;9867568756;afes@dgh.com
+Deepthi ;Land-Line;04885 234905;kjsd@lds.com
+Deepthi ;Land-Line;04885 234905;kjsd@lds.com
+archana;Mobile;09328929292;jsdlj@kjd
+achu;Land-Line;9867568756;afes@dgh.com
+qwer;Mobile;8935793589;jl@jds.xocanish;Mobile;9867568756;kjsd@lds.com
+achu;Mobile;00943734292;afes@dgh.com
+anish m;Mobile;9048442811;null
+achu;Mobile;null;null
+null;Land-Line;9867568756;null
+sfjlfs;Land-Line;kllkdskl;klsdkl@klsd.cjk
+sdddwd;Land-Line;ewe;kjsd@lds.com

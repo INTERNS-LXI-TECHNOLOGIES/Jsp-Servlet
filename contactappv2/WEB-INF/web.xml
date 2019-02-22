@@ -7,29 +7,24 @@
 
 <servlet>
 
-	<servlet-name>Add</servlet-name>
-	<servlet-class>com.lxisoft.contactapp.web.AddContactServlet</servlet-class>
+	<servlet-name>ContactServlet</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.ContactServlet</servlet-class>
 
 </servlet>
 
 <servlet-mapping>
 
-	<servlet-name>Add</servlet-name>
+	<servlet-name>ContactServlet</servlet-name>
 	<url-pattern>/Add</url-pattern>
 
 </servlet-mapping>
 
-<servlet>
-
-	<servlet-name>View</servlet-name>
-	<servlet-class>com.lxisoft.contactapp.web.ViewContactServlet</servlet-class>
-
-</servlet>
-
 <servlet-mapping>
 
-	<servlet-name>View</servlet-name>
+	<servlet-name>ContactServlet</servlet-name>
 	<url-pattern>/View</url-pattern>
 
 </servlet-mapping>
+
+
 </web-app>

@@ -17,13 +17,9 @@ public class ContactService{
 		return a;
 	}
 	
-	public void viewContactList(){
-		
-		contactList = contactRepo.loadFile();
-		
-		/*For(Contact contact : contactList){
-			System.out.println(contact.getName());
-		}*/
+	public ArrayList<Contact> getContactList(){
+		contactList = contactRepo.getFromFile();
+		return contactList;
 	}
 	
 	
