@@ -3,10 +3,11 @@
 <head>
 	<title>Delete</title>
 </head>
-<body>
+<body bgcolor="#F08080">
+	<h1>Delete</h1>
 	<form action="DeleteContact">
 		Name: <input type="text" name="name">
-		<button type="submit">Delete </button>
+		<button type="submit">Delete</button>
 	</form>
 </body>
 </html>

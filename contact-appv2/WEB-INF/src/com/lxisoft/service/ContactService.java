@@ -25,4 +25,9 @@ public class ContactService{
 		String delete=repo.removeFromFile(name);
 		return delete;
 	}
+	public String  searchContact(String name){
+
+		String phno=repo.searchFromFile(name);
+		return phno;
+	}
 }

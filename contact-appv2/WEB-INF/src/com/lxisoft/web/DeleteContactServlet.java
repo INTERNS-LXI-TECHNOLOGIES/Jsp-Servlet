@@ -12,7 +12,7 @@ public class DeleteContactServlet extends HttpServlet{
 	ContactService service=new ContactService();
 	ArrayList<Contact> contactList;
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
-
+		
 		String name=request.getParameter("name");
 		String result=service.removeContact(name);
 		HttpSession session = request.getSession();

@@ -20,5 +20,17 @@
         <servlet-name>DeleteContactServlet</servlet-name>
         <url-pattern>/DeleteContact</url-pattern>
     </servlet-mapping>
+     <servlet>
+      <servlet-name>SearchContactServlet</servlet-name>
+      <servlet-class>com.lxisoft.web.SearchContactServlet</servlet-class>
+      <init-param>
+            <param-name>myparam</param-name>
+            <param-value>myvalue</param-value>
+        </init-param>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>SearchContactServlet</servlet-name>
+        <url-pattern>/SearchContact</url-pattern>
+    </servlet-mapping>
      
 </web-app>

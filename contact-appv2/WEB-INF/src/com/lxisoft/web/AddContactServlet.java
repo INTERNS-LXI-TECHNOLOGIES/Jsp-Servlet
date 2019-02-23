@@ -37,7 +37,7 @@ public class AddContactServlet extends HttpServlet{
 		out.println("color:  #191970;");
 		out.println("}");
 		out.println("</style>");
-		out.println("</head>"+"<body bgcolor=#DCDCDC>"+"<a href=Home.jsp>Home</a>"+"<center>"+"<h1>Contact List</h1>"+"</center>");
+		out.println("</head>"+"<body bgcolor=#87CEFA>"+"<a href=Home.jsp>Home</a>"+"<center>"+"<h1>Contact List</h1>"+"</center>");
 		out.println("<center>"+"<table>"+"<tr>"+"<th>Sl.No</th>"+"<th>Name</th>"+"<th>Phno</th>"+"</tr>");
 		for(int i=0;i<contactList.size();i++){
 			out.println("<tr>"+"<td>");

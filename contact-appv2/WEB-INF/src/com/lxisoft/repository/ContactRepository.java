@@ -89,4 +89,18 @@ public class ContactRepository{
 		String delete="delete";
 		return delete;
 	}
+	public String searchFromFile(String name){
+
+		ArrayList<Contact> list=null;
+		list=getFromFile();
+		String phno="";
+		System.out.println(list);
+		for(int i=0;i<list.size();i++){
+			if(name.equals(list.get(i).getName())){
+
+				phno=list.get(i).getPhno();
+			}
+		}
+		return phno;
+	}
 }

@@ -4,7 +4,7 @@
 	<title> Add Details</title>
 
 </head>
-<body>
+<body bgcolor="	#98FB98">
 	<a href="Home.jsp">Home</a>
 	<div style="display: flex; justify-content: center;">
 	<img src="data/addContact.jpg" style="width: 400px; height: 200px;" />
