@@ -11,7 +11,6 @@ public class ContactService{
 	Contact contact;
 	public String save(String name,String phone,String number,String email){
 
-	
 		String a=contactRepo.addToFile(name,phone,number,email);
 		System.out.println(a);
 		return a;
@@ -21,7 +20,11 @@ public class ContactService{
 		contactList = contactRepo.getFromFile();
 		return contactList;
 	}
-	
+	public String removeContact(String name){
+
+		String delete=contactRepo.removeFromFile(name);
+		return delete;
+	}
 	
 	
 	

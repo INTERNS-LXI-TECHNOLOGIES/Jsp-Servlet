@@ -13,12 +13,13 @@
 <%@  page import = "com.lxisoft.contactapp.web.*,java.util.*,com.lxisoft.contactapp.model.*,javax.servlet.ServletException,javax.servlet.http.* "%>
 
 <body>
-	<h1 align="center"><i>Contacts</i></h1></br>
 	<form action ="Add" method="post">
-	<% 
-	Object rs=session.getAttribute("contactList");
-	out.println(rs);
-	%>
+	
+	<input type="text" placeholder="Search name" name= "searchName">
+	
+	<a href="DeleteServlet"><img src="/contactappv2/images/search1.png" height="20" width></a> <br><br>
+	
+	<a href="Home.jsp"><center><img src="/contactappv2/images/homeIcon.ico" height="70" width></a>
 	
 	</form>
 </body>

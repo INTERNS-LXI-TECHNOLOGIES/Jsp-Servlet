@@ -4,11 +4,25 @@
 <title> Add Contact </title>
 </head>
 	<style>
+	
 		body
 			{
 			background-color:cyan;
-			}
-	</style>	
+			}			
+/* CSS */
+.buttonStyle {
+  color: #FFF;
+  background: #999;
+  font-weight: bold;
+  border: 1px solid #900;
+}
+ 
+.buttonStyle:hover {
+  color: #FFF;
+  background: #900;
+}
+	</style>
+	
 
 <%@  page import = "com.lxisoft.contactapp.web.*,java.util.*,com.lxisoft.contactapp.model.*,javax.servlet.ServletException,javax.servlet.http.* "%>
 
@@ -29,10 +43,13 @@
 		
 		
 		</br></br>
-	   <input align="left" type="submit"/> <input type="reset"/><br><br>
+		
+		<button class=buttonStyle type="submit">Save</button><input type="reset"/><br><br>
+
 	   
 	   	<% 
 	Object rs=null;
+	
 	rs=session.getAttribute("result");
 	if(rs=="save")
 	{%>

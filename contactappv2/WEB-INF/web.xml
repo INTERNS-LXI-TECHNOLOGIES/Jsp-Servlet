@@ -26,5 +26,33 @@
 
 </servlet-mapping>
 
+<servlet>
+
+	<servlet-name>SearchServlet</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.SearchServlet</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>SearchServlet</servlet-name>
+	<url-pattern>/Search</url-pattern>
+
+</servlet-mapping>
+
+<servlet>
+
+	<servlet-name>DeleteServlet</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.DeleteServlet</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>DeleteServlet</servlet-name>
+	<url-pattern>/Delete</url-pattern>
+
+</servlet-mapping>
+
 
 </web-app>

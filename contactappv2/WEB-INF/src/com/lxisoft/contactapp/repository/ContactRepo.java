@@ -56,4 +56,38 @@ public class ContactRepo{
 		return contactList;			
 	}
 	
+public String removeFromFile(String name){
+
+		ArrayList<Contact> list=null;
+		list=getFromFile();
+		System.out.println(list);
+
+		try{
+			 fw=new FileWriter(contactDetails,true);
+			 bw=new BufferedWriter(fw);
+
+
+	     	 for(int i=0;i<list.size();i++){
+
+	      		if(name.equals(list.get(i).getName())){
+
+	      			list.remove(i);
+
+	      		}
+	      		System.out.println(list);
+	      		bw.write(list.get(i).getName()+";");
+	      		bw.write(list.get(i).getPhone()+"\n");
+
+	   		 }
+	   		 bw.close();
+	   		 fw.close();
+		}
+		catch(Exception e){
+
+			e.printStackTrace();
+		}
+		String delete="delete";
+		return delete;
+	}
+	
 }

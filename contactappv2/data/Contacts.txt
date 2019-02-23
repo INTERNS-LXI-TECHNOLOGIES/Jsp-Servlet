@@ -12,3 +12,12 @@ achu;Mobile;null;null
 null;Land-Line;9867568756;null
 sfjlfs;Land-Line;kllkdskl;klsdkl@klsd.cjk
 sdddwd;Land-Line;ewe;kjsd@lds.com
+null;Land-Line;null;null
+null;Land-Line;null;null
+null;null;null;null
+dsfsfs;Mobile;988973278;afes@dgh.com
+abc;Land-Line;04662314234;abc@fn.vn
+anish;Land-Line;null;null
+anish;Mobile;9048442811;mohammedanish000@gmail.com
+anish;Mobile;9048442811;anish@gmail.com
+anish;Mobile;9048442811;anish@gmail.com
