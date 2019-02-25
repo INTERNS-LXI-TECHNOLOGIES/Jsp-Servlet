@@ -12,6 +12,7 @@ public class ContactRepo{
 	
 	
 	File contactDetails=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/Contacts.txt");
+	File tempFile=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/TempFile.txt");
 	FileWriter fw=null;
 	BufferedWriter bw=null;
 	FileReader fr=null;
@@ -51,43 +52,33 @@ public class ContactRepo{
 		contact= new Contact(data[0],data[1],data[2],data[3]);
 		contactList.add(contact);
 		}
+		fr.close();br.close();
 		}catch(IOException e){
 			System.out.println("Error");}
 		return contactList;			
 	}
 	
-public String removeFromFile(String name){
-
-		ArrayList<Contact> list=null;
-		list=getFromFile();
-		System.out.println(list);
-
-		try{
-			 fw=new FileWriter(contactDetails,true);
-			 bw=new BufferedWriter(fw);
-
-
-	     	 for(int i=0;i<list.size();i++){
-
-	      		if(name.equals(list.get(i).getName())){
-
-	      			list.remove(i);
-
-	      		}
-	      		System.out.println(list);
-	      		bw.write(list.get(i).getName()+";");
-	      		bw.write(list.get(i).getPhone()+"\n");
-
-	   		 }
-	   		 bw.close();
-	   		 fw.close();
+public String removeFromFile(String name) throws IOException{
+	String currentLine;
+		String delete=" ";
+		fr=new FileReader(contactDetails);
+		br=new BufferedReader(fr);
+		bw=new BufferedWriter(new FileWriter(tempFile));
+		while((currentLine=br.readLine())!=null){
+			if(!currentLine.contains(name)){ System.out.println(currentLine);
+					 bw.write(currentLine + System.getProperty("line.separator"));}
+					 if(currentLine.contains(name)){
+						 delete="Delete";
+					 }
 		}
-		catch(Exception e){
-
-			e.printStackTrace();
-		}
-		String delete="delete";
-		return delete;
+		fr.close();br.close();
+		bw.close();
+		if(contactDetails.delete()){
+			System.out.println("Success");
+			}else{
+			System.out.println("file exist");}		
+		boolean successful = tempFile.renameTo(contactDetails);
+        System.out.println(successful);
+		return delete;		
 	}
-	
 }

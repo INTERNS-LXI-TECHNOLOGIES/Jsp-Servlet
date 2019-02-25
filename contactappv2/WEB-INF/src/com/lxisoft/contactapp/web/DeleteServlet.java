@@ -13,12 +13,20 @@ public class DeleteServlet extends HttpServlet{
 	ContactService contactService = new ContactService();
 	
 	ArrayList<Contact> contactList=null;
+	ArrayList<Contact> con=null;
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	response.setContentType("text/html"); 
 	PrintWriter out = response.getWriter();
-	HttpSession session = request.getSession();
+	String deleteName=request.getParameter("deleteName");
+	out.println(deleteName);
 	contactList=contactService.getContactList();
-	
+	for(Contact contact:contactList){
+	      		if(contact.getName().equals(deleteName)){
+					String delete=contactService.removeContact(deleteName);
+					out.println(delete);
+				}
+	}
 	
 	}
+	
 }

@@ -2,6 +2,7 @@ package com.lxisoft.contactapp.service;
 import com.lxisoft.contactapp.repository.ContactRepo;
 import java.util.ArrayList;
 import com.lxisoft.contactapp.model.Contact;
+import java.io.*;
 
 
 public class ContactService{
@@ -20,7 +21,7 @@ public class ContactService{
 		contactList = contactRepo.getFromFile();
 		return contactList;
 	}
-	public String removeContact(String name){
+	public String removeContact(String name) throws IOException{
 
 		String delete=contactRepo.removeFromFile(name);
 		return delete;

@@ -49,19 +49,4 @@ private String email;
 		else {
 			return false;}
 	}
-	/*public int hashCode() {
-		int result=0;
-		if(phone==Land-Line){
-			result=1;
-			return result;
-		}
-		if(phone==Mobile){
-			result=2;
-			return result;
-		}
-		else{
-			return result;
-		}
-		
-	}*/
 }

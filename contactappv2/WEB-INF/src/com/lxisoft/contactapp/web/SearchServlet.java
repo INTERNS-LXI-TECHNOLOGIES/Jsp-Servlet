@@ -27,15 +27,15 @@ public class SearchServlet extends HttpServlet{
 	out.println("<tr>"+"<th>Name</th>"+"<th>Number</th>"+"</tr>");
 	
 	String searchName=request.getParameter("searchName");
-	//out.println(searchName);
 	for(int i=0;i<contactList.size();i++){
 	      		if(contactList.get(i).getName().contains(searchName)){
 					out.println("<tr>");
 					out.println("<td>"+contactList.get(i).getName()+"</td>");
 					out.println("<td>"+contactList.get(i).getNumber()+"</td>");
+					//<input type="button" name="bt" value="gi" onclick="{document.frm.hdnbt.value=this.value;document.frm.submit();}" />
+					out.println("<td>"+"<a href='Delete' ><img src='/contactappv2/images/delete.png' height='20' width></a>"+"</td>");	
 					out.println("</tr><br><br>");
-	      		}
-				
+	      		}		
 	}
 	searchName=" ";
 	out.println("</table>"+"</body>"+"</html>");
