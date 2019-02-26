@@ -12,31 +12,33 @@ public class ContactServlet extends HttpServlet{
 	
 	ContactService contactService = new ContactService();
 	ArrayList<Contact> contactList;
+	ArrayList<Contact> conList;
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	response.setContentType("text/html"); 
-	PrintWriter out = response.getWriter();
-	HttpSession session = request.getSession();
-	contactList=contactService.getContactList();
-	out.println("<html>"+"<head>"+"<title> Contacts </title>");
-	out.println("<style> ");
-	out.println("table,th,td{");
-	out.println("border: 1px solid black;");
-	out.println("</style>"+"</head>"+"<body bgcolor='cyan'>"+"<h1><i>Contacts</h1>"+"<table>");
-	out.println("<form action='Search'>"+"<input type='text' placeholder='Search name' name= 'searchName'>");
-	out.println("<button type='submit'><img src='/contactappv2/images/search1.png' height='20' width></button>"+"</form><br>");
-	out.println("<a href='Home.jsp'><center><img src='/contactappv2/images/homeIcon.ico' height='30' width></a>");
-	out.println("<a href='DeleteContact.jsp'><img src='/contactappv2/images/delete.png' height='30' width></a>");
-	out.println("<tr>"+"<th>Name</th>"+"<th>Number</th>"+"</tr>");
-	
-	for(Contact contact:contactList){
-		out.println("<tr>");
-		out.println("<td>"+contact.getName()+"</td>");
-		out.println("<td>"+contact.getNumber()+"</td>");
-		out.println("</tr>");
-	}
-	out.println("</table>"+"</body>"+"</html>");
-	out.close();
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		String editName=request.getParameter("editName");
+		HttpSession session = request.getSession();
+		contactList=contactService.getContactList();
+		for(Contact cont:contactList){
+			if(cont.getName().equals(editName)){
+				out.print("<form action='Update' method='post'>");
+				out.print("<table>");
+				out.print("<tr><td>Name:<input type='text' name='updateName' value='"+cont.getName()+"'/></td></tr>");
+				out.print("<tr><td>Phone:");
+				out.print("<select name='updatePhone'>");
+				out.print("<option>Land-Line</option>");
+				out.print("<option>Mobile</option>");
+				out.print("<option>Other</option>");
+				out.print("</select>");
+				out.print("</td></tr>");
+				out.print("<tr><td>Number:<input type='tel' name='updateNumber' value='"+cont.getNumber()+"'/></td></tr>");
+				out.print("<tr><td>Email:<input type='email' name='updateEmail' value='"+cont.getEmail()+"'/></td></tr>");
+				out.print("<tr><td><input type='submit' value='Save'/></td></tr>");
+				out.print("</table>");
+				out.print("</form>");
+			}
+		}
 	}	
 
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException 

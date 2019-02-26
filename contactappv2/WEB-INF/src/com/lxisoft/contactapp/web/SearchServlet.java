@@ -10,7 +10,7 @@ import javax.servlet.RequestDispatcher;
 
 public class SearchServlet extends HttpServlet{
 	
-	ContactService contactService = new ContactService();
+	ContactService contactService=new ContactService();
 	
 	ArrayList<Contact> contactList=null;
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,8 +18,7 @@ public class SearchServlet extends HttpServlet{
 	PrintWriter out = response.getWriter();
 	HttpSession session = request.getSession();
 	contactList=contactService.getContactList();
-	
-	out.println("<html>"+"<head>"+"<title> Contacts </title>");
+	out.println("<html>"+"<head>"+"<title> Search Result</title>");
 	out.println("<style> ");
 	out.println("table,th,td{");
 	out.println("border: 1px solid black;");
@@ -31,9 +30,7 @@ public class SearchServlet extends HttpServlet{
 	      		if(contactList.get(i).getName().contains(searchName)){
 					out.println("<tr>");
 					out.println("<td>"+contactList.get(i).getName()+"</td>");
-					out.println("<td>"+contactList.get(i).getNumber()+"</td>");
-					//<input type="button" name="bt" value="gi" onclick="{document.frm.hdnbt.value=this.value;document.frm.submit();}" />
-					out.println("<td>"+"<a href='Delete' ><img src='/contactappv2/images/delete.png' height='20' width></a>"+"</td>");	
+					out.println("<td>"+contactList.get(i).getNumber()+"</td>");	
 					out.println("</tr><br><br>");
 	      		}		
 	}

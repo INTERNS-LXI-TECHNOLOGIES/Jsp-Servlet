@@ -13,7 +13,7 @@
 </head>
 	<a href="AddContact.jsp"><center><img src="/contactappv2/images/add2.png" height="60" width></a></a>
   
-    <a href="View"><img src="/contactappv2/images/contacts.png" height="70" width></a>
+    <a href="ContactDetails.jsp"><img src="/contactappv2/images/contacts.png" height="70" width></a>
     
 	
 </body>

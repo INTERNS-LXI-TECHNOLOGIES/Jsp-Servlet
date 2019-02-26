@@ -22,9 +22,10 @@
 <servlet-mapping>
 
 	<servlet-name>ContactServlet</servlet-name>
-	<url-pattern>/View</url-pattern>
+	<url-pattern>/Edit</url-pattern>
 
 </servlet-mapping>
+
 
 <servlet>
 
@@ -42,15 +43,22 @@
 
 <servlet>
 
-	<servlet-name>DeleteServlet</servlet-name>
-	<servlet-class>com.lxisoft.contactapp.web.DeleteServlet</servlet-class>
+	<servlet-name>UpdateServlet</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.UpdateServlet</servlet-class>
 
 </servlet>
 
 <servlet-mapping>
 
-	<servlet-name>DeleteServlet</servlet-name>
+	<servlet-name>UpdateServlet</servlet-name>
 	<url-pattern>/Delete</url-pattern>
+
+</servlet-mapping>
+
+<servlet-mapping>
+
+	<servlet-name>UpdateServlet</servlet-name>
+	<url-pattern>/Update</url-pattern>
 
 </servlet-mapping>
 

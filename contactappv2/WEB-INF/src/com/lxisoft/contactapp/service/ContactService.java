@@ -27,7 +27,22 @@ public class ContactService{
 		return delete;
 	}
 	
-	
-	
+	public String update(String updateName,String updatePhone,String updateNumber,String updateEmail) throws IOException{
+		ArrayList<Contact> clist;
+		clist=contactRepo.getFromFile();
+		for(int i=0;i<clist.size();i++){
+			
+			if((clist.get(i).getName()==updateName)||(clist.get(i).getPhone()==updatePhone)||(clist.get(i).getNumber()==updateNumber)||(clist.get(i).getEmail()==updateEmail)){
+				
+				contact=new Contact(updateName,updatePhone,updateNumber,updateEmail);
+				clist.set(i,contact);
+			}
+			
+		}
+		
+		String update=contactRepo.updateFile(clist);
+		System.out.println(update);
+		return update;
+	}
 	
 }

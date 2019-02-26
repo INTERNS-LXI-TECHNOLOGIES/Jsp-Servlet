@@ -13,13 +13,13 @@ public class ContactRepo{
 	
 	File contactDetails=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/Contacts.txt");
 	File tempFile=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/TempFile.txt");
+	File tempFile1=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/TempFile1.txt");
 	FileWriter fw=null;
 	BufferedWriter bw=null;
 	FileReader fr=null;
 	BufferedReader br=null;
 	Contact contact;
-	public String addToFile(String name,String phone,String number,String email){
-		
+	public String addToFile(String name,String phone,String number,String email){	
 	try{
 	fw=new FileWriter(contactDetails,true);
 	bw=new BufferedWriter(fw);
@@ -58,8 +58,8 @@ public class ContactRepo{
 		return contactList;			
 	}
 	
-public String removeFromFile(String name) throws IOException{
-	String currentLine;
+	public String removeFromFile(String name) throws IOException{
+		String currentLine;
 		String delete=" ";
 		fr=new FileReader(contactDetails);
 		br=new BufferedReader(fr);
@@ -68,7 +68,7 @@ public String removeFromFile(String name) throws IOException{
 			if(!currentLine.contains(name)){ System.out.println(currentLine);
 					 bw.write(currentLine + System.getProperty("line.separator"));}
 					 if(currentLine.contains(name)){
-						 delete="Delete";
+						 delete="delete";
 					 }
 		}
 		fr.close();br.close();
@@ -80,5 +80,24 @@ public String removeFromFile(String name) throws IOException{
 		boolean successful = tempFile.renameTo(contactDetails);
         System.out.println(successful);
 		return delete;		
+	}
+	
+	public String updateFile(ArrayList<Contact> clist)throws IOException{
+
+	fw=new FileWriter(tempFile1);
+	bw=new BufferedWriter(fw);
+	for(Contact con:clist){
+		bw.write(con.getName()+";"+con.getPhone()+";"+con.getNumber()+";"+con.getEmail());
+		bw.newLine();
+	}
+	
+		if(contactDetails.delete()){
+			System.out.println("Success");
+			}else{
+			System.out.println("file exist");}		
+		boolean successful = tempFile1.renameTo(contactDetails);
+	
+	String update="update";
+	return update;
 	}
 }

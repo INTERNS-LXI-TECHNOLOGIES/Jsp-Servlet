@@ -28,15 +28,28 @@
 
 <body>
 
-	<h1 align="center"><i>Delete Contact</i></h1></br>
+	<h1><i>Delete Contact</i></h1></br>
 	<form action ="Delete" method="Get">
 
-		Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text"  name= "deleteName"></br></br>
-	<button type="submit">Delete</button><input type="reset" value="Cancel"/><br><br>
+		Name:<input type="text"  name= "deleteName"></br></br>
+	<button class="buttonStyle" type="submit">Delete</button><input type="reset" value="Cancel"/><br><br>
 
+	<% 
+	Object rs=null;
+	
+	rs=session.getAttribute("delete");
+	if(rs=="delete")
+	{%>
+		<b><% out.println("Deleted");%></b>
+	
+	<%}
+	session.setAttribute("delete",null);
+	%>
 	</form>
 
-<a href="Home.jsp"><center><img src="/contactappv2/images/homeIcon.ico" height="70" width></a>
+	<a href="ContactDetails.jsp"><img src="/contactappv2/images/contacts.png" height="30" width></a>
+
+    <a href="Home.jsp"><img src="/contactappv2/images/homeIcon.ico" height="30" width></a>
 
 </body>
 
