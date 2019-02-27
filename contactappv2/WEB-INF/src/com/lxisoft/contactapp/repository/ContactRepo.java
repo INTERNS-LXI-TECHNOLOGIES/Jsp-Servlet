@@ -84,19 +84,18 @@ public class ContactRepo{
 	
 	public String updateFile(ArrayList<Contact> clist)throws IOException{
 
-	fw=new FileWriter(tempFile1);
-	bw=new BufferedWriter(fw);
+	bw=new BufferedWriter(new FileWriter(tempFile1));
 	for(Contact con:clist){
 		bw.write(con.getName()+";"+con.getPhone()+";"+con.getNumber()+";"+con.getEmail());
 		bw.newLine();
 	}
-	
+	bw.close();
 		if(contactDetails.delete()){
 			System.out.println("Success");
 			}else{
 			System.out.println("file exist");}		
 		boolean successful = tempFile1.renameTo(contactDetails);
-	
+	System.out.println(successful);
 	String update="update";
 	return update;
 	}

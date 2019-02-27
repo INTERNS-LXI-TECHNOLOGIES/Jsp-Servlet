@@ -9,7 +9,7 @@ public class ContactService{
 	
 	ContactRepo contactRepo= new ContactRepo();
 	ArrayList<Contact> contactList;
-	Contact contact;
+	Contact cont;
 	public String save(String name,String phone,String number,String email){
 
 		String a=contactRepo.addToFile(name,phone,number,email);
@@ -30,16 +30,18 @@ public class ContactService{
 	public String update(String updateName,String updatePhone,String updateNumber,String updateEmail) throws IOException{
 		ArrayList<Contact> clist;
 		clist=contactRepo.getFromFile();
+		//System.out.println(clist);
 		for(int i=0;i<clist.size();i++){
 			
-			if((clist.get(i).getName()==updateName)||(clist.get(i).getPhone()==updatePhone)||(clist.get(i).getNumber()==updateNumber)||(clist.get(i).getEmail()==updateEmail)){
+			if((clist.get(i).getName().equals(updateName))||(clist.get(i).getNumber().equals(updateNumber))){
 				
-				contact=new Contact(updateName,updatePhone,updateNumber,updateEmail);
-				clist.set(i,contact);
+				cont=new Contact(updateName,updatePhone,updateNumber,updateEmail);
+				//System.out.println(cont);
+				clist.set(i,cont);
 			}
 			
 		}
-		
+		//System.out.println(clist);
 		String update=contactRepo.updateFile(clist);
 		System.out.println(update);
 		return update;

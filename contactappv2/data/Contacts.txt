@@ -1,17 +1,17 @@
 Deepthi ;Land-Line;04885 234905;kjsd@lds.com
-achu;Land-Line;9867568756;afes@dgh.com
-null;Land-Line;9867568756;null
+anila;Land-Line;9867568756;afes@dgh.com
+anila;Land-Line;9867568756;afes@dgh.com
 sfjlfs;Land-Line;kllkdskl;klsdkl@klsd.cjk
 arathi;Land-Line;09897457438;ar@jksd.kdfj
 ammu;Land-Line;null;null
 arathi;Land-Line;09897457438;nef@knsdk.Cn
 ammu;Land-Line;988665766;mhbuh@gfc.hv
-achu m;Land-Line;9867568756;afes@dgh.com
-anil;Mobile;9867568756;afes@dgh.com
+anila;Land-Line;9867568756;afes@dgh.com
+anila;Land-Line;9867568756;afes@dgh.com
 null;null;null;null
 null;null;null;null
 fhfh;Land-Line;5775768686;null
-anilMurali;Land-Line;9867568756;afes@dgh.com
 anila;Land-Line;9867568756;afes@dgh.com
-pappu;Mobile;9812233456;papu@abc.com
-ramu;Land-Line;9812233456;papu@abc.com
+anila;Land-Line;9867568756;afes@dgh.com
+ramya;Land-Line;9812233456;papu@abc.com
+ashik;Land-Line;9087654567;ashi@a.ca

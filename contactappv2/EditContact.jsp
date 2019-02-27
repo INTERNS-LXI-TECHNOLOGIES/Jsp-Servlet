@@ -45,7 +45,7 @@
 	<%}
 	session.setAttribute("result",null);
 	%>
-	
+	<a href="Home.jsp"><img src="/contactappv2/images/homeIcon.ico" height="30" width></a>
 	</form>
 </body>
 

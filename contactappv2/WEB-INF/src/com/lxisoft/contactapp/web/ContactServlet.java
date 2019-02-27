@@ -23,7 +23,10 @@ public class ContactServlet extends HttpServlet{
 		for(Contact cont:contactList){
 			if(cont.getName().equals(editName)){
 				out.print("<form action='Update' method='post'>");
-				out.print("<table>");
+				out.println("<style> ");
+				out.println("table,th,td{");
+				out.println("border: 1px solid black;");
+				out.println("</style>"+"</head>"+"<body bgcolor='cyan'>"+"<h1><i>Contacts</h1>"+"<table>");
 				out.print("<tr><td>Name:<input type='text' name='updateName' value='"+cont.getName()+"'/></td></tr>");
 				out.print("<tr><td>Phone:");
 				out.print("<select name='updatePhone'>");
