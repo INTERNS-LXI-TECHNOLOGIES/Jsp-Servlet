@@ -25,37 +25,10 @@ public class AddContactServlet extends HttpServlet{
 			}
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
 
-		PrintWriter out=response.getWriter();
 		contactList=service.getContact();
-		HttpSession session = request.getSession();
-		out.println("<html>"+"<head>"+"<title>Contact List</title>");
-		out.println("<style>");
-		out.println("table,th,td{");
-		out.println("border: 1px solid black;");
-		out.println("}");
-		out.println("h1{");
-		out.println("color:  #191970;");
-		out.println("}");
-		out.println("</style>");
-		out.println("</head>"+"<body bgcolor=#87CEFA>"+"<a href=Home.jsp>Home</a>"+"<center>"+"<h1>Contact List</h1>"+"</center>");
-		out.println("<center>"+"<table>"+"<tr>"+"<th>Sl.No</th>"+"<th>Name</th>"+"<th>Phno</th>"+"</tr>");
-		for(int i=0;i<contactList.size();i++){
-			out.println("<tr>"+"<td>");
-			out.println(i+1);
-			out.println("</td>"+"<td>");
-			out.println(contactList.get(i).getName());
-			out.println("</td>"+"<td>");
-			out.println(contactList.get(i).getPhno());
-			out.println("</td>"+"</tr>");
-		}
-		out.println("</table>"+"<a href=Deletecontact.jsp>Delete</a>"+"<br>"+"<br>");
-		Object rs=null;
-		rs=session.getAttribute("result");
-		if(rs=="delete")
-		{
-			out.println("<b>"+"Contact Deleted"+"</b>");
-	   		session.setAttribute("result",null);
-			out.println("</center>"+"</body>"+"</html>");
-		}
+		System.out.println(contactList);
+		request.setAttribute("contactList",contactList);
+		RequestDispatcher rd= request.getRequestDispatcher("contact.jsp");
+		rd.forward(request, response); 
 	}
 }

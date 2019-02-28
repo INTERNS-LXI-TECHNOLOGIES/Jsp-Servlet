@@ -23,8 +23,10 @@
 	{%>
 		<b><% out.println("Saved Successfully");%></b>
 	
-	<%}
+	<%
 	session.setAttribute("result",null);
+}
+	
 	%>
 </form>
 </body>

@@ -9,6 +9,7 @@ public class ContactService{
 
 	ContactRepository repo=new ContactRepository();
 	ArrayList<Contact> conList;
+	ArrayList<String> list;
 
 	public String  addContact(Contact contact){
 
@@ -25,9 +26,15 @@ public class ContactService{
 		String delete=repo.removeFromFile(name);
 		return delete;
 	}
-	public String  searchContact(String name){
+	public ArrayList<String> searchContact(String name){
 
-		String phno=repo.searchFromFile(name);
-		return phno;
+		list=repo.searchFromFile(name);
+		return list;
+	}
+	public String editContact(String upName,String upPhno){
+
+		String result=repo.editFromFile(upName,upPhno);
+
+		return result;
 	}
 }

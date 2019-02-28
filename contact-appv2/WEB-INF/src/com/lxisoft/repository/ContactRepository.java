@@ -60,7 +60,6 @@ public class ContactRepository{
 
 		ArrayList<Contact> list=null;
 		list=getFromFile();
-		System.out.println(list);
 		
 		try{
 			 fw=new FileWriter(file);
@@ -74,7 +73,7 @@ public class ContactRepository{
 	      			list.remove(i);
 	   
 	      		}
-	      		System.out.println(list);
+	      	//	System.out.println(list);
 	      		bw.write(list.get(i).getName()+";");
 	      		bw.write(list.get(i).getPhno()+"\n");
 
@@ -89,18 +88,52 @@ public class ContactRepository{
 		String delete="delete";
 		return delete;
 	}
-	public String searchFromFile(String name){
+	public ArrayList<String> searchFromFile(String name){
 
 		ArrayList<Contact> list=null;
 		list=getFromFile();
+		ArrayList<String> list1=new ArrayList<String>();
 		String phno="";
-		System.out.println(list);
+		String nam="";
 		for(int i=0;i<list.size();i++){
 			if(name.equals(list.get(i).getName())){
 
+				nam=list.get(i).getName();
 				phno=list.get(i).getPhno();
+				list1.add(nam);
+				list1.add(phno);
 			}
 		}
-		return phno;
+		return list1;
+	}
+	public String editFromFile(String upName,String upPhno){
+
+		ArrayList<Contact> list=null;
+		list=getFromFile();
+		try{
+				fw=new FileWriter(file);
+				bw=new BufferedWriter(fw);
+	     	 
+				for(int i=0;i<list.size();i++){
+					if((upName.equals(list.get(i).getName()))||(upPhno.equals(list.get(i).getPhno()))){
+
+						Contact contact=new Contact(upName,upPhno);
+						list.set(i,contact);
+				}
+	      		bw.write(list.get(i).getName()+";");
+	      		bw.write(list.get(i).getPhno()+"\n");
+
+	   		 }
+	   		 bw.close();
+	   		 fw.close();
+	   		}
+		catch(Exception e){
+
+			e.printStackTrace();
+		}
+		String update="update";
+		return update;
+			
+
 	}
 }
