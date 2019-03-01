@@ -18,14 +18,18 @@ public class UpdateServlet extends HttpServlet{
 	PrintWriter out = response.getWriter();
 	String deleteName=request.getParameter("deleteName");
 	contactList=contactService.getContactList();
-
+	String result="";
 	for(Contact con:contactList){
 	      		if(con.getName().equals(deleteName)){
-					String del=contactService.remove(con.getName());
-					request.setAttribute("del", del);
-					request.getRequestDispatcher("DeleteContact.jsp").forward(request, response);}
+					result=contactService.remove(con.getName());
+					HttpSession session = request.getSession();
+					session.setAttribute("result", result);
+					RequestDispatcher rd= request.getRequestDispatcher("DeleteContact.jsp");
+					rd.forward(request, response);
 				}
-	out.println("<a href='Home.jsp'><img src='/contactappv2/images/homeIcon.ico' height='30' width></a>");
+	}
+				System.out.println(result);
+	out.println("<a href='Home.jsp'><img src='/contactappv3/images/homeIcon.ico' height='30' width></a>");
 	out.close();
 	}
 	

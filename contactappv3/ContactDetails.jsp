@@ -45,11 +45,11 @@ th {
 	<h1><i>Contacts</i></h1></br>
 	<table>
 	
-	<a href="Home.jsp"><img src="/contactappv2/images/homeIcon.ico" height="30" width></a>
-	<a href="DeleteContact.jsp"><img src="/contactappv2/images/delete.png" height="30" width></a>
-	<a href="EditContact.jsp"><img src="/contactappv2/images/edit.jpg" height="30" width></a><br>
+	<a href="Home.jsp"><img src="/contactappv3/images/homeIcon.ico" height="30" width></a>
+	<a href="DeleteContact.jsp"><img src="/contactappv3/images/delete.png" height="30" width></a>
+	<a href="EditContact.jsp"><img src="/contactappv3/images/edit.jpg" height="30" width></a><br>
 	<form action="GetAll" method="Get"><input type="text" placeholder="Search Name" name= "searchName">
-	<button type="submit"><img src="/contactappv2/images/search1.png" height="20" width></button> </form><br><br>
+	<button type="submit"><img src="/contactappv3/images/search1.png" height="20" width></button> </form><br><br>
 	
 	
 	

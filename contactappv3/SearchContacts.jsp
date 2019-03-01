@@ -45,9 +45,9 @@
 	}%>
 	</form>
 	
-	<a href="DeleteContact.jsp"><img src="/contactappv2/images/delete.png" height="30" width></a>
-	<a href="EditContact.jsp"><img src="/contactappv2/images/edit.jpg" height="30" width></a><br>
-	<a href="Home.jsp"><img src="/contactappv2/images/homeIcon.ico" height="30" width></a>
+	<a href="DeleteContact.jsp"><img src="/contactappv3/images/delete.png" height="30" width></a>
+	<a href="EditContact.jsp"><img src="/contactappv3/images/edit.jpg" height="30" width></a><br>
+	<a href="Home.jsp"><img src="/contactappv3/images/homeIcon.ico" height="30" width></a>
 	
 	
 </body>

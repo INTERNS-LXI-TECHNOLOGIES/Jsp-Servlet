@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class ContactRepository{
 	
 	
-	File contactDetails=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/Contacts.txt");
-	File tempFile=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/TempFile.txt");
-	File tempFile1=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv2/data/TempFile1.txt");
+	File contactDetails=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv3/data/Contacts.txt");
+	File tempFile=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv3/data/TempFile.txt");
+	File tempFile1=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv3/data/TempFile1.txt");
 	FileWriter fw=null;
 	BufferedWriter bw=null;
 	FileReader fr=null;
@@ -59,16 +59,15 @@ public class ContactRepository{
 	}
 	
 	public String delete(String name) throws IOException{
-		String currentLine;
-		String del=" ";
+		String currentLine,result=" ";
 		fr=new FileReader(contactDetails);
 		br=new BufferedReader(fr);
 		bw=new BufferedWriter(new FileWriter(tempFile));
 		while((currentLine=br.readLine())!=null){
-			if(!currentLine.contains(name)){ System.out.println(currentLine);
+			if(!currentLine.contains(name)){
 					 bw.write(currentLine + System.getProperty("line.separator"));}
 					 if(currentLine.contains(name)){
-						 del="delete";
+						 result="delete";
 					 }
 		}
 		fr.close();br.close();
@@ -79,7 +78,7 @@ public class ContactRepository{
 			System.out.println("file exist");}		
 		boolean successful = tempFile.renameTo(contactDetails);
         System.out.println(successful);
-		return del;		
+		return result;		
 	}
 	
 	public String update(ArrayList<Contact> clist)throws IOException{

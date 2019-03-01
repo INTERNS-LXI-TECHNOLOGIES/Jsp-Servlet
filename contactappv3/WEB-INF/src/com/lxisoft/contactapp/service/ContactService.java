@@ -10,7 +10,7 @@ public class ContactService{
 	ContactRepository contactRepo= new ContactRepository();
 	ArrayList<Contact> contactList;
 	Contact cont;
-	public String save(String name,String phone,String number,String email){
+	public String addContact(String name,String phone,String number,String email){
 
 		String a=contactRepo.save(name,phone,number,email);
 		System.out.println(a);
@@ -22,9 +22,9 @@ public class ContactService{
 		return contactList;
 	}
 	public String remove(String name) throws IOException{
-
-		String del=contactRepo.delete(name);
-		return del;
+		String result=contactRepo.delete(name);
+		System.out.println(result);
+		return result;
 	}
 	
 	public String update(String updateName,String updatePhone,String updateNumber,String updateEmail) throws IOException{

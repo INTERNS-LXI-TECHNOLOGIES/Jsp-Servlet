@@ -34,7 +34,7 @@ public class ContactServlet extends HttpServlet{
 	String phone=request.getParameter("phone"); 
 	String number=request.getParameter("number");  
 	String email=request.getParameter("email");  
-	String result = contactService.save(name,phone,number,email);
+	String result = contactService.addContact(name,phone,number,email);
 	HttpSession session = request.getSession();
 	session.setAttribute("result", result);
     RequestDispatcher rd= request.getRequestDispatcher("AddContact.jsp");

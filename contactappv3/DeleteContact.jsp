@@ -31,13 +31,13 @@
 	<h1><i>Delete Contact</i></h1></br>
 	<form action ="Delete" method="Get">
 
-		Name:<input type="text"  name= "deleteName"></br></br>
+	Name:<input type="text"  name= "deleteName"></br></br>
 	<button class="buttonStyle" type="submit">Delete</button><input type="reset" value="Cancel"/><br><br>
 
 	<% 
 	Object rs=null;
 	
-	rs=session.getAttribute("del");
+	rs=session.getAttribute("result");
 	if(rs=="delete")
 	{%>
 		<b><% out.println("Deleted");%></b>
@@ -47,9 +47,9 @@
 	%>
 	</form>
 
-	<a href="ContactDetails.jsp"><img src="/contactappv2/images/contacts.png" height="30" width></a>
+	<a href="ContactDetails.jsp"><img src="/contactappv3/images/contacts.png" height="30" width></a>
 
-    <a href="Home.jsp"><img src="/contactappv2/images/homeIcon.ico" height="30" width></a>
+    <a href="Home.jsp"><img src="/contactappv3/images/homeIcon.ico" height="30" width></a>
 
 </body>
 
