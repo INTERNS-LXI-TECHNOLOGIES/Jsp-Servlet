@@ -8,31 +8,20 @@ import com.lxisoft.contactapp.service.ContactService;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 
-public class UpdateServlet extends HttpServlet{
-	
-	ContactService contactService = new ContactService();
-	
-	ArrayList<Contact> contactList=null;
+public class EditServlet extends HttpServlet{
+
+		ContactService contactService = new ContactService();
+		ArrayList<Contact> list;
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	response.setContentType("text/html"); 
-	PrintWriter out = response.getWriter();
-	String deleteName=request.getParameter("deleteName");
-	contactList=contactService.getContactList();
-	String result="";
-	for(Contact con:contactList){
-	      		if(con.getName().equals(deleteName)){
-					result=contactService.remove(con.getName());
-					HttpSession session = request.getSession();
-					session.setAttribute("result", result);
-					RequestDispatcher rd= request.getRequestDispatcher("DeleteContact.jsp");
-					rd.forward(request, response);
-				}
+			list=contactService.getContact();
+			String editName=request.getParameter("editName");
+			if(editName!=null){
+					request.setAttribute("list",list);
+					request.setAttribute("editName",editName);
+					RequestDispatcher rd= request.getRequestDispatcher("EditContact1.jsp");
+					rd.forward(request, response);}
 	}
-				System.out.println(result);
-	out.println("<a href='Home.jsp'><img src='/contactappv3/images/homeIcon.ico' height='30' width></a>");
-	out.close();
-	}
-	
+			
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException 
 	{
 	response.setContentType("text/html"); 
@@ -49,4 +38,5 @@ public class UpdateServlet extends HttpServlet{
     rd.forward(request, response);
 	out.close();
 	}
-}
+
+}		

@@ -4,18 +4,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home</title>
+<title>Error</title>
 </head>
 <style>
-		body
-			{ 
-			background-color:cyan;
-			}
-	</style>
-	<h1><center><b>CONTACT APP</h1>	
+	body
+	{ 
+		background-color:lightblue;
+	}
+	h1
+	{
+		color:White;
+		text-align:center;
+	}
+	
+	
+</style>
 <body>
-	<a href="AddContact.jsp"><center><img src="/contactApp/images/add3.jpg" height="40" width></a>
-    
-     <a href="Login.jsp"><img src="/contactApp/images/contacts.png" height="40" width></img></a>
+<div id="top">
+<h1>Contacts</h1>
+<p align="center">
+<a href="Home.jsp"><img src="/contactApp/images/homeIcon.ico" height="30" width></a>
+</br>
+</p>
+</div>
 </body>
 </html>

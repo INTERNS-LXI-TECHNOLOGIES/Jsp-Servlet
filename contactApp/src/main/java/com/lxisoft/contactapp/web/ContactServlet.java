@@ -13,16 +13,11 @@ public class ContactServlet extends HttpServlet{
 	ContactService contactService = new ContactService();
 	ArrayList<Contact> contactList=null;
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String searchName=request.getParameter("searchName"); 
-		String editName=request.getParameter("editName"); 
-		contactList=contactService.getContactList();
-		request.setAttribute("contacts", contactList);
-		if(searchName!=null){
-		request.getRequestDispatcher("SearchContacts.jsp").forward(request, response);}
-		if(editName!=null){
-		request.getRequestDispatcher("EditContact1.jsp").forward(request,response);
-		}
-		
+			
+			contactList=contactService.getContact();
+			request.setAttribute("contactList",contactList);
+			RequestDispatcher rd= request.getRequestDispatcher("ContactDetails.jsp");
+			rd.forward(request, response);
 	}	
 
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException 
@@ -34,7 +29,8 @@ public class ContactServlet extends HttpServlet{
 	String phone=request.getParameter("phone"); 
 	String number=request.getParameter("number");  
 	String email=request.getParameter("email");  
-	String result = contactService.addContact(name,phone,number,email);
+	Contact contact=new Contact(name,phone,number,email);
+	String result = contactService.addContact(contact);
 	HttpSession session = request.getSession();
 	session.setAttribute("result", result);
     RequestDispatcher rd= request.getRequestDispatcher("AddContact.jsp");

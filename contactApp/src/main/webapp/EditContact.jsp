@@ -29,7 +29,7 @@
 <body>
 
 	<h1><i>Edit Contact</i></h1></br>
-	<form action ="GetAll" method="Get">
+	<form action ="Edit" method="Get">
 	
 	Name:<input type="text"  name= "editName"></br></br>
 	<button class="buttonStyle" type="submit">Edit</button><br><br>
@@ -46,7 +46,7 @@
 	<%}
 	session.setAttribute("result",null);
 	%>
-	<a href="Home.jsp"><img src="/contactappv3/images/homeIcon.ico" height="30" width></a>
+	<a href="Home.jsp"><img src="/contactApp/images/homeIcon.ico" height="40" width></a>
 	</form>
 </body>
 

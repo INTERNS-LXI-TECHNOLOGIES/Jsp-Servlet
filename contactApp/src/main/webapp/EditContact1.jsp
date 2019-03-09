@@ -40,14 +40,14 @@ th {
 
 	<%
 	ArrayList<Contact> conlist=new ArrayList<Contact>();
-	conlist=(ArrayList<Contact>)request.getAttribute("contacts");
+	conlist=(ArrayList<Contact>)request.getAttribute("list");
 	String editName=request.getParameter("editName");
 		for(Contact cont:conlist){
 			if(cont.getName().equals(editName)){
 				String phone=cont.getPhone();
 				String number=cont.getNumber();
 				String email=cont.getEmail();%>
-				<form action="Update" method="post">
+				<form action="Edit" method="post">
 				<table>
 				<tr><td>Name:<input type="text" name="updateName" value="<%=cont.getName()%>"/></td></tr>
 				<tr><td>Phone:

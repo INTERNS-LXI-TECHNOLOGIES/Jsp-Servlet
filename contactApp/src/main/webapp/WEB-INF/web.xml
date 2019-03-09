@@ -7,6 +7,7 @@
 <servlet>
 
 	<servlet-name>ContactServlet</servlet-name>
+	
 	<servlet-class>com.lxisoft.contactapp.web.ContactServlet</servlet-class>
 
 </servlet>
@@ -14,42 +15,75 @@
 <servlet-mapping id="ServletMapping_1551943586944">
 
 	<servlet-name>ContactServlet</servlet-name>
+	
 	<url-pattern>/Add</url-pattern>
 
 </servlet-mapping>
 
+
 <servlet-mapping>
 
 	<servlet-name>ContactServlet</servlet-name>
+	
 	<url-pattern>/GetAll</url-pattern>
 
 </servlet-mapping>
 
+	<filter>
+
+      <filter-name>securityFilter</filter-name>
+	  
+      <filter-class>com.lxisoft.contactapp.filter.securityFilter</filter-class>
+	  
+	</filter>
+   
+    <filter-mapping>
+	
+      <filter-name>securityFilter</filter-name>
+	  
+      <url-pattern>/GetAll</url-pattern>
+	  
+    </filter-mapping>
+   
+<servlet>
+
+	<servlet-name>EditServlet</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.EditServlet</servlet-class>
+
+</servlet>
+
 <servlet-mapping>
 
-	<servlet-name>ContactServlet</servlet-name>
+	<servlet-name>EditServlet</servlet-name>
+	
 	<url-pattern>/Edit</url-pattern>
 
 </servlet-mapping>
 
 <servlet>
 
-	<servlet-name>UpdateServlet</servlet-name>
-	<servlet-class>com.lxisoft.contactapp.web.UpdateServlet</servlet-class>
+	<servlet-name>DeleteServlet</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.DeleteServlet</servlet-class>
 
 </servlet>
 
 <servlet-mapping>
 
-	<servlet-name>UpdateServlet</servlet-name>
+	<servlet-name>DeleteServlet</servlet-name>
 	<url-pattern>/Delete</url-pattern>
 
 </servlet-mapping>
 
+<servlet>
+
+	<servlet-name>SearchServlet</servlet-name>
+	<servlet-class>com.lxisoft.contactapp.web.SearchServlet</servlet-class>
+
+</servlet>
 <servlet-mapping>
 
-	<servlet-name>UpdateServlet</servlet-name>
-	<url-pattern>/Update</url-pattern>
+	<servlet-name>SearchServlet</servlet-name>
+	<url-pattern>/Search</url-pattern>
 
 </servlet-mapping>
   

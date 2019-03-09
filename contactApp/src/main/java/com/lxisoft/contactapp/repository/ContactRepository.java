@@ -19,11 +19,11 @@ public class ContactRepository{
 	FileReader fr=null;
 	BufferedReader br=null;
 	Contact contact;
-	public String save(String name,String phone,String number,String email){	
+	public String save(Contact c){	
 	try{
 	fw=new FileWriter(contactDetails,true);
 	bw=new BufferedWriter(fw);
-	bw.write(name+";"+phone+";"+number+";"+email);
+	bw.write(c.getName()+";"+c.getPhone()+";"+c.getNumber()+";"+c.getEmail());
 	bw.newLine();
 	}catch(IOException e){
 			System.out.println("Error");	
@@ -40,7 +40,7 @@ public class ContactRepository{
 	return result;
 	}
 	
-	public ArrayList<Contact> getFromFile(){
+	public ArrayList<Contact> getContactList(){
 		ArrayList<Contact> contactList= null;
 		String line;
 		try{
@@ -58,8 +58,9 @@ public class ContactRepository{
 		return contactList;			
 	}
 	
-	public String delete(String name) throws IOException{
+	public String delete(String name) {
 		String currentLine,result=" ";
+		try{
 		fr=new FileReader(contactDetails);
 		br=new BufferedReader(fr);
 		bw=new BufferedWriter(new FileWriter(tempFile));
@@ -78,11 +79,15 @@ public class ContactRepository{
 			System.out.println("file exist");}		
 		boolean successful = tempFile.renameTo(contactDetails);
         System.out.println(successful);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 		return result;		
 	}
 	
-	public String update(ArrayList<Contact> clist)throws IOException{
-
+	public String update(ArrayList<Contact> clist){
+		String result="";
+	try{
 	bw=new BufferedWriter(new FileWriter(tempFile1));
 	for(Contact con:clist){
 		bw.write(con.getName()+";"+con.getPhone()+";"+con.getNumber()+";"+con.getEmail());
@@ -95,7 +100,21 @@ public class ContactRepository{
 			System.out.println("file exist");}		
 		boolean successful = tempFile1.renameTo(contactDetails);
 	System.out.println(successful);
-	String result="update";
+	result="update";
+	}catch(IOException e){
+		e.printStackTrace();
+	}
 	return result;
+	}
+	
+	public ArrayList<Contact> search(String name){
+	ArrayList<Contact> contacts=getContactList();
+	ArrayList<Contact> contList=new ArrayList<Contact>();
+	for(Contact con:contacts){
+		if(con.getName().equals(name)){
+			contList.add(con);
+		}
+	}
+	return contList;
 	}
 }

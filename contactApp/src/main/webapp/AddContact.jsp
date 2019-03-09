@@ -58,7 +58,7 @@
 
 	</form>
 
-<a href="Home.jsp"><center><img src="/contactappv3/images/homeIcon.ico" height="70" width></a>
+<a href="Home.jsp"><center><img src="/contactApp/images/homeIcon.ico" height="100" width></a>
 
 </body>
 </html>

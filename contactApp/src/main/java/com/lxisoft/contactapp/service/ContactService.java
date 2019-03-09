@@ -6,30 +6,23 @@ import java.io.*;
 
 
 public class ContactService{
-	
-	ContactRepository contactRepo= new ContactRepository();
-	ArrayList<Contact> contactList;
+		
 	Contact cont;
-	public String addContact(String name,String phone,String number,String email){
-
-		String a=contactRepo.save(name,phone,number,email);
-		System.out.println(a);
-		return a;
-	}
+	ContactRepository contactRepo=new ContactRepository();
 	
-	public ArrayList<Contact> getContactList(){
-		contactList = contactRepo.getFromFile();
-		return contactList;
-	}
-	public String remove(String name) throws IOException{
-		String result=contactRepo.delete(name);
-		System.out.println(result);
+	public String addContact(Contact contact){
+		String result=contactRepo.save(contact);
 		return result;
 	}
 	
-	public String update(String updateName,String updatePhone,String updateNumber,String updateEmail) throws IOException{
+	public ArrayList<Contact> getContact(){
+		ArrayList<Contact> contactList = contactRepo.getContactList();
+		return contactList;
+	}
+	
+	public String update(String updateName,String updatePhone,String updateNumber,String updateEmail){
 		ArrayList<Contact> clist;
-		clist=contactRepo.getFromFile();
+		clist=contactRepo.getContactList();
 		for(int i=0;i<clist.size();i++){
 			if((clist.get(i).getName().equals(updateName))||(clist.get(i).getNumber().equals(updateNumber))){
 				cont=new Contact(updateName,updatePhone,updateNumber,updateEmail);
@@ -40,5 +33,18 @@ public class ContactService{
 		System.out.println(result);
 		return result;
 	}
+	
+	public ArrayList<Contact> searchContact(String name){
+		ArrayList<Contact> li;
+		li=contactRepo.search(name);
+		return li;
+	}
+	
+	public String remove(String name){
+		String result=contactRepo.delete(name);
+		System.out.println(result);
+		return result;
+	}
+
 	
 }

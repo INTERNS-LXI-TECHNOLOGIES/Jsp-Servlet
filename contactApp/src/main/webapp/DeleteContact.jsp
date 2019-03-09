@@ -30,6 +30,7 @@
 
 	<h1><i>Delete Contact</i></h1></br>
 	<form action ="Delete" method="Get">
+	
 
 	Name:<input type="text"  name= "deleteName"></br></br>
 	<button class="buttonStyle" type="submit">Delete</button><input type="reset" value="Cancel"/><br><br>
@@ -46,10 +47,9 @@
 	session.setAttribute("delete",null);
 	%>
 	</form>
+	<a href="ContactDetails.jsp"><img src="/contactApp/images/contacts.png" height="40" width></a>
 
-	<a href="ContactDetails.jsp"><img src="/contactappv3/images/contacts.png" height="30" width></a>
-
-    <a href="Home.jsp"><img src="/contactappv3/images/homeIcon.ico" height="30" width></a>
+    <a href="Home.jsp"><img src="/contactApp/images/homeIcon.ico" height="40" width></a>
 
 </body>
 

@@ -38,28 +38,29 @@ th {
 
 <body>
 
-<%ContactService contactService=new ContactService();
-	ArrayList<Contact> contactList=null;
-	contactList=contactService.getContactList();%>
+<%
+	ArrayList<Contact> conlist=new ArrayList<Contact>();
+	conlist=(ArrayList<Contact>)request.getAttribute("contactList");%>
 	
 	<h1><i>Contacts</i></h1></br>
 	<table>
 	
-	<a href="Home.jsp"><img src="/contactappv3/images/homeIcon.ico" height="30" width></a>
-	<a href="DeleteContact.jsp"><img src="/contactappv3/images/delete.png" height="30" width></a>
-	<a href="EditContact.jsp"><img src="/contactappv3/images/edit.jpg" height="30" width></a><br>
-	<form action="GetAll" method="Get"><input type="text" placeholder="Search Name" name= "searchName">
-	<button type="submit"><img src="/contactappv3/images/search1.png" height="20" width></button> </form><br><br>
+	<a href="Home.jsp"><img src="/contactApp/images/homeIcon.ico" height="40" width></a>
+	<a href="DeleteContact.jsp"><img src="/contactApp/images/delete.png" height="40" width></a>
+	<a href="EditContact.jsp"><img src="/contactApp/images/edit.jpg" height="40" width></a><br>
+	<form action="Search" method="Get"><input type="text" placeholder="Search Name" name= "searchName">
+	<button type="submit"><img src="/contactApp/images/search1.png" height="40" width></button> </form><br><br>
 	
 	
 	
 	<tr><th>Name</th><th>Phone</th></tr>
-	<%for(Contact contact:contactList){%>
+	<%for(Contact contact:conlist){%>
 		<tr>
 		<td><%out.println(contact.getName());%></td>
 		<td><%out.println(contact.getNumber());%></td>
 		</tr>
 		<%}%>
+	
 	</table>
 
 </body>
