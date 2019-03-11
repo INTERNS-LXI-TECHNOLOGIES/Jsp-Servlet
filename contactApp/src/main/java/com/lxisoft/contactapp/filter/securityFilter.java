@@ -12,12 +12,12 @@ import javax.servlet.ServletResponse;
 /**
  * Servlet Filter implementation class RequestLoggingFilter
  */
-public class securityFilter implements Filter {
+public class SecurityFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public securityFilter() {
+    public SecurityFilter() {
         // TODO Auto-generated constructor stub
     }
 

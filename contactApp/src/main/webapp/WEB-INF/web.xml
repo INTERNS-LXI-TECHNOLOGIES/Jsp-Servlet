@@ -1,21 +1,20 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app>
-
+<web-app
+  version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 <servlet>
 
-	<servlet-name>ContactServlet</servlet-name>
-	
+	<servlet-name>ContactServlet</servlet-name>  
 	<servlet-class>com.lxisoft.contactapp.web.ContactServlet</servlet-class>
 
 </servlet>
 
-<servlet-mapping id="ServletMapping_1551943586944">
+<servlet-mapping>
 
 	<servlet-name>ContactServlet</servlet-name>
-	
 	<url-pattern>/Add</url-pattern>
 
 </servlet-mapping>
@@ -31,15 +30,15 @@
 
 	<filter>
 
-      <filter-name>securityFilter</filter-name>
+      <filter-name>SecurityFilter</filter-name>
 	  
-      <filter-class>com.lxisoft.contactapp.filter.securityFilter</filter-class>
+      <filter-class>com.lxisoft.contactapp.filter.SecurityFilter</filter-class>
 	  
 	</filter>
    
     <filter-mapping>
 	
-      <filter-name>securityFilter</filter-name>
+      <filter-name>SecurityFilter</filter-name>
 	  
       <url-pattern>/GetAll</url-pattern>
 	  

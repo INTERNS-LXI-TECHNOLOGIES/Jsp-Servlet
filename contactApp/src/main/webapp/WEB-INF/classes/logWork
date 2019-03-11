@@ -1,0 +1,8 @@
+Mar 11, 2019 3:52:26 PM com.lxisoft.contactapp.web.ContactServlet doPost
+INFO: >Got values 
+Mar 11, 2019 3:52:26 PM com.lxisoft.contactapp.web.ContactServlet doPost
+INFO: >Create Contact 
+Mar 11, 2019 3:52:41 PM com.lxisoft.contactapp.web.ContactServlet doGet
+INFO: entering the method
+Mar 11, 2019 3:52:41 PM com.lxisoft.contactapp.web.ContactServlet doGet
+INFO: >Got Contacts 

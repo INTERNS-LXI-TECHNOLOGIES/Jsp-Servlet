@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class ContactRepository{
 	
 	
-	File contactDetails=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv3/data/Contacts.txt");
-	File tempFile=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv3/data/TempFile.txt");
-	File tempFile1=new File("D:/lxisoft.app/apache-tomcat-8.5.38/webapps/contactappv3/data/TempFile1.txt");
+	File contactDetails=new File("C:/Users/Windows 10/Desktop/000-workspace/Team3/contactApp/src/main/webapp/data/Contacts.txt");
+	File tempFile=new File("C:/Users/Windows 10/Desktop/000-workspace/Team3/contactApp/src/main/webapp/data/TempFile.txt");
+	File tempFile1=new File("C:/Users/Windows 10/Desktop/000-workspace/Team3/contactApp/src/main/webapp/data/TempFile1.txt");
 	FileWriter fw=null;
 	BufferedWriter bw=null;
 	FileReader fr=null;
