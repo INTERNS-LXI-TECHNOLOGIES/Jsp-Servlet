@@ -1,0 +1,6 @@
+Mar 12, 2019 1:32:05 PM com.lxisoft.service.ContactService getContact
+INFO: >Contact getting
+Mar 12, 2019 1:32:15 PM com.lxisoft.service.ContactService searchContact
+INFO: entering the method
+Mar 12, 2019 1:32:15 PM com.lxisoft.service.ContactService searchContact
+INFO: >Contact searching
