@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" 
+         version="2.5" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name>Archetype Created Web Application</display-name>
+   <servlet>
+      <servlet-name>AddContactServlet</servlet-name>
+      <servlet-class>com.lxisoft.web.AddContactServlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>AddContactServlet</servlet-name>
+        <url-pattern>/AddContact</url-pattern>
+    </servlet-mapping>
+      <servlet>
+      <servlet-name>DeleteContactServlet</servlet-name>
+      <servlet-class>com.lxisoft.web.DeleteContactServlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>DeleteContactServlet</servlet-name>
+        <url-pattern>/DeleteContact</url-pattern>
+    </servlet-mapping>
+     <servlet>
+      <servlet-name>SearchContactServlet</servlet-name>
+      <servlet-class>com.lxisoft.web.SearchContactServlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>SearchContactServlet</servlet-name>
+        <url-pattern>/SearchContact</url-pattern>
+    </servlet-mapping>
+    <servlet>
+      <servlet-name>EditContactServlet</servlet-name>
+      <servlet-class>com.lxisoft.web.EditContactServlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>EditContactServlet</servlet-name>
+        <url-pattern>/EditContact</url-pattern>
+    </servlet-mapping>
+    <filter>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>com.lxisoft.filter.MyFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/DeleteContact</url-pattern>
+</filter-mapping>
+</web-app>
