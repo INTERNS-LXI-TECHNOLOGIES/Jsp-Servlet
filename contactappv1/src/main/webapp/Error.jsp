@@ -23,7 +23,8 @@
 <div id="top">
 <h1>Contacts</h1>
 <p align="center">
-<a href="Home.jsp"><img src="/contactApp/images/homeIcon.ico" height="30" width></a>
+<a href="Home.jsp"><center><img src="/contactappv1/images/homeIcon.ico" height="60" width></a>
+
 </br>
 </p>
 </div>

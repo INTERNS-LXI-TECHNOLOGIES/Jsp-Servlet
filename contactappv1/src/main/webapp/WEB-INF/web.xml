@@ -86,5 +86,34 @@
 	<url-pattern>/Update</url-pattern>
 
 </servlet-mapping>
+<!--Defines Security Constraint -->
+<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>protected</web-resource-name>
+			<url-pattern>/Delete</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+		 <user-data-constraint>
+                <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+         </user-data-constraint>
+</security-constraint>
+	<!--Defines Security Role -->
+<security-role>
+	<role-name>admin</role-name>
+</security-role>
+<!--Defines Login Config -->
+
+<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.html</form-login-page>
+			<form-error-page>/Error.jsp</form-error-page>
+		</form-login-config>
+</login-config>
+
 
 </web-app>

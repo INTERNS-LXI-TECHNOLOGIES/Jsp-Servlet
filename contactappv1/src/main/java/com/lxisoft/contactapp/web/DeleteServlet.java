@@ -1,4 +1,5 @@
 package com.lxisoft.contactapp.web;
+
 import java.io.*;  
 import java.sql.*; 
 import javax.servlet.ServletException;  
@@ -8,11 +9,16 @@ import com.lxisoft.contactapp.service.ContactService;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 
+
+
 public class DeleteServlet extends HttpServlet{
+
 	
 	ContactService contactService = new ContactService();
 	ArrayList<Contact> contactList=null;
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		
 		try{
 		String name=request.getParameter("dName");		
 		if(name!=null){
