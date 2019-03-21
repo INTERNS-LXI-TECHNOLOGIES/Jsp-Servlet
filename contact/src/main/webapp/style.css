@@ -1,0 +1,52 @@
+.bgbody {
+	
+	position: absolute;
+  	top: 30%;
+  	left: 40%;
+	
+}
+body {
+	background-color : lightgrey
+}
+
+h1{
+	color: white;
+	font-family:arial;
+	border: 2px solid white;
+	text-align: center;
+	background-color: grey;
+	border-radius: 50px;
+	background: linear-gradient(21deg, #10abff, #1beabd);
+  	width: 96%;
+}
+input {
+	border-radius: 40px;
+	text-align: center;
+	cursor :text;
+	padding: 10px 45px;
+	border: 2px solid white;
+	
+}
+.loginbutton {
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	color : white;
+	border: 2px solid white;
+	border-radius: 40px;
+	text-align: center;
+	cursor :pointer;
+	width: 100px;
+	height : 40px;
+	font-weight:bold;
+}
+.contactbutton {
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	color : white;
+	border: 2px solid white;
+	border-radius: 100px;
+	text-align: center;
+	cursor :pointer;
+	width: 40px;
+	height : 40px;
+	font-weight:bold;
+	font-size: 20px;
+}
