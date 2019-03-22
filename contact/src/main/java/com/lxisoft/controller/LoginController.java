@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lxisoft.repo.LoginRepo;
 
@@ -16,17 +17,23 @@ import com.lxisoft.repo.LoginRepo;
 public class LoginController extends HttpServlet {
 	
 
-	public void service(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
+	public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
+
 		String a = req.getParameter("action");
 		LoginRepo loginRepo = new LoginRepo();
 		if(a.equals("login")) {
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
+			//HttpSession ses = req.getSession();
+			//ses.setAttribute("username", username);
 			try {
 				if(password.equals(loginRepo.getUser(username))) {
 					RequestDispatcher reqD = req.getRequestDispatcher("contacts");
 					reqD.forward(req,res);
 					
+				}
+				else {
+					res.sendRedirect("index.jsp");
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

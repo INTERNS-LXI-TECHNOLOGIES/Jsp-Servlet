@@ -1,18 +1,27 @@
 .bgbody {
 	
 	position: absolute;
-  	top: 30%;
-  	left: 40%;
+  	top: 25%;
+  	left: 35%;
+  	border: 2px solid white;
+	border-radius: 50px;
+	background-color : lightgrey;
+	width: 270px;
+	height : 300px;
+	padding: 20px 45px;
 	
 }
-body {
-	background-color : lightgrey
+.dbody {
+	
+	width: 270px;
+	height : 300px;
+	
 }
 
 h1{
 	color: white;
 	font-family:arial;
-	border: 2px solid white;
+	border: 2px solid grey;
 	text-align: center;
 	background-color: grey;
 	border-radius: 50px;
@@ -27,10 +36,15 @@ input {
 	border: 2px solid white;
 	
 }
+.cform {
+	position: absolute;
+  	top: 25%;
+  	left: 40%;
+}
 .loginbutton {
 	background: linear-gradient(21deg, #10abff, #1beabd);
 	color : white;
-	border: 2px solid white;
+	border: 2px solid grey;
 	border-radius: 40px;
 	text-align: center;
 	cursor :pointer;
@@ -41,7 +55,7 @@ input {
 .contactbutton {
 	background: linear-gradient(21deg, #10abff, #1beabd);
 	color : white;
-	border: 2px solid white;
+	border: 2px solid grey;
 	border-radius: 100px;
 	text-align: center;
 	cursor :pointer;
@@ -49,4 +63,72 @@ input {
 	height : 40px;
 	font-weight:bold;
 	font-size: 20px;
+	position: fixed;
+  	bottom: 10%;
+  	right: 7%;
+}
+table, td, th {  
+  text-align: left;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: grey;
+  
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  
+}
+
+th, td {
+  padding: 15px;
+}
+.search{
+  	border-radius: 40px;
+	text-align: center;
+	color : grey;
+	cursor :text;
+	padding: 10px 45px;
+	border: 2px solid black;
+}
+.searchb {
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	color : white;
+	border: 2px solid grey;
+	border-radius: 40px;
+	text-align: center;
+	cursor :pointer;
+	width: 40px;
+	height : 40px;
+	font-weight:bold;
+	
+}
+.logb {
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	color : white;
+	border: 2px solid grey;
+	border-radius: 40px;
+	text-align: center;
+	cursor :pointer;
+	width: 40px;
+	height : 40px;
+	font-weight:bold;
+	position: fixed;
+  	bottom: 17%;
+  	right: 7%;
+}
+.addcb{
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	color : white;
+	border: 2px solid grey;
+	border-radius: 40px;
+	text-align: center;
+	cursor :pointer;
+	width: 265px;
+	height : 40px;
+	font-weight:bold;
+	
 }
