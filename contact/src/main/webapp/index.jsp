@@ -7,10 +7,10 @@
 		<h1>&nbsp; &nbsp; &nbsp;ContactApp</h1>
 		<div>
 		<form action = "login" method = "post">
-		<input type="text" name = "username" placeholder="Username">	
+		<input type="text" name = "username" placeholder="Username" required>	
 		<br>
 		<br>
-		<input type="password" name = "password" placeholder="Password">	
+		<input type="password" name = "password" placeholder="Password" required>	
 		<br>
 		<br>
 		<button class = "loginbutton" type="submit" name="action" value="login">Login</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
