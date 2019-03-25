@@ -3,9 +3,8 @@
 	position: absolute;
   	top: 25%;
   	left: 35%;
-  	border: 2px solid white;
+  	border: 2px solid grey;
 	border-radius: 50px;
-	background-color : lightgrey;
 	width: 270px;
 	height : 300px;
 	padding: 20px 45px;
@@ -33,7 +32,7 @@ input {
 	text-align: center;
 	cursor :text;
 	padding: 10px 45px;
-	border: 2px solid white;
+	border: 2px solid grey;
 	
 }
 .cform {
@@ -131,4 +130,16 @@ th, td {
 	height : 40px;
 	font-weight:bold;
 	
+}
+
+.editbl{
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	color : white;
+	border: 2px solid grey;
+	border-radius: 40px;
+	text-align: center;
+	cursor :pointer;
+	width: 30px;
+	height : 30px;
+	font-weight:bold;
 }

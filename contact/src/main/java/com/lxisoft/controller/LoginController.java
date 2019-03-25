@@ -24,8 +24,8 @@ public class LoginController extends HttpServlet {
 		if(a.equals("login")) {
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
-			//HttpSession ses = req.getSession();
-			//ses.setAttribute("username", username);
+			HttpSession ses = req.getSession();
+			ses.setAttribute("username", username);
 			try {
 				if(password.equals(loginRepo.getUser(username))) {
 					RequestDispatcher reqD = req.getRequestDispatcher("contacts");
@@ -40,6 +40,21 @@ public class LoginController extends HttpServlet {
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
+		}
+		else if(a.equals("register")) {
+			String username = req.getParameter("username");
+			String password = req.getParameter("password");
+			try {
+				loginRepo.setUser(username,password);
+				res.sendRedirect("index.jsp");
+			} catch (ClassNotFoundException e) {
+			
+				e.printStackTrace();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+			
 		}
 	}
 }
