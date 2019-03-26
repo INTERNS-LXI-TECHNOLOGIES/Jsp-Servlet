@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ralert?useUnicode=true&characterEncoding=utf8&useSSL=false&jdbcCompliantTruncation=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+     name: Contact
+
+server:
+  port: 8085
+  
