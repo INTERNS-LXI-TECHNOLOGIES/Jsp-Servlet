@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 			ses.setAttribute("username", username);
 			try {
 				if(password.equals(loginRepo.getUser(username))) {
-					RequestDispatcher reqD = req.getRequestDispatcher("contacts");
+					RequestDispatcher reqD = req.getRequestDispatcher("lang");
 					reqD.forward(req,res);
 					
 				}

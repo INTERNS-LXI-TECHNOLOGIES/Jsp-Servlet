@@ -1,7 +1,7 @@
 <%@ page import = "com.lxisoft.model.ContactDetails" %>
-<%@ page import = "java.util.List" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page import = "com.lxisoft.controller.*" %>
+<%@ page import = "java.util.*" %>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,16 +10,18 @@
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
 	
 	<title>Contacts</title>
-	<script>
+	<script type="text/javascript">
 	
-	function displayEdit(){
-		if(document.getElementById("edit").style.visibility == "hidden"){
-			document.getElementById("edit").style.visibility = "visible";
-		}
-		else{
-			document.getElementById("edit").style.visibility = "hidden";
-		}
+	function lang(){}
+	if(document.getElementById("lang").value=="true"){
+		document.getElementById("lang").value = "flase"
 	}
+	else{
+		document.getElementById("lang").value = "true"
+	}
+	
+)
+	
 	</script>
 </head>
 <body>
@@ -31,24 +33,36 @@
 <button class = "searchb" type="submit" title = "Search"><i class="fa fa-search"></i></button>
 </form>
 <form action = "logout" >
-<button class = "logb" type="submit" title = "LogOut"><i class="fas fa-sign-out-alt"></i></button>
+<button class = "logb" type="submit" title = "LogOut"><i id = "h" class="fas fa-sign-out-alt"></i></button>
 
-<%
-    
-%>
 </form>
+
+	<button class = "langa" onclick="window.location.href='lang?l=false'">Eng</button>
+	<button class = "lang" onclick="window.location.href='lang?l=true'">Mal</button>
+</div>
+
 <form action = "AddContact.jsp" >
-	<button class = "contactbutton" type = "submit" title = "Add Contact">+</button>
+	<button   class = "contactbutton" type = "submit" title = "Add Contact">+</button>
 </form>
 	<%
 	
 	List<ContactDetails> contacts =(List<ContactDetails>) request.getAttribute("contacts");
+	Locale l = null;
+	if((String)request.getAttribute("lang") != null){
+	l = new Locale((String)request.getAttribute("lang"),(String)request.getAttribute("cont"));
+	}
+	else{
+	l = new Locale("ml","IN");
+	}
+	boolean a = false;
+	ResourceBundle r = ResourceBundle.getBundle("lang",l);
+	
 	%>
 	<table>
 		<tr>
-			<th>Name</th>
-			<th>Email Id</th>
-			<th>Number</th>
+			<th><%=r.getString("name")%></th>
+			<th><%=r.getString("emailid")%></th>
+			<th><%=r.getString("no")%></th>
 		</tr>
 		<%
 			for(int i =0;i<contacts.size();i++){
