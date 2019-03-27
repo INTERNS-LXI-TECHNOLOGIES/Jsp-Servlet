@@ -19,38 +19,20 @@ public class Lang extends HttpServlet{
 	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
 		
 		String name = req.getParameter("l");
-		System.out.println(name);
+		HttpSession ses = req.getSession();
 		if(name!=null) {
 		if(name.equals("true")) {
-			req.setAttribute("lang","ml");
-			req.setAttribute("cont","IN");
+			ses.setAttribute("lang","ml");
+			ses.setAttribute("cont","IN");
 		}
 		else {
-			req.setAttribute("lang","en");
-			req.setAttribute("cont","US");
+			ses.setAttribute("lang","en");
+			ses.setAttribute("cont","US");
 		}
-		
-		
-		
 		}
 		RequestDispatcher reqD = req.getRequestDispatcher("contacts");
 		reqD.forward(req,res);
 		
 	}
 	
-	/*public ResourceBundle lang(boolean a) {
-		
-		if(a){
-			lang = "ml";
-			cont = "IN";
-		}
-		else{
-			lang = "en";
-			cont = "US";
-		}
-		System.out.println("haiii");
-		Locale l = new Locale(lang,cont);
-		ResourceBundle r = ResourceBundle.getBundle("lang",l);
-		return r;
-	}*/
 }

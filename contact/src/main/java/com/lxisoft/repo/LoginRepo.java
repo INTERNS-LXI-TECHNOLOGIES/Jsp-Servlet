@@ -2,12 +2,14 @@ package com.lxisoft.repo;
 
 import java.sql.*;
 
+import javax.sql.DataSource;
+
 public class LoginRepo {
+	DataSource ds = RepoDataSource.getMySQLDataSource();
 	public String getUser(String name) throws SQLException, ClassNotFoundException { 
-		 
+		
 		String password = null;
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection c = DriverManager.getConnection("jdbc:mysql://localhost/contactuser","root","root");
+		Connection c = ds.getConnection();
 
 		Statement s = c.createStatement();
 		ResultSet r = s.executeQuery("select * from user where username = '"+name+"'");
@@ -18,8 +20,7 @@ public class LoginRepo {
 	}
 	public boolean setUser(String username,String password) throws ClassNotFoundException, SQLException {
 		int x = 0;
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection c = DriverManager.getConnection("jdbc:mysql://localhost/contactuser","root","root");
+		Connection c = ds.getConnection();
 		Statement s = c.createStatement();
 		ResultSet r = s.executeQuery("select * from user");
 		while(r.next()){

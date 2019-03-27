@@ -36,10 +36,12 @@
 <button class = "logb" type="submit" title = "LogOut"><i id = "h" class="fas fa-sign-out-alt"></i></button>
 
 </form>
-
+	
 	<button class = "langa" onclick="window.location.href='lang?l=false'">Eng</button>
 	<button class = "lang" onclick="window.location.href='lang?l=true'">Mal</button>
-</div>
+	<button class = "prev" onclick="window.location.href='contacts?prev=true'"><</button>
+	<button class = "next" onclick="window.location.href='contacts?next=true'">></button>
+	
 
 <form action = "AddContact.jsp" >
 	<button   class = "contactbutton" type = "submit" title = "Add Contact">+</button>
@@ -48,8 +50,8 @@
 	
 	List<ContactDetails> contacts =(List<ContactDetails>) request.getAttribute("contacts");
 	Locale l = null;
-	if((String)request.getAttribute("lang") != null){
-	l = new Locale((String)request.getAttribute("lang"),(String)request.getAttribute("cont"));
+	if((String)session.getAttribute("lang") != null){
+	l = new Locale((String)session.getAttribute("lang"),(String)session.getAttribute("cont"));
 	}
 	else{
 	l = new Locale("ml","IN");
