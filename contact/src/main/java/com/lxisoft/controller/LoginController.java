@@ -17,10 +17,14 @@ import com.lxisoft.repo.LoginRepo;
 public class LoginController extends HttpServlet {
 	
 
-	public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
+	public void service(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
 
 		String a = req.getParameter("action");
 		LoginRepo loginRepo = new LoginRepo();
+		if(a==null) {
+			res.sendRedirect("/contact/index.jsp");
+		}
+		else {
 		if(a.equals("login")) {
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
@@ -55,6 +59,7 @@ public class LoginController extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+		}
 		}
 	}
 }
