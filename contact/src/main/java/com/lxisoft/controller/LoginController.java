@@ -19,38 +19,15 @@ public class LoginController extends HttpServlet {
 
 	public void service(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
 
-		String a = req.getParameter("action");
+		
 		LoginRepo loginRepo = new LoginRepo();
-		if(a==null) {
-			res.sendRedirect("/contact/index.jsp");
-		}
-		else {
-		if(a.equals("login")) {
-			String username = req.getParameter("username");
-			String password = req.getParameter("password");
-			HttpSession ses = req.getSession();
-			ses.setAttribute("username", username);
-			try {
-				if(password.equals(loginRepo.getUser(username))) {
-					RequestDispatcher reqD = req.getRequestDispatcher("lang");
-					reqD.forward(req,res);
-					
-				}
-				else {
-					res.sendRedirect("index.jsp");
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
-		else if(a.equals("register")) {
+		HttpSession ses = req.getSession();
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
 			try {
 				loginRepo.setUser(username,password);
-				res.sendRedirect("index.jsp");
+				ses.invalidate();
+				res.sendRedirect("/contact");
 			} catch (ClassNotFoundException e) {
 			
 				e.printStackTrace();
@@ -60,6 +37,4 @@ public class LoginController extends HttpServlet {
 			}
 			
 		}
-		}
 	}
-}

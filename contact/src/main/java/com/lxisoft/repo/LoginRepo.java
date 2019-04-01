@@ -36,6 +36,10 @@ public class LoginRepo {
 			p.execute();
 			PreparedStatement pr = c.prepareStatement("create table "+username+"(id INT AUTO_INCREMENT,name VARCHAR(50),emailid VARCHAR(50),number VARCHAR(50),PRIMARY KEY(id))");
 			pr.execute();
+			PreparedStatement pre = c.prepareStatement("insert into roles(username,rolename) values(?,?)");
+			pre.setString(1,username);
+			pre.setString(2,"user");
+			pre.execute();
 			return true;
 		}
 		else {
