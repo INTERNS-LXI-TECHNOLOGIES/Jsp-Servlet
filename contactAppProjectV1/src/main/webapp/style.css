@@ -1,0 +1,72 @@
+/* CSS */
+.buttonStyle {
+  color: #FFF;
+  background: #999;
+  font-weight: bold;
+  border: 1px solid #900;
+  cursur:pointer;
+}
+
+.body
+	{
+	background-color:cyan;
+	text-align: center;
+	
+	}
+	
+.h1{
+	border-radius: 40px;
+	text-align: center;
+	padding: 10px 45px;
+	border:2px solid #ff80c0;
+	font-family: "Times New Roman", Times, serif;
+}			
+.input {
+	border-radius: 40px;
+	text-align: center;
+	cursor :text;
+	padding: 10px 45px;
+    border: 2px solid #0000ff;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+.table, .td {
+	
+	background-color: #f1f1c1;
+    border: 1px solid black;
+    border-style: outset;
+  	border-collapse: collapse;
+  	font-family: "Times New Roman", Times, serif;
+}
+
+.tr:hover{
+ background-color:#f5f5f5;
+}
+.th {
+  text-align: left;
+}
+
+.cbutton {
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	color : white;
+	border: 2px solid grey;
+	border-radius: 40px;
+	text-align: center;
+	cursor :pointer;
+	width: 100px;
+	height : 40px;
+	font-weight:bold;
+}
+.button {
+  padding: 10px 15px;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #8000ff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 9px #999;
+}
