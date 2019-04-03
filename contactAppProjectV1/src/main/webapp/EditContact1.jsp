@@ -28,19 +28,12 @@
 				<tr><td><input class="input" type="email" name="uEmail" value="<%=conlist.get(4)%>"/></td></tr>
 
 				<tr><td><input class="button" type="submit" value="Save"/></td></tr>
-<% Object rs=null;
-	rs=session.getAttribute("result");
-	if(rs=="update")
-	{%>
-		<b><% out.println("Updated Successfully");%></b>
-	
-	<%}
-	session.setAttribute("result",null);
-	%>
+				</table>
+				</form><br><br>
+
 		<a  href="AddContact.jsp"><center><img src="/contactAppProjectV1/images/add3.jpg" height="30" width></a>
 		<a  href="Home.jsp"><img src="/contactAppProjectV1/images/homeIcon.ico" height="30" width></a>
-				</table>
-				</form>
+				
 				
 </body>
 

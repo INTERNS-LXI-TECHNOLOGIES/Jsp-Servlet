@@ -24,11 +24,8 @@ public class EditServlet extends HttpServlet{
 			String uEmail=request.getParameter("uEmail"); 
 			System.out.println(uFirstName+" "+uLastName+" "+" "+uPhone+" "+" "+uNumber+" "+" "+uEmail+" ");
 			String result = contactService.updateContact(uFirstName,uLastName,uPhone,uNumber,uEmail);
-			
-			HttpSession session = request.getSession();
-			session.setAttribute("result", result);
-			RequestDispatcher rd= request.getRequestDispatcher("EditContact1.jsp");
-			rd.forward(request, response);
+			System.out.println(result);
+			response.sendRedirect("Home.jsp");
 			out.close();
 			}catch(SQLException se){
 			se.printStackTrace();}

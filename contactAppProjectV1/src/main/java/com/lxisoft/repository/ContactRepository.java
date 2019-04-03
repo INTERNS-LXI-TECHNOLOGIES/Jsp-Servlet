@@ -82,12 +82,12 @@ public class ContactRepository {
 			return list;
 			}
 		public String delete(String name)throws SQLException{
+			System.out.println(name);
 			connect();
 			String result="";
 			stm=con.createStatement();
-			String sql="DELETE FROM contacts WHERE id='"+name+"'";
+			String sql="DELETE FROM contacts WHERE first_name='"+name+"'";
 			int result1=stm.executeUpdate(sql);
-
 			result="delete";
 			stm.close();
 			con.close();
@@ -96,7 +96,7 @@ public class ContactRepository {
 		}
 		public String update(String uFirstName,String uLastName,String uPhone,String uNumber,String uEmail) throws SQLException{
 			//System.out.println(uFirstName+" "+uLastName+" "+" "+uPhone+" "+" "+uNumber+" "+" "+uEmail+" ");
-			ArrayList<Contact> list=new ArrayList<Contact>();
+			ArrayList<Contact> list;
 			list=getContactList();
 			connect();
 			String result="";

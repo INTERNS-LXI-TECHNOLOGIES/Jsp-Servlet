@@ -51,10 +51,10 @@
 	background: linear-gradient(21deg, #10abff, #1beabd);
 	color : white;
 	border: 2px solid grey;
-	border-radius: 40px;
+	border-radius: 10px;
 	text-align: center;
 	cursor :pointer;
-	width: 100px;
+	width: 50px;
 	height : 40px;
 	font-weight:bold;
 }

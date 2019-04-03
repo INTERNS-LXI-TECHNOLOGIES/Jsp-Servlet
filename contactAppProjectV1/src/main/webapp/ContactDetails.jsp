@@ -11,19 +11,17 @@
 
 	<%
 	ArrayList<Contact> contacts=new ArrayList<Contact>();
-	contacts=(ArrayList<Contact>)request.getAttribute("contacts");
-
-	 
+	contacts=(ArrayList<Contact>)request.getAttribute("contacts"); 
    
 %>
 	
 	<%Object c=application.getAttribute("contactapp"); %>
 	<h1 class="h1"><b><%=c %></i></h1></br>	
 	<h3><i>Contacts</i></h3></br>
-	<table  width=100% class=".table .td .tr">
+	<table  width=100% class="table td tr">
 	
 	<a href="Home.jsp"><img src="/contactAppProjectV1/images/homeIcon.ico" height="40" width></a></br>
-	<form action="Search" method="Get"><input type="text" placeholder="Search Name" name= "searchName">
+	<form action="Search" method="Get"><input class="input" type="text" placeholder="Search Name" name= "searchName">
 	<button type="submit"><img src="/contactAppProjectV1/images/search1.png" height="30" width></button> </form><br><br>
 	
 	<%//request.setAttribute("contacts",conlist);%>
@@ -47,8 +45,8 @@
 			}
 		%>
 	</table>
-	<button class = "prev" onclick="window.location.href='Add?prev=true'"></button>
-	<button class = "next" onclick="window.location.href='Add?next=true'"></button>
+	<button class = "button" onclick="window.location.href='Add?prev=true'">Prev</button>
+	<button class = "button" onclick="window.location.href='Add?next=true'">Next</button>
   	
 </body>
 

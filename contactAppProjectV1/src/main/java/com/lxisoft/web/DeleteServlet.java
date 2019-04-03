@@ -25,9 +25,7 @@ public class DeleteServlet extends HttpServlet{
 		if(name!=null){
 					String result=contactService.remove(name);
 					System.out.println(result);
-					RequestDispatcher rd= request.getRequestDispatcher("Home.jsp");
-					rd.forward(request, response);
-	
+					response.sendRedirect("Home.jsp");
 				}
 		}catch(SQLException se){
 			se.printStackTrace();
