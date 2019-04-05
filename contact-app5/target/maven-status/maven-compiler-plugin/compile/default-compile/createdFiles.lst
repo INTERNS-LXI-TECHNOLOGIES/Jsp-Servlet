@@ -1,0 +1,9 @@
+com\lxisoft\web\AddContactServlet.class
+com\lxisoft\web\SearchContactServlet.class
+com\lxisoft\repository\ContactRepository.class
+com\lxisoft\web\DeleteContactServlet.class
+com\lxisoft\web\LangController1.class
+com\lxisoft\model\Contact.class
+com\lxisoft\service\ContactService.class
+com\lxisoft\web\EditContactServlet.class
+com\lxisoft\web\LangController.class
