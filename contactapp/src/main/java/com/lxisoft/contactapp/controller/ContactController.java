@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lxisoft.contactapp.model.Contact;
 import com.lxisoft.contactapp.service.ContactService;
 
 @RestController
+@RequestMapping("/contact")
 public class ContactController {
 
 	@Autowired
@@ -32,7 +34,7 @@ public class ContactController {
 	@PostMapping("/api/create")
 	public ResponseEntity<Contact> createContact(@RequestBody Contact contact) throws URISyntaxException {
 		Contact result = contactService.createContact(contact);
-		return ResponseEntity.created(new URI("/api/new/"+result.getId()))
+		return ResponseEntity.created(new URI("/api/create/"+result.getId()))
 				.header("X-contact-created", result.toString())
 				.body(result);
 	}
