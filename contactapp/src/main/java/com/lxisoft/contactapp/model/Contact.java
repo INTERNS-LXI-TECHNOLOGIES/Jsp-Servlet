@@ -1,10 +1,13 @@
 package com.lxisoft.contactapp.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Contact {
@@ -18,7 +21,16 @@ public class Contact {
 	private String phoneNumber;
 	@Column
 	private String email;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="address")
+	private Address address;
 	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	public int getId() {
 		return id;
 	}

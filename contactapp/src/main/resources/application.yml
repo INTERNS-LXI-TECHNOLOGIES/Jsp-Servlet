@@ -10,6 +10,7 @@ spring:
     show-sql: true
   application:
      name: Contact
+     
 
 server:
   port: 8081
