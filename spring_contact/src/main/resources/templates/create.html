@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/index/create}" th:object="${contact}" method="post">
+   <input type="text" id="name" name="name" />
+   <input type="text" id="number" name="number" />
+   <input type="text" id="adrs.city" name="adrs.city" />
+   <input type="text" id="adrs.state" name="adrs.state" />
+   <input type="text" id="adrs.pincode" name="adrs.pincode" />
+   <button type="submit">Add</button>
+</form>
+</body>
+</html>

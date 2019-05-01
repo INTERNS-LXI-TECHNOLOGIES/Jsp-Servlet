@@ -1,5 +1,6 @@
 package com.lxisoft.spring_contact.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,9 +36,17 @@ public class ContactService implements ContactServiceIn {
 	}
 
 	@Override
-	public Optional<Contact> getContact(int id) {
+	public List<Contact> getContact(int id) {
 		
-		return contactRepo.findById(id);
+		 Optional<Contact> a = contactRepo.findById(id);
+		 List<Contact> searchedContact = new ArrayList<Contact>();
+			Contact c = new Contact();
+			c.setName(a.get().getName());
+			c.setNumber(a.get().getNumber());
+			c.setAdrs(a.get().getAdrs());
+			searchedContact.add(c);
+			return searchedContact;
+			
 
 	}
 }

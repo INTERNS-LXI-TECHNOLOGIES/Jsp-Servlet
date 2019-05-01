@@ -11,6 +11,6 @@ public interface ContactServiceIn {
 	public Contact create(Contact contact);
 	public void remove(int id);
 	public List<Contact> read();
-	public Optional<Contact> getContact(int id);
+	public List<Contact> getContact(int id);
 	
 }

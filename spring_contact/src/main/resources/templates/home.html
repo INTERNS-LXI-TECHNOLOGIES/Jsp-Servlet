@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Home</h1>
+
+<!--<form action="#" th:action="@{/create}" th:object="${contact}" method="post">
+    <table border="1">
+        <tr>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>-->
+<div>
+	<tr th:each="m: ${contact}">
+    	<td th:text="${m.id}" /><br />
+    	<td th:text="${m.name}" /><br />
+    	<td th:text="${m.number}" /><br />
+    	<td th:text="${m.adrs.city}" /><br />
+    	<td th:text="${m.adrs.state}" /><br />
+    	<td th:text="${m.adrs.pincode}" /><br /><br /><br />
+	</tr>
+</div>
+</body>
+</html>

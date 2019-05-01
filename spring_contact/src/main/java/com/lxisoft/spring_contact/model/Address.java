@@ -38,5 +38,8 @@ public class Address {
 		this.pincode = pincode;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Address \nid=" + id + ", city=" + city + ", state=" + state + ", pincode=" + pincode+"\n";
+	}
 }

@@ -43,6 +43,10 @@ public class Contact {
 	public void setAdrs(Address adrs) {
 		this.adrs = adrs;
 	}
+	@Override
+	public String toString() {
+		return "Contact \n id=" + id + ",\n name=" + name + ",\n number=" + number + ",\n adrs=" + adrs + "\n";
+	}
 	
 	
 }
