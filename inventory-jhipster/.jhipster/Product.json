@@ -1,0 +1,39 @@
+{
+    "name": "Product",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "stock",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "stock",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "sale",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "sale",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190514051752",
+    "entityTableName": "product",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

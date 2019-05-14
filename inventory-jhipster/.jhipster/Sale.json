@@ -1,0 +1,28 @@
+{
+    "name": "Sale",
+    "fields": [
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "sale",
+            "relationshipName": "product",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190514051754",
+    "entityTableName": "sale",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

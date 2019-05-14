@@ -1,0 +1,19 @@
+entity Product{
+	name String,
+    price String
+}
+entity Sale{
+	quantity Integer
+}
+entity Stock{
+	quantity Integer
+}
+
+relationship ManyToMany {
+	Sale{product} to Product{sale}
+}
+relationship OneToOne {
+	Stock to Product
+}
+
+service * with serviceImpl 

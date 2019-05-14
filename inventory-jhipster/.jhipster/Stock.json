@@ -1,0 +1,28 @@
+{
+    "name": "Stock",
+    "fields": [
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "stock",
+            "relationshipName": "product",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190514051755",
+    "entityTableName": "stock",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
