@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.lxisoft.inventory"
+    },
+    "jhipsterVersion": "6.0.1",
+    "applicationType": "monolith",
+    "baseName": "inventory",
+    "packageName": "com.lxisoft.inventory",
+    "packageFolder": "com/lxisoft/inventory",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZjY4ZjE2YzY0N2NmZmQ4YTU3MzJjNzExOTI0NjdiN2Y0M2Y0NTY1MDc1NGZiMzVkNTA2NWQ4NzI3YjIyMjg1ZTI4Y2IyNjdjZmMwZTI2NTIzYzJhYzk1OTljOTg3NjA3YTQzMzZmMjA2NmQ5YzdkZjc2MDY4NjU2MTE0YTFmMjk=",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": ["gatling", "protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}
