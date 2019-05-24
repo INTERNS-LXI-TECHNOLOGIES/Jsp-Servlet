@@ -1,77 +1,33 @@
-# Directories #
-build/
-bin/
-target/
-libs/
-tmp/
+######################
+# Project Specific
+######################
+/src/main/webapp/content/css/main.css
+/target/classes/static/**
+/src/test/javascript/coverage/
+
+######################
+# Node
+######################
+/node/
+node_tmp/
 node_modules/
-jaxws/jaxws-client/src/main/
-jaxws/jaxws-endpoint/src/main/webapp/WEB-INF/wsdl/
- 
-# OS Files #
-.DS_Store
- 
-*.class
- 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.db
-rebel.xml
+npm-debug.log.*
+/.awcache/*
+/.cache-loader/*
 
 ######################
-# Windows
+# SASS
 ######################
- 
-# Windows image file caches
-Thumbs.db 
- 
-# Folder config file
-Desktop.ini
- 
-######################
-# OSX
-######################
- 
-.DS_Store
-.svn
- 
-# Thumbnails
-._*
- 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+.sass-cache/
 
-######################
-# NetBeans
-######################
-nbproject/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
- 
-######################
-# IDEA
-######################
-*.iml
-*.ipr
-*.iws
-.idea/
-atlassian-ide-plugin.xml
-
- 
 ######################
 # Eclipse
 ######################
- 
 *.pydevproject
 .project
 .metadata
+tmp/
+tmp/**/*
 *.tmp
 *.bak
 *.swp
@@ -80,25 +36,110 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.factorypath
+/src/main/resources/rebel.xml
 
 # External tool builders
-.externalToolBuilders/
- 
+.externalToolBuilders/**
+
 # Locally stored "Eclipse launch configurations"
 *.launch
- 
+
 # CDT-specific
 .cproject
- 
+
 # PDT-specific
 .buildpath
 
-# Testing environment specific
-derby.log
-
+######################
+# Intellij
+######################
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+classes/
+out/
 
 ######################
-# Liberty tools
+# Visual Studio Code
 ######################
+.vscode/
 
-.factorypath
+######################
+# Maven
+######################
+/log/
+/target/
+
+######################
+# Gradle
+######################
+.gradle/
+/build/
+
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+*.db
+
+######################
+# Windows
+######################
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+######################
+# Mac OSX
+######################
+.DS_Store
+.svn
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+######################
+# Directories
+######################
+/bin/
+/deploy/
+
+######################
+# Logs
+######################
+*.log*
+
+######################
+# Others
+######################
+*.class
+*.*~
+*~
+.merge_file*
+
+######################
+# Gradle Wrapper
+######################
+!gradle/wrapper/gradle-wrapper.jar
+
+######################
+# Maven Wrapper
+######################
+!.mvn/wrapper/maven-wrapper.jar
+
+######################
+# ESLint
+######################
+.eslintcache
