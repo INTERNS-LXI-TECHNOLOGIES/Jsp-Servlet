@@ -1,0 +1,27 @@
+{
+    "name": "Category",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "book",
+            "otherEntityRelationshipName": "category",
+            "relationshipName": "book"
+        }
+    ],
+    "changelogDate": "20190528045816",
+    "entityTableName": "category",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "Library",
+    "applications": "*",
+    "microserviceName": "Library"
+}

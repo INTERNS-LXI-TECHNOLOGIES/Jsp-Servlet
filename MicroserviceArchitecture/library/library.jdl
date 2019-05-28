@@ -1,0 +1,14 @@
+entity  Book {
+    name String,
+    author String
+}
+
+entity Category {
+    name String
+}
+
+relationship OneToMany {
+    Category to Book
+}
+
+service * with serviceImpl
