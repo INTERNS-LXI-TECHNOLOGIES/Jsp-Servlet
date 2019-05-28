@@ -1,12 +1,11 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.lxisoft.library",
-      "nativeLanguage": "en"
+      "packageName": "com.lxisoft.library"
     },
-    "jhipsterVersion": "6.0.1",
+    "jhipsterVersion": "5.8.2",
     "applicationType": "microservice",
-    "baseName": "Library",
+    "baseName": "library",
     "packageName": "com.lxisoft.library",
     "packageFolder": "com/lxisoft/library",
     "serverPort": "8080",
@@ -22,18 +21,14 @@
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "ZDQ4NWI5Y2I2NGUyMmYwNWMxYTAwZWZlNmZhYWQ4ZGYzMzFiZGMyYWYyNTdmODM3ZWFhNDc3MzNiMDAzOTIwYTEyY2JmODlkMWUwYWI1OWUxNTUxMjJlNjljZDUwNTBkZTc2ZTAxMmVkMmVlNWVkNWRkMTkxYzBkZGRkYjUxODA=",
+    "jwtSecretKey": "NDRiMmMxOWQzYWM4NmZmYzhjYmI4YzhjMmVmNTgyZmNhYTg0ZjJhMGQ2MTY2MzU2Njg4YWNmODg1Zjk2NzA5NzUxOTM0NTY2MTExOWI3YzQ3YzlmODAxNzM2NWJlNGZlMjE3NTczYzQ3MTM4NWRhMGNiMWNjMjZiZDI4NTllOTk=",
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "enableTranslation": true,
+    "enableTranslation": false,
     "clientPackageManager": "npm",
-    "nativeLanguage": "en",
-    "languages": [
-      "en"
-    ],
     "skipClient": true,
     "skipUserManagement": true
   }

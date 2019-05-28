@@ -40,6 +40,10 @@
         "spec": "http://localhost:8080/v2/api-docs",
         "useServiceDiscovery": true
       }
+    },
+    "promptValues": {
+      "cliName": "inventory",
+      "inputSpec": "http://localhost:8080/v2/api-docs"
     }
   }
 }

@@ -13,13 +13,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
-import org.springframework.beans.factory.DisposableBean;
 import org.springframework.core.env.Environment;
-import org.springframework.core.env.Profiles;
+
+import javax.annotation.PreDestroy;
 
 @Configuration
 @EnableCaching
-public class CacheConfiguration implements DisposableBean {
+public class CacheConfiguration {
 
     private final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
 
@@ -29,8 +29,8 @@ public class CacheConfiguration implements DisposableBean {
         this.env = env;
     }
 
-    @Override
-    public void destroy() throws Exception {
+    @PreDestroy
+    public void destroy() {
         log.info("Closing Cache Manager");
         Hazelcast.shutdownAll();
     }
@@ -44,18 +44,18 @@ public class CacheConfiguration implements DisposableBean {
     @Bean
     public HazelcastInstance hazelcastInstance(JHipsterProperties jHipsterProperties) {
         log.debug("Configuring Hazelcast");
-        HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("Library");
+        HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("library");
         if (hazelCastInstance != null) {
             log.debug("Hazelcast already initialized");
             return hazelCastInstance;
         }
         Config config = new Config();
-        config.setInstanceName("Library");
+        config.setInstanceName("library");
         config.getNetworkConfig().setPort(5701);
         config.getNetworkConfig().setPortAutoIncrement(true);
 
         // In development, remove multicast auto-configuration
-        if (env.acceptsProfiles(Profiles.of(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT))) {
+        if (env.acceptsProfiles(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT)) {
             System.setProperty("hazelcast.local.localAddress", "127.0.0.1");
 
             config.getNetworkConfig().getJoin().getAwsConfig().setEnabled(false);
