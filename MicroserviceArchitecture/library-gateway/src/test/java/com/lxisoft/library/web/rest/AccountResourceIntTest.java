@@ -1,6 +1,6 @@
 package com.lxisoft.library.web.rest;
 
-import com.lxisoft.library.LibraryGatewayApp;
+import com.lxisoft.library.LibraryApp;
 import com.lxisoft.library.domain.Authority;
 import com.lxisoft.library.domain.User;
 import com.lxisoft.library.repository.UserRepository;
@@ -38,7 +38,7 @@ import org.springframework.web.context.WebApplicationContext;
  * @see AccountResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LibraryGatewayApp.class)
+@SpringBootTest(classes = LibraryApp.class)
 public class AccountResourceIntTest{
 
     @Autowired

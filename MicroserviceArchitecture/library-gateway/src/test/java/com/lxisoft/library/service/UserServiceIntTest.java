@@ -1,6 +1,6 @@
 package com.lxisoft.library.service;
 
-import com.lxisoft.library.LibraryGatewayApp;
+import com.lxisoft.library.LibraryApp;
 import com.lxisoft.library.config.Constants;
 import com.lxisoft.library.domain.User;
 import com.lxisoft.library.repository.UserRepository;
@@ -43,7 +43,7 @@ import static org.mockito.Mockito.when;
  * @see UserService
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LibraryGatewayApp.class)
+@SpringBootTest(classes = LibraryApp.class)
 @Transactional
 public class UserServiceIntTest {
 

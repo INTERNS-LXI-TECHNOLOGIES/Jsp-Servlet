@@ -1,6 +1,6 @@
 package com.lxisoft.library.web.rest;
 
-import com.lxisoft.library.LibraryGatewayApp;
+import com.lxisoft.library.LibraryApp;
 import com.lxisoft.library.config.audit.AuditEventConverter;
 import com.lxisoft.library.domain.PersistentAuditEvent;
 import com.lxisoft.library.repository.PersistenceAuditEventRepository;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LibraryGatewayApp.class)
+@SpringBootTest(classes = LibraryApp.class)
 @Transactional
 public class AuditResourceIntTest {
 

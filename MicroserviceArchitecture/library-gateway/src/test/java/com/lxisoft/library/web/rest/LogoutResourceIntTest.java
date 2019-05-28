@@ -1,6 +1,6 @@
 package com.lxisoft.library.web.rest;
 
-import com.lxisoft.library.LibraryGatewayApp;
+import com.lxisoft.library.LibraryApp;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see LogoutResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LibraryGatewayApp.class)
+@SpringBootTest(classes = LibraryApp.class)
 public class LogoutResourceIntTest {
 
     @Autowired

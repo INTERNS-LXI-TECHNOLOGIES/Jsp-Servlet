@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LibraryGatewaySharedModule } from 'app/shared';
+import { LibrarySharedModule } from 'app/shared';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import {
@@ -11,13 +11,12 @@ import {
     JhiHealthModalComponent,
     JhiHealthCheckComponent,
     JhiConfigurationComponent,
-    JhiDocsComponent,
-    JhiGatewayComponent
+    JhiDocsComponent
 } from './';
 
 @NgModule({
     imports: [
-        LibraryGatewaySharedModule,
+        LibrarySharedModule,
         RouterModule.forChild(adminState)
         /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     ],
@@ -28,10 +27,9 @@ import {
         JhiHealthCheckComponent,
         JhiHealthModalComponent,
         JhiDocsComponent,
-        JhiGatewayComponent,
         JhiMetricsMonitoringComponent
     ],
     entryComponents: [JhiHealthModalComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class LibraryGatewayAdminModule {}
+export class LibraryAdminModule {}

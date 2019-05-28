@@ -12,8 +12,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
@@ -24,20 +22,18 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-@EnableDiscoveryClient
-@EnableZuulProxy
-public class LibraryGatewayApp {
+public class LibraryApp {
 
-    private static final Logger log = LoggerFactory.getLogger(LibraryGatewayApp.class);
+    private static final Logger log = LoggerFactory.getLogger(LibraryApp.class);
 
     private final Environment env;
 
-    public LibraryGatewayApp(Environment env) {
+    public LibraryApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes libraryGateway.
+     * Initializes library.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -62,7 +58,7 @@ public class LibraryGatewayApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(LibraryGatewayApp.class);
+        SpringApplication app = new SpringApplication(LibraryApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
@@ -98,12 +94,5 @@ public class LibraryGatewayApp {
             serverPort,
             contextPath,
             env.getActiveProfiles());
-
-        String configServerStatus = env.getProperty("configserver.status");
-        if (configServerStatus == null) {
-            configServerStatus = "Not found or not setup for this application";
-        }
-        log.info("\n----------------------------------------------------------\n\t" +
-                "Config Server: \t{}\n----------------------------------------------------------", configServerStatus);
     }
 }

@@ -3,14 +3,14 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "library-gateway": {
+        "library": {
             "root": "",
             "sourceRoot": "src/main/webapp",
             "projectType": "application",
             "architect": {}
         }
     },
-    "defaultProject": "library-gateway",
+    "defaultProject": "library",
     "cli": {
         "packageManager": "npm"
     },

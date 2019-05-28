@@ -17,7 +17,7 @@ import locale from '@angular/common/locales/en';
         DatePipe
     ]
 })
-export class LibraryGatewayCoreModule {
+export class LibraryCoreModule {
     constructor() {
         registerLocaleData(locale);
     }

@@ -1,6 +1,6 @@
 package com.lxisoft.library.repository;
 
-import com.lxisoft.library.LibraryGatewayApp;
+import com.lxisoft.library.LibraryApp;
 import com.lxisoft.library.config.Constants;
 import com.lxisoft.library.config.audit.AuditEventConverter;
 import com.lxisoft.library.domain.PersistentAuditEvent;
@@ -31,7 +31,7 @@ import static com.lxisoft.library.repository.CustomAuditEventRepository.EVENT_DA
  * @see CustomAuditEventRepository
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LibraryGatewayApp.class)
+@SpringBootTest(classes = LibraryApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIntTest {
 

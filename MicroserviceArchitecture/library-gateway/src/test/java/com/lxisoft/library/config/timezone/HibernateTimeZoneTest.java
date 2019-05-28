@@ -1,6 +1,6 @@
 package com.lxisoft.library.config.timezone;
 
-import com.lxisoft.library.LibraryGatewayApp;
+import com.lxisoft.library.LibraryApp;
 import com.lxisoft.library.repository.timezone.DateTimeWrapper;
 import com.lxisoft.library.repository.timezone.DateTimeWrapperRepository;
 import org.junit.Before;
@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Unit tests for the UTC Hibernate configuration.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LibraryGatewayApp.class)
+@SpringBootTest(classes = LibraryApp.class)
 public class HibernateTimeZoneTest {
 
     @Autowired

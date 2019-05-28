@@ -1,10 +1,10 @@
-# libraryGateway
+# library
 
 This application was generated using JHipster 5.8.2, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.8.2](https://www.jhipster.tech/documentation-archive/v5.8.2).
 
 This is a "gateway" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
 
-This application is configured for Service Discovery and Configuration with the JHipster-Registry. On launch, it will refuse to start if it is not able to connect to the JHipster-Registry at [http://localhost:8761](http://localhost:8761). For more information, read our documentation on [Service Discovery and Configuration with the JHipster-Registry][].
+This application is configured for Service Discovery and Configuration with . On launch, it will refuse to start if it is not able to connect to .
 
 ## Development
 
@@ -151,7 +151,7 @@ will generate few files:
 
 ## Building for production
 
-To optimize the libraryGateway application for production, run:
+To optimize the library application for production, run:
 
     ./mvnw -Pprod clean package
 
@@ -225,7 +225,6 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [jhipster 5.8.2 archive]: https://www.jhipster.tech/documentation-archive/v5.8.2
 [doing microservices with jhipster]: https://www.jhipster.tech/documentation-archive/v5.8.2/microservices-architecture/
 [using jhipster in development]: https://www.jhipster.tech/documentation-archive/v5.8.2/development/
-[service discovery and configuration with the jhipster-registry]: https://www.jhipster.tech/documentation-archive/v5.8.2/microservices-architecture/#jhipster-registry
 [using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v5.8.2/docker-compose
 [using jhipster in production]: https://www.jhipster.tech/documentation-archive/v5.8.2/production/
 [running tests page]: https://www.jhipster.tech/documentation-archive/v5.8.2/running-tests/

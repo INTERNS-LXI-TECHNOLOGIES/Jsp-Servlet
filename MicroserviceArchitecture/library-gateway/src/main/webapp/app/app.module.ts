@@ -10,11 +10,11 @@ import { NgJhipsterModule } from 'ng-jhipster';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { LibraryGatewaySharedModule } from 'app/shared';
-import { LibraryGatewayCoreModule } from 'app/core';
-import { LibraryGatewayAppRoutingModule } from './app-routing.module';
-import { LibraryGatewayHomeModule } from './home/home.module';
-import { LibraryGatewayEntityModule } from './entities/entity.module';
+import { LibrarySharedModule } from 'app/shared';
+import { LibraryCoreModule } from 'app/core';
+import { LibraryAppRoutingModule } from './app-routing.module';
+import { LibraryHomeModule } from './home/home.module';
+import { LibraryEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
@@ -28,12 +28,12 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
             alertAsToast: false,
             alertTimeout: 5000
         }),
-        LibraryGatewaySharedModule.forRoot(),
-        LibraryGatewayCoreModule,
-        LibraryGatewayHomeModule,
+        LibrarySharedModule.forRoot(),
+        LibraryCoreModule,
+        LibraryHomeModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        LibraryGatewayEntityModule,
-        LibraryGatewayAppRoutingModule
+        LibraryEntityModule,
+        LibraryAppRoutingModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
     providers: [
@@ -55,7 +55,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
     ],
     bootstrap: [JhiMainComponent]
 })
-export class LibraryGatewayAppModule {
+export class LibraryAppModule {
     constructor(private dpConfig: NgbDatepickerConfig) {
         this.dpConfig.minDate = { year: moment().year() - 100, month: 1, day: 1 };
     }
