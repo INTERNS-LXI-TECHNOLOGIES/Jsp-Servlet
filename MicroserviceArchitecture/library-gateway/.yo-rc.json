@@ -30,5 +30,11 @@
         "dtoSuffix": "DTO",
         "otherModules": [],
         "enableTranslation": false
+    },
+    "generator-jhipster-swagger-cli": {
+        "promptValues": {
+            "inputSpec": "http://localhost:8080/library/v2/api-docs",
+            "cliName": "library"
+        }
     }
 }
