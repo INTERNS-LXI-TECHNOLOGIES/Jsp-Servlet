@@ -22,6 +22,7 @@ public class QueryResourceService {
 
     @Autowired
     private BookResourceApi bookResourceApi;
+    @Autowired
     private CategoryResourceApi categoryResourseApi;
     
 

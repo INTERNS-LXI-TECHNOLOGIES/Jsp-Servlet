@@ -1,0 +1,10 @@
+<span *ngFor="let book of books">
+    <h4>{{book.name}}</h4>
+<br>
+</span>
+<div>
+    <label>name:
+        <input #name/>
+    </label>
+</div>
+<button (click) = "createContact(name.value)">Add Book</button>
