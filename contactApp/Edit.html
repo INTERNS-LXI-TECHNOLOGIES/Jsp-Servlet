@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style2.css">
+<h1>Edit Contact Details</h1>
+</head>
+<body>
+<form action="edit.jsp" method="get">
+  <div class="container">
+    <h1>Edit Contact</h1>
+    <p>Please fill in this form to edit a contact.</p>
+    <hr>
+	
+	<label for="oldName"><b>Enter the odd Contact name to be edited</b></label>
+    <input type="text" placeholder="Enter Old FirstName" name="oldName" required>
+	
+    <label for="firstName"><b>Enter new contact name</b></label>
+    <input type="text" placeholder="Enter New FirstName" name="firstName" required>
+
+    <label for="lastName"><b>Enter new LastName</b></label>
+    <input type="text" placeholder="Enter New LastName" name="lastName" required>
+
+    <label for="workPlace"><b>Enter new WorkPlace</b></label>
+    <input type="text" placeholder="Enter New work place" name="workPlace" required>
+	
+	<label for="number"><b>Enter new Mobile</b></label>
+    <input type="text" placeholder="Enter New mobile number" name="number" required>
+    <hr>
+    
+
+    <button type="submit" class="btn">Edit Contact</button>
+  </div>
+  
+  
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+h1
+{
+	color:red;
+}
+a
+{
+	color:blue;
+}
+div
+{
+	background-color:green;
+}
+
+input[type=text] 
+{
+  width:100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+  background-color: #3CBC8D;
+  color: white;
+}
+body
+{
+	background-color:red;
+}
+
+.btn
+{
+	background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
