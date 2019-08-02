@@ -19,4 +19,8 @@ public class Contact
 	{
 		return num;
 	}
+	public String printData()
+	{
+		return "Name:"+name+"Number:"+num;
+	}
 }
