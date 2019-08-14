@@ -34,7 +34,7 @@ public void create(Contact c)
 	
 }
 
-public void view()
+public void view(ArrayList<Contact> list)
 {
 	try{
 		PreparedStatement ps;	 
@@ -44,8 +44,15 @@ public void view()
 		//System.out.println("jfjhj"); 
 		while(rs.next())
 		{	
-			System.out.println(rs.getString(1)+"  "+rs.getString(2));
+	        String n=rs.getString(1);
+			String p=rs.getString(2);
+			Contact co=new Contact();
+			co.setName(n);
+			co.setPhoneNumber(p);
+			list.add(co);
+			//System.out.println(rs.getString(1)+"  "+rs.getString(2));
 		}
+		
 	}
 catch(Exception e){ System.out.println(e);}    
   

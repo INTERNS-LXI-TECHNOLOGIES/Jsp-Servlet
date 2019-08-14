@@ -3,12 +3,20 @@
 <title>Create</title>
 </head>
 <body>
+
+
 <form action="create.jsp"method=" ">
 <fieldset>
 <legend><h3>Create new contact</h3> </legend>
-Name : <input type="text" name="Name"><br><br>
-PhoneNumber : <input type="text" name="PhoneNumber"><br><br>
-<input type="submit" value="Submit">
+<label for="Name"><b>Name</b></label><br><br>
+      <input type="text" placeholder="Enter Name" name="Name" required><br><br>
+
+      <label for="PhoneNumber"><b>PhoneNumber</b></label><br><br>
+      <input type="text" placeholder="Enter PhoneNumber" name="PhoneNumber" required><br><br><br>
+       
+	   <input type="submit" value="Create">
+       
+
 </fieldset>
 </form>
 </body>
