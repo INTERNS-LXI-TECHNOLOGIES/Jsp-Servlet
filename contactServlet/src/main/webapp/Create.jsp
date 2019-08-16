@@ -19,7 +19,9 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/upload.css" rel="stylesheet">
   <style type="text/css">
+  
     html,
     body,
     header,
@@ -153,7 +155,7 @@
 
           <!--Grid column-->
           <div class="col-md-6 col-xl-5 mb-4">
-
+ 
             <!--Card-->
             <div class="card">
 
@@ -186,11 +188,25 @@
 
                   <div class="text-center">
                     <button class="btn btn-indigo" type="submit" value="submit">Submitt</button>
+                     <form action="createcsv" method="post">
+  	                      <div style="position:relative;">
+        <a class='btn btn-indigo' href='javascript:;'>
+            Browse 
+            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+ 			      
+        </a>
+        
+        &nbsp;
+        <span class='label label-info' id="upload-file-info"></span>
+</div>
+  <input class='btn btn-indigo' type="submit">
+</form>
                     <hr>
                   </div>
 
                 </form>
                 <!-- Form -->
+          
 
               </div>
 
