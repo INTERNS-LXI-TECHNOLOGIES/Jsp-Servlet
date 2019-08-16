@@ -1,18 +1,20 @@
-<%@ page import= "com.lxisoft.contact.*"%>
-<%@ page import="java.util.*"%>
-<%@ page import="java.io.*"%>
 <html>
 <head>
-	
+<title>Edit</title>
 </head>
 <body>
-<%
-String n=request.getParameter("name");
-String f=request.getParameter("field");
-String d=request.getParameter("data");
-RepositoryImpl re=new RepositoryImpl();
-re.edit(d,n,f);
-%>
-<h5>Contact updated...</h5>
+<form action="edit.jsp"method=" ">
+<fieldset>
+<legend><h3>Edit contact</h3> </legend>
+Enter a contact name  :<input type="text" name="name"><br><br>
+<p><b>Please select a field...</b></p><br>
+Name<label for="name"></label>
+<input type="radio" name="field" id="name" value="name"><br>
+PhoneNumber<label for="phno"></label>
+<input type="radio" name="field" id="phno" value="phno"><br><br>
+Type here to update:<input type="text" name="data"><br><br>
+<input type="submit" value="Submit">
+</fieldset>
+</form>
 </body>
 </html>

@@ -1,16 +1,13 @@
-<%@ page import= "com.lxisoft.contact.*"%>
-<%@ page import="java.util.*"%>
-<%@ page import="java.io.*"%>
 <html>
 <head>
-	
+<title>Delete</title>
 </head>
 <body>
-<%
-String data=request.getParameter("name");
-RepositoryImpl re=new RepositoryImpl();
-re.delete(data);
-%>
-<h5>Contact deleted...</h5>
+<form action="delete.jsp"method=" ">
+<fieldset>
+<h3>Enter a contact name </h3><input type="text" name="name"><br><br>
+<input type="submit" value="Delete">
+</fieldset>
+</form>
 </body>
 </html>

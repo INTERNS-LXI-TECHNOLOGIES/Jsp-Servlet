@@ -1,3 +1,11 @@
+<%@ page import= "com.lxisoft.contact.model.*"%>
+<%@ page import= "com.lxisoft.contact.repo.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.io.*"%>
+<%ArrayList<Contact>list=new ArrayList<Contact>();
+RepositoryImpl rep=new RepositoryImpl();
+rep.view(list);
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +23,13 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/home.css" rel="stylesheet">
+  <link href="css/create.css" rel="stylesheet">
 </head>
 
+<body>
 
-
-    <body>
-
-        <!-- Main navigation -->
         <header>
-          <!--Navbar-->
+          <!-- Navbar -->
           <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
               <a class="navbar-brand" href="#">
@@ -34,16 +40,19 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
+				<li class="nav-item">
+                    <a class="nav-link" href="view.jsp">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="create.jsp">Create</a>
+                    <a class="nav-link" href="create.jsp">Create
+                      
+                    </a>
                   </li>
-				  <li class="nav-item">
-                    <a class="nav-link" href="display.jsp">View</a>
+				  
+				  
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">View
+					<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Edit</a>
@@ -60,57 +69,53 @@
               </div>
             </div>
           </nav>
+          <!-- Navbar -->
           <!-- Full Page Intro -->
-          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
             <!-- Mask & flexbox options-->
             <div class="mask rgba-gradient align-items-center">
               <!-- Content -->
               <div class="container">
+			   top:50px;
+			   position :relative
                 <!--Grid row-->
-                <div class="row">
+                <div class="row mt-5">
                   <!--Grid column-->
-                  <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
-                    <h1 class="h1-responsive font-weight-bold mt-sm-5">My Contact Book</h1>
-                    <hr class="hr-light">
-                    <h4 class="mb-4">Create your contact with better experience....</h4>
-					
-                    
-                    <a class="btn btn-outline-white">Learn more</a>
-                  </div>
-                  <!--Grid column-->
-                  <!--Grid column-->
-                  <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
-                    <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
-                  </div>
-                  <!--Grid column-->
-                </div>
-                <!--Grid row-->
-              </div>
-              <!-- Content -->
-            </div>
-            <!-- Mask & flexbox options-->
-          </div>
-          <!-- Full Page Intro -->
-        </header>
-        <!-- Main navigation -->
-        <!--Main Layout-->
-        <main>
-          <div class="container">
-            <!--Grid row-->
-            <div class="row py-5">
-              <!--Grid column-->
-              <div class="col-md-12 text-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-              <!--Grid column-->
-            </div>
-            <!--Grid row-->
-          </div>
-        </main>
-        <!--Main Layout-->
+                  <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
+                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">My Contacts </h1>
+                    <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                    <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s"></h6>
+                     </div>
 
-    </body>
-	
+		 
+<table class="table white-text">
+  <thead>
+  
+    <tr>
+     
+      <th scope="col"><h4>Name</h4></th>
+      <th scope="col"><h4>PhoneNumber</h4></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+	<%for(int i=0;i<list.size();i++){%>
+<tr>
+      <td><%=list.get(i).getName()%></td>
+      <td><%=list.get(i).getPhoneNumber()%></td>
+	  </tr>
+	<%}%>
+    
+    
+  </tbody>
+</table>
+
+
+
+
+</header>
+</body>
 	
 	 <!-- SCRIPTS -->
   <!-- JQuery -->
@@ -121,6 +126,9 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
-</body>
 
+	</header>
+</body>
+	
+	
 </html>
