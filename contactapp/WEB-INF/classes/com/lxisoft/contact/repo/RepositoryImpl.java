@@ -26,6 +26,7 @@ public void create(Contact c)
 	String sql="insert into contactlist (name,phoneNo) values(?,?)";
 	ps=con.prepareStatement(sql);
 	ps.setString(1,c.getName());
+	System.out.println(c.getName()+" "+c.getPhoneNumber());
 	ps.setString(2,c.getPhoneNumber());
 	ps.executeUpdate();
 	}

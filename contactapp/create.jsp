@@ -52,7 +52,7 @@
                     <a class="nav-link" href="#">Edit</a>
                   </li>
 				  <li class="nav-item">
-                    <a class="nav-link" href="#">Delete</a>
+                    <a class="nav-link" href="delete.jsp">Delete</a>
                   </li>
                 </ul>
                 <form class="form-inline">
@@ -76,7 +76,7 @@
                 <div class="row mt-5">
                   <!--Grid column-->
                   <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Create contact right now! </h1>
+                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Create a contact right now! </h1>
                     <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
                     <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">You can create a contact now...</h6>
                      </div>
@@ -84,6 +84,7 @@
                   <!--Grid column-->
                   <div class="col-md-6 col-xl-5 mb-4">
                     <!--Form-->
+					<form action = "create" method = "post">
                     <div class="card wow fadeInRight" data-wow-delay="0.3s">
                       <div class="card-body">
                         <!--Header-->
@@ -95,12 +96,12 @@
                         <!--Body-->
                         <div class="md-form">
                           <i class="fas fa-user prefix white-text active"></i>
-                          <input type="text" id="form3" class="white-text form-control">
+                          <input type="text" id="form3" class="white-text form-control" name="Name">
                           <label for="form3" class="active">Your name</label>
                         </div>
                         <div class="md-form">
                           <i class="fas fa-phone prefix white-text active"></i>
-                          <input type="email" id="form2" class="white-text form-control">
+                          <input type="text" id="form2" class="white-text form-control" name="PhoneNumber">
                           <label for="form2" class="active">Your PhoneNumber</label>
                         </div>
                         
@@ -121,6 +122,7 @@
                         </div>
                       </div>
                     </div>
+					</form>
                     <!--/.Form-->
                   </div>
                   <!--Grid column-->

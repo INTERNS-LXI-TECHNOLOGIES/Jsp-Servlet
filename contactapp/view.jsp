@@ -49,7 +49,7 @@
                     <a class="nav-link" href="#">Edit</a>
                   </li>
 				  <li class="nav-item">
-                    <a class="nav-link" href="#">Delete</a>
+                    <a class="nav-link" href="delete.jsp">Delete</a>
                   </li>
                 </ul>
                 <form class="form-inline">

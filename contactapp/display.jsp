@@ -48,8 +48,6 @@ rep.view(list);
                       
                     </a>
                   </li>
-				  
-				  
                   <li class="nav-item active">
                     <a class="nav-link" href="#">View
 					<span class="sr-only">(current)</span></a>
@@ -58,7 +56,7 @@ rep.view(list);
                     <a class="nav-link" href="#">Edit</a>
                   </li>
 				  <li class="nav-item">
-                    <a class="nav-link" href="#">Delete</a>
+                    <a class="nav-link" href="delete.jsp">Delete</a>
                   </li>
                 </ul>
                 <form class="form-inline">
