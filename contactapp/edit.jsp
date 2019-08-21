@@ -1,20 +1,127 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Edit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/home.css" rel="stylesheet">
+  <link href="css/create.css" rel="stylesheet">
+  <link href="css/delete.css" rel="stylesheet">
 </head>
+
+
+
+
+
 <body>
-<form action="edit.jsp"method=" ">
-<fieldset>
-<legend><h3>Edit contact</h3> </legend>
-Enter a contact name  :<input type="text" name="name"><br><br>
-<p><b>Please select a field...</b></p><br>
-Name<label for="name"></label>
-<input type="radio" name="field" id="name" value="name"><br>
-PhoneNumber<label for="phno"></label>
-<input type="radio" name="field" id="phno" value="phno"><br><br>
-Type here to update:<input type="text" name="data"><br><br>
-<input type="submit" value="Submit">
-</fieldset>
-</form>
+
+ 
+  <header>
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <strong></strong>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                <ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+                    <a class="nav-link" href="view.jsp">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="create.jsp">Create
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="display.jsp">View
+					</a>
+                  </li>
+                  <li class="nav-item active">
+					<!-- Basic dropdown -->
+                    <button class=" white-text btn btn dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Edit</button>
+
+                    <div class="dropdown-menu">
+					  <a class="dropdown-item" href="#">Update name</a>
+					  <a class="dropdown-item" href="#">Update PhoneNumber</a>
+					  </div>
+					<!-- Basic dropdown -->
+					<span class="sr-only">(current)</span></a>
+                  </li>
+                  
+				  <li class="nav-item">
+                    <a class="nav-link" href="delete.jsp">Delete</a>
+					</li>
+                </ul>
+                <form class="form-inline">
+                  <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                  </div>
+                </form>
+				
+              </div>
+            </div>
+          </nav>
+          <!-- Navbar -->
+          <!-- Full Page Intro -->
+          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-gradient align-items-center">
+              <!-- Content -->
+              <div class="container">
+			   top:50px;
+			   position :relative
+                <!--Grid row-->
+                <div class="row mt-5">
+                  <!--Grid column-->
+				  <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
+                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Update now! </h1>
+                    <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                    <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">Select one to update...</h6>
+                   
+                   </div>                
+         
+
+
+
+
+
+
+
+
+</header>
+
+
 </body>
+
+	
+	
+	 <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  </header>
+</body>
+	
+	
+	
 </html>

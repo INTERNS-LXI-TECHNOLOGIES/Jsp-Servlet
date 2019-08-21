@@ -61,7 +61,7 @@ reps.view(list);
 					</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Edit</a>
+                    <a class="nav-link" href="edit.jsp">Edit</a>
                   </li>
 				  <li class="nav-item active">
                     <a class="nav-link" href="delete.jsp">Delete</a>
@@ -97,6 +97,7 @@ reps.view(list);
 
 
 <!-- Editable table -->
+<form action = "delete" method = "post">
 <div class="card">
   <h3 class="card-header text-center font-weight-bold text-uppercase py-4">My contacts</h3>
   <div class="card-body">
@@ -113,6 +114,7 @@ reps.view(list);
           </tr>
         </thead>
         <tbody>
+		
 		<%for(int i=0;i<list.size();i++){%>
           <tr>
             <td class="pt-3-half" contenteditable="true"><%=list.get(i).getName()%></td>
@@ -124,11 +126,13 @@ reps.view(list);
                     aria-hidden="true"></i></a></span>
             </td>
             <td>
-              <span class="table-remove"><button type="button"
+              <span class="table-remove"><button type="submit" value=<%=list.get(i).getName()%> name="name"
                   class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+				  
             </td>
           </tr>
 		  <%}%>
+		  </form>
           <!-- This is our clonable table line -->
           
           <!-- This is our clonable table line -->

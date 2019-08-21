@@ -49,7 +49,7 @@
                     <a class="nav-link" href="display.jsp">View</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Edit</a>
+                    <a class="nav-link" href="edit.jsp">Edit</a>
                   </li>
 				  <li class="nav-item">
                     <a class="nav-link" href="delete.jsp">Delete</a>

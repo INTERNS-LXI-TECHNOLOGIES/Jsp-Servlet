@@ -53,7 +53,7 @@ rep.view(list);
 					<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Edit</a>
+                    <a class="nav-link" href="edit.jsp">Edit</a>
                   </li>
 				  <li class="nav-item">
                     <a class="nav-link" href="delete.jsp">Delete</a>
