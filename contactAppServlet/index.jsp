@@ -19,5 +19,8 @@
 <form action="Delete.jsp" method="post">
 	<input type="submit" value="Delete">
 </form>
+<form action="UploadFile.jsp" method="post">
+	<input type="submit" value="Upload">
+</form>
 </body>
 </html>

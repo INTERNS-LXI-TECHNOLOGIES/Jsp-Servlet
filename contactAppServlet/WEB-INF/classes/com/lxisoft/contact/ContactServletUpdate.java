@@ -12,7 +12,11 @@ PrintWriter out=res.getWriter();//get the stream to write the data
   ContactRepository contactR=new ContactRepository();
 	String editName=req.getParameter("name");
 	String newName=req.getParameter("nname");
-	contactR.updateContact(editName,newName);
+	int value=contactR.updateContact(editName,newName);
+	HttpSession session=req.getSession(true);
+	session.setAttribute("value",value);
+	String name="success";
+	res.sendRedirect("Update.jsp?name="+name);
 	out.println("<a href="+"index.jsp"+">back to jsp</a>");
 out.close();//closing the stream  
 }

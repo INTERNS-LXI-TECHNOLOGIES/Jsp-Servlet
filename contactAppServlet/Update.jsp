@@ -14,7 +14,17 @@
 	<input type="submit" name="submit" value="Submit">	
 	</form>
 	<%
-	// out.println(request.getParameter("name"));
+	//out.println(request.getParameter("a"));
+	 out.println(request.getParameter("name"));
+	if(session!=null)
+	{
+		if(session.getAttribute("value")!=null)
+		{
+			int value=(int)session.getAttribute("value");
+			out.println("<br>"+value);
+		}
+	}
 	%>
-	
+	<a href="index.jsp">back to home</a>
 </body>
+</html>

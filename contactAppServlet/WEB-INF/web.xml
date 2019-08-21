@@ -1,6 +1,5 @@
 <web-app>  
-  
-<servlet>  
+	<servlet>
 <servlet-name>demo</servlet-name>  
 <servlet-class>com.lxisoft.contact.ContactServlet</servlet-class>  
 </servlet>  
@@ -35,4 +34,14 @@
 <url-pattern>/delete</url-pattern>  
 </servlet-mapping>  
   
+ <servlet>  
+<servlet-name>demo3</servlet-name>  
+<servlet-class>com.lxisoft.contact.ContactServletUpload</servlet-class>  
+</servlet> 
+
+<servlet-mapping>  
+<servlet-name>demo3</servlet-name>  
+<url-pattern>/upload</url-pattern>  
+</servlet-mapping> 
+
 </web-app>  

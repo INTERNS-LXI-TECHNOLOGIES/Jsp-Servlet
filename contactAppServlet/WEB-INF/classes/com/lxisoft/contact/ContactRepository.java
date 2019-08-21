@@ -74,13 +74,14 @@ public class ContactRepository
 		}
 		return contacts;
 	}
-	public void updateContact(String name,String editName)throws Exception
+	public int updateContact(String name,String editName)throws Exception
 	{	
+		int value=0;
 		try
 		{	
 		sql="update contact  set contact_name='"+editName+"' WHERE contact_name='"+name+"'";
 		ps=con.prepareStatement(sql);
-		ps.executeUpdate();
+		value=ps.executeUpdate();
 		ps.close();
 		con.close();
 		}
@@ -88,6 +89,7 @@ public class ContactRepository
 		{
 			e.printStackTrace();
 		}
+		return value;
 	}
 	public void deleteContact(String name)throws Exception
 	{
