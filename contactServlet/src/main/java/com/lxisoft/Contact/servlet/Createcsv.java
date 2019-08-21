@@ -25,11 +25,24 @@ public class Createcsv extends HttpServlet {
 	RepositoryImpl ri = new RepositoryImpl();
 	RepositoryImpl si = new RepositoryImpl();
 	int count = 0;
+	String data;
 	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException 
 	{
-		String data;
-		try{
-			File file = new File("create.csv");
+		
+		if(request.getParameter("txtPhoto") == null)
+         {
+             response.sendRedirect("upload.jsp");
+             return;
+         }
+         PrintWriter out = response.getWriter();
+
+         FileInputStream input = null;
+         File theFile = new File(request.getParameter("txtPhoto"));
+         input = new FileInputStream(theFile);
+         out.println("FullPathname" + " " + theFile.getAbsolutePath());
+
+        try {
+        	File file = new File(theFile.getAbsolutePath());
 			FileReader fR = new FileReader(file);
 			BufferedReader bR = new BufferedReader(fR);
 			while((data = bR.readLine())!= null){
