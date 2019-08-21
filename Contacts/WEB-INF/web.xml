@@ -1,0 +1,47 @@
+<web-app>
+	<servlet>
+		<servlet-name>contact</servlet-name>
+		<servlet-class>com.lxisoft.controller.ContactServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>contact</servlet-name>
+		<url-pattern>/create</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>contact</servlet-name>
+		<url-pattern>/view</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>editcon</servlet-name>
+		<servlet-class>com.lxisoft.controller.ContactEditServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>editcon</servlet-name>
+		<url-pattern>/edit</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>deletecon</servlet-name>
+		<servlet-class>com.lxisoft.controller.ContactDeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>deletecon</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>uploading</servlet-name>
+		<servlet-class>com.lxisoft.controller.UploadServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>uploading</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
