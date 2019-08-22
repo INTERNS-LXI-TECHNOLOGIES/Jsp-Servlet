@@ -56,7 +56,7 @@
                       aria-haspopup="true" aria-expanded="false">Edit</button>
 
                     <div class="dropdown-menu">
-					  <a class="dropdown-item" href="#">Update name</a>
+					  <a class="dropdown-item" href="editName.jsp">Update name</a>
 					  <a class="dropdown-item" href="#">Update PhoneNumber</a>
 					  </div>
 					<!-- Basic dropdown -->
