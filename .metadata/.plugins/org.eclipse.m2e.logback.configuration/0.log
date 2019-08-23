@@ -1,0 +1,16 @@
+2019-08-23 10:24:30,273 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-wtp does not contain lifecycle mapping metadata
+2019-08-23 10:24:30,308 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-egit does not contain lifecycle mapping metadata
+2019-08-23 10:24:30,310 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive does not contain lifecycle mapping metadata
+2019-08-23 10:24:30,312 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subclipse does not contain lifecycle mapping metadata
+2019-08-23 10:24:40,018 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.lxisoft.contact:contactservlet:1.0-SNAPSHOT @ C:\Users\Arun Johnson\Desktop\java tutorial\EEJavaFoundational\contactServlet\pom.xml.
+2019-08-23 10:24:45,065 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /contactServlet/src/main/java
+2019-08-23 10:24:45,067 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /contactServlet/src/test/java
+2019-08-23 10:24:45,068 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.lxisoft.contact:contactservlet:1.0-SNAPSHOT @ C:\Users\Arun Johnson\Desktop\java tutorial\EEJavaFoundational\contactServlet\pom.xml.
+2019-08-23 10:24:48,014 [Worker-4] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Project import completed 12 sec
+2019-08-23 10:24:50,479 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-08-23 10:24:50,479 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2019-08-23 10:24:53,835 [Worker-11] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.lxisoft.contact:contactservlet:1.0-SNAPSHOT @ C:\Users\Arun Johnson\Desktop\java tutorial\EEJavaFoundational\contactServlet\pom.xml.
+2019-08-23 10:24:54,425 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-23 10:24:54,426 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Arun Johnson\Desktop\java tutorial\EEJavaFoundational\contactServlet\src\main\resources
+2019-08-23 10:24:54,431 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-23 10:24:54,433 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Arun Johnson\Desktop\java tutorial\EEJavaFoundational\contactServlet\src\test\resources
