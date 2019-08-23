@@ -1,5 +1,0 @@
-com\lxisoft\Contact\repositoryImpl\RepositoryImpl.class
-com\lxisoft\Contact\servlet\CreateContact.class
-com\lxisoft\Contact\servlet\UpdatePhoneNumber.class
-com\lxisoft\Contact\model\ContactModel.class
-com\lxisoft\Contact\servlet\UpdateName.class
