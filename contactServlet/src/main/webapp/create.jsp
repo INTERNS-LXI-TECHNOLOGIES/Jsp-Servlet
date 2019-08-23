@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title></title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -16,6 +17,7 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/home.css" rel="stylesheet">
   <link href="css/create.css" rel="stylesheet">
+  <link href= "css/upload.css" rel="stylesheet">
 </head>
 <body>
 
@@ -34,21 +36,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a onclick="window.location.href='index.html'" class="nav-link" href="#">Home
+                      <a onclick="window.location.href='index.jsp'" class="nav-link" href="#">Home
                         <span class="sr-only">(current)</span>
                       </a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="window.location.href='create.html'" class="nav-link" href="#">Create</a>
+                        <a onclick="window.location.href='create.jsp'" class="nav-link" href="#">Create</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="dropdown" href="Update.html">Update</a>
                         <div class="dropdown-menu">
-                          <a onclick="window.locaton.href='updateFirst_Name.html'" class="dropdown-item" href="#">Update First_Name</a>
-                          <a onclick="window.locaton.href='updateLast_Name.html'" class="dropdown-item" href="#">Update Last_Name</a>
-                          <a onclick="window.locaton.href='upPhoneN.html'" class="dropdown-item" href="upPhoneN.html">Update Phone_Number</a>
-                          <a onclick="window.locaton.href='upMobN.html'" class="dropdown-item" href="upMobN.html">Update Mobile_Number</a>
-                          <a onclick="window.locaton.href='upEmailId.html'" class="dropdown-item" href="upEmailId.html">Update Email_ID</a>
+                          <a onclick="window.locaton.href='upFirstName.jsp'" class="dropdown-item" href="upFirstName.jsp">Update First_Name</a>
+                          <a onclick="window.locaton.href='upLastName.jsp'" class="dropdown-item" href="upLastName.jsp">Update Last_Name</a>
+                          <a onclick="window.locaton.href='upPhoneN.jsp'" class="dropdown-item" href="upPhoneN.jsp">Update Phone_Number</a>
+                          <a onclick="window.locaton.href='upMobN.jsp'" class="dropdown-item" href="upMobN.jsp">Update Mobile_Number</a>
+                          <a onclick="window.locaton.href='upEmailId.jsp'" class="dropdown-item" href="upEmailId.jsp">Update Email_ID</a>
                         </div>
                       </li>
                       <li class="nav-item">
@@ -86,7 +88,7 @@
                     <!--Grid column-->
                     <div class="col-md-6 col-xl-5 mb-4">
                       <!--Form-->
-                      <form name="" action="create.jsp" method="post">
+                      <form name="" action="create" method="post">
                       <div class="card wow fadeInRight" data-wow-delay="0.3s">
                         <div class="card-body">
                           <!--Header-->
@@ -121,14 +123,23 @@
                             <input type="email" id="form2" class="white-text form-control" name="Your email">
                             <label for="form2" class="active">Your email</label>
                           </div>
-        
+  
+
                           <div class="text-center mt-4">
                             <button class="btn btn-indigo" type="submit" value="submit">Add Now</button>
+                            </form>
+                              
+  <form action="csvfile" method="post">
+  <h1>upload file here</h1>
+  <input type="file" name="csv" placeholder="upload" accept=" "/><br/><br/>
+  <input type="submit" value="upload">
+  </form>
                             <hr class="hr-light mb-3 mt-4">
                             <div class="inline-ul text-center">
                               <a class="p-2 m-2 tw-ic">
                                 <i class="fab fa-twitter white-text"></i>
                               </a>
+      
                               <a class="p-2 m-2 li-ic">
                                 <i class="fab fa-linkedin-in white-text"> </i>
                               </a>
@@ -137,7 +148,7 @@
                               </a>
                             </div>
                           </div>
-                        </form>
+                        
                         </div>
                       </div>
                       <!--/.Form-->
@@ -154,10 +165,10 @@
           </header>
           <!-- Main navigation -->
           <!--Main Layout-->
-          <main>
+          
             <div class="container">
               <!--Grid row-->
-              <div class="row py-5">
+              <div class="row py-2">
                 <!--Grid column-->
                 <div class="col-md-12 text-center">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -166,7 +177,7 @@
               </div>
               <!--Grid row-->
             </div>
-          </main>
+        
           <!--Main Layout-->
   
 

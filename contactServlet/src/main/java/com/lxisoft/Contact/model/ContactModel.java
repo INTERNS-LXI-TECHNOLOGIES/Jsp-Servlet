@@ -1,31 +1,83 @@
 package com.lxisoft.Contact.model;
 import java.util.*;
-public class ContactModel{
+public class ContactModel
+{
 
-	private String name;
-	private ArrayList<String> phoneNumber;
-	private String mailId;
+	private int id;
+	private String firstName;
+	private String lastName;
+	private String phone;
+	private String mobNumber;
+	private String email;
 
-	public void setName(String name){
-		this.name=name;
+	
+	public String getPhone()
+	{
+	return phone;
 	}
-	public String getName(){
-		return this.name;
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public void setPhoneNumber(ArrayList<String> phoneNumber){
-		this.phoneNumber=phoneNumber;
+
+
+	public String getMobNumber() {
+		return mobNumber;
 	}
-	public ArrayList<String> getPhoneNumber(){
-		return this.phoneNumber;
+
+
+	public void setMobNumber(String mobNumber) {
+		this.mobNumber = mobNumber;
 	}
-	public void setMailId(String mailId){
-		this.mailId=mailId;
+
+
+	public String getEmail() {
+		return email;
 	}
-	public String getMailId(){
-		return this.mailId;
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String toString(){  
-		return name+" "+phoneNumber+" "+mailId;
-	}
+
+
+
+		public String getFirstName() {
+			return firstName;
+		}
+
+
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+
+
+		public String getLastName() {
+			return lastName;
+		}
+
+
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
+		}
+
+		public String toString()
+		{
+		return firstName+" "+lastName+" "+phone+" "+mobNumber+" "+email+" ";
+		}
+
+
+		public void setId(int id) 
+		{
+			this.id=id;
+			
+		}
+		public int getId()
+		{
+			return id;
+		}
+
+
 
 }
